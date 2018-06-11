@@ -1,0 +1,5 @@
+<deploy package="basicprograms" partName="payrollProgram2" partType="Program" version="2">
+	<buildDescriptors>
+		<buildDescriptor name="EGL_WORKSHOPJavaBuildOptions" fileName="\EGL_WORKSHOP\EGLSource\EGL_WORKSHOP.eglbld" egldd="" genProject="EGL_WORKSHOP"/>
+	</buildDescriptors>
+</deploy>

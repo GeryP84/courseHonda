@@ -1,0 +1,19 @@
+package basicPrograms;
+
+import basicLibrary.helloLib;
+
+// basic program
+//
+program helloName type BasicProgram {}
+
+	//use helloLib;
+	sayMyName char(26);
+
+	function main()
+		//sayHelloTo("Gery");
+		sayMyName= helloLib.sayHelloTo("Gery");
+		
+		SysLib.writeStdout(sayMyName);
+	end
+	
+end

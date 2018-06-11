@@ -1,0 +1,5 @@
+<deploy package="basiclibrary" partName="helloLib" partType="Library" version="2">
+	<buildDescriptors>
+		<buildDescriptor name="EGL_WORKSHOPJavaBuildOptions" fileName="\EGL_WORKSHOP\EGLSource\EGL_WORKSHOP.eglbld" egldd="" genProject="EGL_WORKSHOP"/>
+	</buildDescriptors>
+</deploy>

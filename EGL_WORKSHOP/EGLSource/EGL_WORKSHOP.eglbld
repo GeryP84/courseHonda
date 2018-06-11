@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE EGL PUBLIC "-//IBM Corporation, Inc.//DTD EGL Build Parts 6.0//EN" "">
+
+<EGL>
+<BuildDescriptor
+	name="EGL_WORKSHOPJavaBuildOptions"
+	genProject="EGL_WORKSHOP"
+	system="WIN"
+	J2EE="NO"
+	genProperties="GLOBAL"
+	genDataTables="YES"
+	dbms="DB2"
+	sqlValidationConnectionURL="jdbc:db2://localhost:50000/SAMPLE"
+	sqlJDBCDriverClass="com.ibm.db2.jcc.DB2Driver"
+	sqlDB="jdbc:db2://localhost:50000/SAMPLE"
+	deploymentDescriptor="EGL_WORKSHOP"
+>
+</BuildDescriptor>
+<BuildDescriptor
+	name="EGL_WORKSHOPDebugBuildOptions"
+	genProject="EGL_WORKSHOP"
+	system="WIN"
+	J2EE="NO"
+	genProperties="GLOBAL"
+	genDataTables="YES"
+	dbms="DB2"
+	sqlValidationConnectionURL="jdbc:db2://localhost:50000/SAMPLE"
+	sqlJDBCDriverClass="com.ibm.db2.jcc.DB2Driver"
+	sqlDB="jdbc:db2://localhost:50000/SAMPLE"
+	deploymentDescriptor="EGL_WORKSHOP"
+>
+</BuildDescriptor>
+</EGL>

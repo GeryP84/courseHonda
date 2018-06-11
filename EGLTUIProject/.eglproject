@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource name="EGLTUIProject">
+	<storedValue key="EGLProjectMigrationVersion" value="8.0.0"/>
+	<storedValue key="DefaultBuildDescriptorCobolTargetName" value="EGLTUIProjectCOBOLBuildOptions"/>
+	<storedValue key="DefaultBuildDescriptorCobolTargetPath" value="EGLTUIProject/EGLSource/EGLTUIProject.eglbld"/>
+	<storedValue key="DefaultBuildDescriptorNonJavaScriptDebugName" value="EGLTUIProjectDebugBuildOptions"/>
+	<storedValue key="EGLProjectFeatureMask" value="16"/>
+	<storedValue key="EGLProjectSecondaryMigrationVersion" value="9.0"/>
+	<storedValue key="DefaultBuildDescriptorNonJavaScriptDebugPath" value="EGLTUIProject/EGLSource/EGLTUIProject.eglbld"/>
+	<storedValue key="EGLTargetRuntimeMask" value="4"/>
+</resource>

@@ -1,0 +1,31 @@
+package eglui.helloworld;
+
+// form group with screen and print floating areas
+//
+formGroup helloGroup
+	{ScreenFloatingAreas = [
+		@ScreenFloatingArea{screenSize=[24, 80], bottomMargin=0, topMargin=0, leftMargin=0, rightMargin=0}
+	],
+	 PrintFloatingAreas = [
+		@PrintFloatingArea{pageSize=[255,132], topMargin=3, bottomMargin=3, leftMargin=5, rightMargin=5}
+    ],
+	
+	validationBypassKeys = [pf2], helpKey = pf1, 
+	pfKeyEquate = yes}
+	form HelloWorld1 type textForm
+		{ FormSize = [24, 80], Position = [1, 1]}
+		OutputField char(20) {Value = "Hello World!!!", Position = [3, 12], color = green, protect = skipProtect};
+		InputField char(20) {Position = [6, 15], highlight = underline, color = green, protect = noProtect};
+		FkeyLabel char(25) {Value = "Press F5 for next Screen", Position = [20, 19], color = green, protect = skipProtect};
+	end
+	
+	form HelloWorld2 type textForm
+		{ FormSize = [24, 80], Position = [1, 1]}
+		OutputField char(35) {Value = "Hello World!!!! THIS IS SCREEN 2", Position = [1, 9], color = green, protect = skipProtect};
+		OutputField2 char(35) {Position = [6, 19], Highlight = underline, color = green, protect = noProtect};
+		FkeyLabel char(34) {Value = "Press Enter to return to screen 1", Position = [20, 20], color = green, protect = skipProtect};
+	end
+	
+	// Use Declarations or Form Definitions
+	 
+end

@@ -1,0 +1,21 @@
+package basicLibrary;
+
+// basic library
+library convertTempLib type BasicLibrary {}
+	
+	// Function Declarations
+	function celsiusToFahrenheit(rec tempRec)
+		rec.tempF = ((9/5) * rec.tempC) + 32;
+	end
+	
+	function fahrenheitToCelsius(rec tempRec)
+		rec.tempC = ((5/9) * rec.tempF) - 32;
+	end
+	
+end
+
+
+record tempRec
+	tempC	decimal (5,2) {ZeroFormat = yes, Sign = leading};
+	tempF	decimal (5,2) {ZeroFormat = yes, Sign = leading};
+end

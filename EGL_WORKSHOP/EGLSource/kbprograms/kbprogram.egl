@@ -1,0 +1,39 @@
+package kbprograms;
+
+program kbprogram type BasicProgram{}
+
+    amount decimal(9, 2);
+    principal decimal(7, 2);
+    interest float;
+    nbrYears int;
+
+    function main()
+    //Initialize values
+        amount = 0;
+        principal = 10000.01;
+        interest = .05;
+        nbrYears = 10;
+        //Invoke simple interest calculation function
+        calculateSimpleInterest();
+        calculatePrincipal();
+        calculateInterestRate();
+        calculateNbrCompoundingPeriods();
+    end
+
+    function calculateSimpleInterest()
+        amount = principal *(1 +(nbrYears * interest));
+    end
+
+    function calculatePrincipal()
+        principal = amount /(1 +(nbrYears * interest));
+    end
+
+    function calculateInterestRate()
+        interest =((amount / principal) - 1) / nbrYears;
+    end
+
+    function calculateNbrCompoundingPeriods()
+        nbrYears =((amount / principal) - 1) / interest;
+    end
+
+end

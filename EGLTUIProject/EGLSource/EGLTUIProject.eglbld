@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE EGL PUBLIC "-//IBM Corporation, Inc.//DTD EGL Build Parts 6.0//EN" "">
+
+<EGL>
+<BuildDescriptor
+	name="EGLTUIProjectDebugBuildOptions"
+	genProject="EGLTUIProject"
+	system="WIN"
+	J2EE="NO"
+	genProperties="GLOBAL"
+	genDataTables="YES"
+	dbms="DB2"
+	sqlValidationConnectionURL="jdbc:db2://localhost:50000/SAMPLE"
+	sqlJDBCDriverClass="com.ibm.db2.jcc.DB2Driver"
+	sqlDB="jdbc:db2://localhost:50000/SAMPLE"
+	deploymentDescriptor="EGLTUIProject"
+>
+</BuildDescriptor>
+<BuildDescriptor
+	name="EGLTUIProjectCOBOLBuildOptions"
+	system="ZOSCICS"
+	genDirectory=""
+	destHost=""
+	destPort=""
+	destUserID=""
+	destPassword=""
+	projectID=""
+	genDataTables="YES"
+	genFormGroup="YES"
+	genHelpFormGroup="YES"
+	sqlDB=""
+	sqlID=""
+	sqlPassword=""
+	deploymentDescriptor="EGLTUIProject"
+	>
+	<symbolicParameter name="DSNLOAD">
+		<symbolicValue>
+			<![CDATA[]]>
+		</symbolicValue>
+	</symbolicParameter>
+	<symbolicParameter name="ELA">
+		<symbolicValue>
+			<![CDATA[]]>
+		</symbolicValue>
+	</symbolicParameter>
+</BuildDescriptor>
+</EGL>

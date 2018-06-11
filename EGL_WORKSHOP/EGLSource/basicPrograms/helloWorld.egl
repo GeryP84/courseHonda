@@ -1,0 +1,13 @@
+package basicPrograms;
+
+// basic program
+//
+program helloWorld type BasicProgram {}
+	
+	msg char(11) = "Hello World";
+	
+	function main()
+		SysLib.writeStdout(msg);
+	end
+	
+end

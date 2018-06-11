@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource name="EGL_MySample_Programs">
+	<storedValue key="EGLProjectMigrationVersion" value="8.0.0"/>
+	<storedValue key="DefaultBuildDescriptorCobolTargetName" value="EGL_Sample_ProgramsCOBOLBuildOptions"/>
+	<storedValue key="DefaultBuildDescriptorCobolTargetPath" value="EGL_MySample_Programs/EGLSource/EGL_Sample_Programs.eglbld"/>
+	<storedValue key="DefaultBuildDescriptorNonJavaScriptDebugName" value="EGL_Sample_ProgramsDebugBuildOptions"/>
+	<storedValue key="EGLProjectFeatureMask" value="16"/>
+	<storedValue key="EGLProjectSecondaryMigrationVersion" value="9.0"/>
+	<storedValue key="DefaultBuildDescriptorNonJavaScriptDebugPath" value="EGL_MySample_Programs/EGLSource/EGL_Sample_Programs.eglbld"/>
+	<storedValue key="EGLTargetRuntimeMask" value="4"/>
+</resource>

@@ -1,0 +1,212 @@
+package basicPrograms;
+
+program payrollProgram2 type BasicProgram() {}
+//Global Record Variable declarations	
+	empRecin	empRec2;
+	empRecout	empRec2;
+	empRecArray	emprec2[0];	//Dynamic Array of empRecs
+	
+//Begin processing functions	
+	function main()			
+		set empRecin empty; //Not really necessary. 
+		set empRecout empty; //Used here only to show how Set works
+		assignEmpVals();
+		fieldMoves();
+		groupMoves();
+		recordMoves();
+		loadArray();
+		
+		//Begin conditional and Looping statement workshop		
+		simpleIfElse();
+		compoundIfElse();
+		inTest();
+		forLoop();
+		whileLoopMatches();
+		ret int =  continueExitReturn();
+		SysLib.writeStdout(ret);
+		try
+			exceptionRef();
+		onException (exception IndexOutOfBoundsException)
+			SysLib.writeStdout(exception.messageID);			
+			SysLib.writeStdout(exception.message);			
+		end
+		
+	end  //end-main function
+	
+	function fieldMoves()
+		move empRecin.lastName to empRecout.lastName;
+		move empRecin.grossPay to empRecout.grossPay;
+		move empRecin.partTimeInd to empRecout.partTimeInd;		
+	end	 //end-fieldMoves()
+	
+	function groupMoves()	
+		set empRecout empty; 
+		move empRecin.emp to empRecout.emp;
+		move empRecin.pay to empRecout.pay;		
+		move empRecin.rpt to empRecout.rpt;		
+	end //end-groupMoves()
+	function recordMoves()
+		set empRecout empty;
+		move empRecin to empRecout byName;		
+	end	//end-recordMoves()
+	
+	function assignEmpVals()
+		empRecin.lastName = "Irving";
+		empRecin.firstName = "Julian";
+		empRecin.empId = "1X43T6";
+		empRecin.empPhone = 2126784343;
+		empRecin.partTimeInd = 0;
+		empRecin.grossPay = 98765.43; 
+		empRecin.ytdGrossPay = 98765.43;
+		empRecin.fedTax = 98765.43;
+		empRecin.ytdFedTax = 98765.43;
+		empRecin.netPay = 98765.43;
+		empRecin.ytdNetPay = 98765.43;
+		empRecin.stockPurchPerc = 4.5;	
+		empRecin.four01KPerc = 11.0;
+		empRecin.currDate = datetimelib.currentDate();
+		empRecin.periodEndDate = datetimelib.currentDate() + 30;
+		empRecin.reportTimeStamp = DateTimeLib.currentTimeStamp();
+		empRecin.payPeriod = 4;			
+	end //end-assignEmpVals()
+	
+	function loadArray()
+		empRecArray.appendElement(empRecin);  //load record1
+		empRecin.lastName = "Hudak";
+		empRecin.firstName = "William";
+		empRecin.empId = "289483";
+		empRecin.empPhone = 8602283788;
+		empRecin.partTimeInd = 1;
+		empRecin.grossPay = 12122.43; 
+		empRecin.ytdGrossPay = 93242.43;
+		empRecin.fedTax = 13865.43;
+		empRecin.ytdFedTax = 5522.43;
+		empRecin.netPay = 987367.43;
+		empRecin.ytdNetPay = 83456.43;
+		empRecin.stockPurchPerc = 2.0;	
+		empRecin.four01KPerc = 8.5;
+		empRecin.currDate = datetimelib.currentDate();
+		empRecin.periodEndDate = datetimelib.currentDate() + 30;
+		empRecin.reportTimeStamp = DateTimeLib.currentTimeStamp();
+		empRecin.payPeriod = 4;			
+		empRecArray.appendElement(empRecin);  //load record2
+		
+		empRecin.lastName = "Smith";
+		empRecin.firstName = "MaryLou";
+		empRecin.empId = "4h4673";
+		empRecin.empPhone = 6157236235;
+		empRecin.partTimeInd = 1;
+		empRecin.grossPay = 12312.43; 
+		empRecin.ytdGrossPay = 53423.43; 
+		empRecin.fedTax = 231.43;
+		empRecin.ytdFedTax = 531.43;
+		empRecin.netPay = 23423.43;
+		empRecin.ytdNetPay = 78564.43;
+		empRecin.stockPurchPerc = 1.0;	
+		empRecin.four01KPerc = 15.0;
+		empRecin.currDate = datetimelib.currentDate();
+		empRecin.periodEndDate = datetimelib.currentDate() + 30;
+		empRecin.reportTimeStamp = DateTimeLib.currentTimeStamp();
+		empRecin.payPeriod = 4;							
+		empRecArray.appendElement(empRecin);  //load record3
+	end //end loadArray()
+	
+	//Program Source// copy starting from the package line below
+
+	function simpleIfElse()
+		if(empRecArray[1].grossPay > empRecArray[2].grossPay)
+			SysLib.writeStdout("1's grossPay > 2's");			
+		else
+			SysLib.writeStdout("2's grossPay > 1's");
+		end
+	end
+
+	function compoundIfElse()
+		if((empRecArray[1].partTimeInd == 1 && empRecArray[1].netPay < 100000) || empRecArray[1].ytdFedTax > 50000)
+			empRecArray[1].ytdGrossPay = empRecArray[1].ytdGrossPay + empRecArray[1].netPay;
+			syslib.writeStdout(empRecArray[1].ytdGrossPay as string);			
+		else 
+			empRecArray[1].ytdGrossPay = empRecArray[1].ytdGrossPay + empRecArray[1].netPay *.8;
+		end
+	end
+	
+	function inTest()
+		if("Smith" in empRecArray.lastname)   
+			syslib.writeStdout("Smith is EmpID: "+ empRecArray[SysVar.arrayIndex].empId);
+		end
+	end
+
+	function whileLoopMatches()
+//find employees with an alpha in position 2 of their empId and numbers in 1 and 3 - 6		
+		i int = 1;
+		while(i < 4)
+			if(empRecArray[i].empId matches "[0-9][A-Z][0-9][0-9][0-9][0-9]") 
+				writeStdout(i as string+" "+empRecArray[i].empId);
+			end
+			i = i +1;
+		end
+	end
+	
+	function forLoop()
+//Derive statistics from the empArray.grossPay values		
+		tmpTot, tmpMax, tmpMin, avg decimal(9,2);
+		i	int;
+		tmpMin = 9999999.99;
+		sz int = size(empRecArray);
+		for (i from 1 to sz by 1)
+			if(empRecArray[i].grossPay > tmpMax)
+				tmpMax = empRecArray[i].grossPay;
+			end
+			if(empRecArray[i].grossPay < tmpMin)
+				tmpMin = empRecArray[i].grossPay;
+			end			
+			tmpTot = tmpTot + empRecArray[i].grossPay;
+		end	
+		avg = tmpTot / sz;
+	end	
+	
+	function exceptionRef()
+		currPayPer int = empRecArray[4].payPeriod;	
+	end	//end-recordMoves()
+
+	function continueExitReturn() returns(int)
+		h int;
+		for (j int from 1 to 10 by 1)
+			h = h+1;
+			if(j == 5)
+				continue; //branch back to the for statement!
+			else
+				SysLib.writeStdout(j as string); 
+				if(j == 8)
+					exit for;  //branch to the return statement
+				end //end inner if
+			end //end outer if
+		end // end for statement
+		return(-3);
+	end //end function
+	
+	
+end  //end Logic Part payrollProgram()
+//Structured Record
+Record empRec2 type BasicRecord 
+03 emp 	char(57);
+	05	lastName 			char(20);
+	05	firstName 			char(20);
+	05	empId				char(6);
+	05	empPhone			num(10);
+	05	partTimeInd			num(1);
+03 pay char(62);
+	05	grossPay			Num(9,2);
+	05	ytdGrossPay			Num(9,2);
+	05	fedTax				Num(9,2);
+	05	ytdFedTax			Num(9,2);
+	05	netPay				Num(9,2);
+	05	ytdNetPay			Num(9,2);
+	05	stockPurchPerc		Num(4,2);
+	05	four01KPerc			Num(4,2);
+03 rpt char(32);
+	05	currDate			date;
+	05	periodEndDate		date;
+	05	reportTimeStamp		timestamp;
+	05	payPeriod			num(2);
+end //end Data Part empRec

@@ -1,0 +1,13 @@
+package basicLibrary;
+
+// basic library
+library helloLib type BasicLibrary {}
+	
+	msg char(26) = "Hello ";		
+		
+	function sayHelloTo(name char(20)) returns (char(26))
+		msg = StrLib.clip(msg) + " " + name;
+		return(msg);
+	end
+	
+end

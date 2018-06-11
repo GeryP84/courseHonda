@@ -1,0 +1,48 @@
+package calculations;
+
+// basic program
+//
+program simpleCalculations type BasicProgram {}
+	
+	sum 			int;
+	division 		decimal (7,2);
+	multiplication	int;
+	substraction	int;
+	number1, number2 int;
+	
+	function main()
+		initNumbers();
+		calcSum();
+		calcDivision();
+		calcMultiplication();
+		calcSubstaction();
+	end
+	
+	function initNumbers()
+		number1 = 25;
+		number2 = 4;
+	end
+	
+	function calcSum();
+		sum = number1 + number2;
+		SysLib.writeStdout("Sum = " + sum);
+	end
+	
+	function calcSubstaction();
+		substraction = number1 - number2;
+		SysLib.writeStdout("substraction = " + substraction);
+	end
+	
+	function calcDivision();
+		division = number1 / number2;
+		SysLib.writeStdout("division = " + division);
+		division = MathLib.round((number1 / number2), -1);
+		SysLib.writeStdout("division = " + division);
+	end
+	
+	function calcMultiplication();
+		multiplication = number1 * number2;
+		SysLib.writeStdout("multiplication = " + multiplication);		
+	end
+	
+end

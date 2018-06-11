@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource name="EGL_WORKSHOP">
+	<storedValue key="EGLProjectMigrationVersion" value="8.0.0"/>
+	<storedValue key="DefaultBuildDescriptorNonJavaScriptDebugName" value="EGL_WORKSHOPDebugBuildOptions"/>
+	<storedValue key="DefaultBuildDescriptorJavaTargetPath" value="EGL_WORKSHOP/EGLSource/EGL_WORKSHOP.eglbld"/>
+	<storedValue key="EGLProjectFeatureMask" value="16"/>
+	<storedValue key="EGLProjectSecondaryMigrationVersion" value="9.0"/>
+	<storedValue key="DefaultBuildDescriptorJavaTargetName" value="EGL_WORKSHOPJavaBuildOptions"/>
+	<storedValue key="DefaultBuildDescriptorNonJavaScriptDebugPath" value="EGL_WORKSHOP/EGLSource/EGL_WORKSHOP.eglbld"/>
+	<storedValue key="EGLTargetRuntimeMask" value="1"/>
+</resource>

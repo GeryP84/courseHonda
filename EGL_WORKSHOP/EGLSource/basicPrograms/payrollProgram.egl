@@ -1,0 +1,121 @@
+package basicPrograms;
+
+program payrollProgram type BasicProgram() {}
+//Global Record Variable declarations	
+	empRecin	empRec;
+	empRecout	empRec;
+	empRecArray	emprec[0];	//Dynamic Array of empRecs
+	
+//Begin processing functions	
+	function main()			
+		set empRecin empty; //Not really necessary. 
+		set empRecout empty; //Used here only to show how Set works
+		assignEmpVals();
+		fieldMoves();
+		groupMoves();
+		recordMoves();
+		loadArray();
+	end  //end-main function
+	
+	function fieldMoves()
+		move empRecin.lastName to empRecout.lastName;
+		move empRecin.grossPay to empRecout.grossPay;
+		move empRecin.partTimeInd to empRecout.partTimeInd;		
+	end	 //end-fieldMoves()
+	
+	function groupMoves()	
+		set empRecout empty; 
+		move empRecin.emp to empRecout.emp;
+		move empRecin.pay to empRecout.pay;		
+		move empRecin.rpt to empRecout.rpt;		
+	end //end-groupMoves()
+	function recordMoves()
+		set empRecout empty;
+		move empRecin to empRecout byName;		
+	end	//end-recordMoves()
+	
+	function assignEmpVals()
+		empRecin.lastName = "Irving";
+		empRecin.firstName = "Julian";
+		empRecin.empId = "1X43T6";
+		empRecin.empPhone = 2126784343;
+		empRecin.partTimeInd = 0;
+		empRecin.grossPay = 98765.43; 
+		empRecin.ytdGrossPay = 98765.43;
+		empRecin.fedTax = 98765.43;
+		empRecin.ytdFedTax = 98765.43;
+		empRecin.netPay = 98765.43;
+		empRecin.ytdNetPay = 98765.43;
+		empRecin.stockPurchPerc = 4.5;	
+		empRecin.four01KPerc = 11.0;
+		empRecin.currDate = datetimelib.currentDate();
+		empRecin.periodEndDate = datetimelib.currentDate() + 30;
+		empRecin.reportTimeStamp = DateTimeLib.currentTimeStamp();
+		empRecin.payPeriod = 4;			
+	end //end-assignEmpVals()
+	
+	function loadArray()
+		empRecArray.appendElement(empRecin);  //load record1
+		empRecin.lastName = "Hudak";
+		empRecin.firstName = "William";
+		empRecin.empId = "289483";
+		empRecin.empPhone = 8602283788;
+		empRecin.partTimeInd = 1;
+		empRecin.grossPay = 12122.43; 
+		empRecin.ytdGrossPay = 93242.43;
+		empRecin.fedTax = 13865.43;
+		empRecin.ytdFedTax = 5522.43;
+		empRecin.netPay = 987367.43;
+		empRecin.ytdNetPay = 83456.43;
+		empRecin.stockPurchPerc = 2.0;	
+		empRecin.four01KPerc = 8.5;
+		empRecin.currDate = datetimelib.currentDate();
+		empRecin.periodEndDate = datetimelib.currentDate() + 30;
+		empRecin.reportTimeStamp = DateTimeLib.currentTimeStamp();
+		empRecin.payPeriod = 4;			
+		empRecArray.appendElement(empRecin);  //load record2
+		
+		empRecin.lastName = "Smith";
+		empRecin.firstName = "MaryLou";
+		empRecin.empId = "4h4673";
+		empRecin.empPhone = 6157236235;
+		empRecin.partTimeInd = 1;
+		empRecin.grossPay = 12312.43; 
+		empRecin.ytdGrossPay = 53423.43; 
+		empRecin.fedTax = 231.43;
+		empRecin.ytdFedTax = 531.43;
+		empRecin.netPay = 23423.43;
+		empRecin.ytdNetPay = 78564.43;
+		empRecin.stockPurchPerc = 1.0;	
+		empRecin.four01KPerc = 15.0;
+		empRecin.currDate = datetimelib.currentDate();
+		empRecin.periodEndDate = datetimelib.currentDate() + 30;
+		empRecin.reportTimeStamp = DateTimeLib.currentTimeStamp();
+		empRecin.payPeriod = 4;							
+		empRecArray.appendElement(empRecin);  //load record3
+	end //end loadArray()
+	
+end  //end Logic Part payrollProgram()
+//Structured Record
+Record empRec type BasicRecord 
+03 emp 	char(57);
+	05	lastName 			char(20);
+	05	firstName 			char(20);
+	05	empId				char(6);
+	05	empPhone			num(10);
+	05	partTimeInd			num(1);
+03 pay char(62);
+	05	grossPay			Num(9,2);
+	05	ytdGrossPay			Num(9,2);
+	05	fedTax				Num(9,2);
+	05	ytdFedTax			Num(9,2);
+	05	netPay				Num(9,2);
+	05	ytdNetPay			Num(9,2);
+	05	stockPurchPerc		Num(4,2);
+	05	four01KPerc			Num(4,2);
+03 rpt char(32);
+	05	currDate			date;
+	05	periodEndDate		date;
+	05	reportTimeStamp		timestamp;
+	05	payPeriod			num(2);
+end //end Data Part empRec

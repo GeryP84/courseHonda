@@ -1,0 +1,31 @@
+package basicPrograms;
+
+import basicLibrary.convertTempLib;
+import basicLibrary.tempRec;
+
+// basic program
+//
+program convertTempProg type BasicProgram {}
+	
+	rec tempRec;
+	use convertTempLib;
+	
+	function main()
+		convertFahrenheitToCelsius();
+		convertCelsiusToFahrenheit();
+	end
+	
+	function convertFahrenheitToCelsius()
+		set rec empty;
+		rec.tempF = 100;
+		fahrenheitToCelsius(rec);
+		SysLib.writeStdout("" + rec.tempF + "° Fahrenheit equals " + rec.tempC + "° Celsius.");
+	end
+	
+	function convertCelsiusToFahrenheit()
+		set rec empty;
+		rec.tempC = 25;
+		celsiusToFahrenheit(rec);
+		SysLib.writeStdout("" + rec.tempC + "° Celsius equals " + rec.tempF + "° Fahrenteit.");
+	end
+end
