@@ -14,17 +14,48 @@ formGroup DemoGroup
 	pfKeyEquate = yes}
 	form Form1 type textForm
 		{ FormSize = [24, 80], Position = [1, 1], msgField = Message1}
-		* {Highlight = reverse, Position = [1, 15], value = "This is the screen Title Line. It is a constant", Color = green, intensity = bold, protect = skipProtect};
+		* {Highlight = reverse, Position = [2, 14], value = "This is the screen Title Line. It is a constant", Color = green, intensity = bold, protect = skipProtect};
 		Input1 char(24) {MinimumInput = 3, InputRequired = yes, Position = [7, 7], highlight = underline, color = green, protect = noProtect};
 		Output1 char(32) {Position = [7, 32], color = green, protect = skipProtect};
 		Array1 char(57)[2] {Position = [9, 6], color = green, Protect = noProtect , indexOrientation = down , columns = 1 , linesBetweenRows = 0 , spacesBetweenColumns = 1,
-	this[1]{Value = "Column Array, Element 1"}
-,
-	this[2]{Value = "Column Array, Element 2"}
-};
+			this[1]{Value = "Column Array, Element 1"}
+		,
+			this[2]{Value = "Column Array, Element 2"}
+		};
 		Message1 char(68) {Value = "This is the Message Line", Position = [21, 8], color = red, intensity = bold, protect = skipProtect};
+		* {Position = [1, 2], value = "This is Another Title Line", color = blue, intensity = bold, protect = skipProtect};
+		* {Position = [4, 8], Value = "Label Field", color = cyan, protect = skipProtect};
+		* {Position = [5, 8], Value = "Instructions Field", color = cyan, protect = skipProtect};
+		* {Position = [6, 8], Value = "Help Field. Note the properties for these fields", color = white, protect = skipProtect};
+		Array2 char(20)[3] {Position = [12, 7], color = green, protect = skipProtect , indexOrientation = across , columns = 3 , linesBetweenRows = 0 , spacesBetweenColumns = 5,
+	this[1]{Value = "Row Array, Element 1"}
+,
+	this[2]{Value = "Row Array, Element 2"}
+,
+	this[3]{Value = "Row Array, Element 3"}
+};
+		Array3 char(20)[9] {Position = [14, 7], color = green, protect = skipProtect , indexOrientation = down , columns = 3 , linesBetweenRows = 0 , spacesBetweenColumns = 5};
+		PasswordField char(15) {Value = "Password Field", Position = [18, 8], color = green, intensity = invisible, protect = noProtect};
+		FKeyLine1 char(69) {Value = "Function Key Line 1 - This is a Variable Field", Position = [23, 2], color = green, protect = skipProtect};
 	end
 	
-	// Use Declarations or Form Definitions
+	form FormFromRecord type TextForm
+	{ helpKey = pf1, screenSizes = [[24, 80]], 
+	FormSize = [24, 80], Position = [1,1], MsgField = MessageLine}
+	
+	MessageLine char(68) {IsBoolean = no, Masked = no, LowerCase = no,
+		Value = "This is the Message Line. ", Position = [22, 6],
+		Color = red, Intensity = bold, Protect = skipProtect};
+		* {Position = [6, 4], value = "First Name", color = cyan, protect = skipProtect};
+		firstName char(15) {Position = [6, 16], highlight = underline, color = green, protect = noProtect};
+		* {Position = [7, 4], value = "Last Name", color = cyan, protect = skipProtect};
+		lastName char(20) {Position = [7, 15], highlight = underline, color = green, protect = noProtect};
+		* {Position = [8, 4], value = "City", color = cyan, protect = skipProtect};
+		city char(20) {Position = [8, 10], highlight = underline, color = green, protect = noProtect};
+		* {Position = [9, 4], value = "State", color = cyan, protect = skipProtect};
+		state char(2) {Position = [9, 11], highlight = underline, color = green, protect = noProtect};
+	
+	
+	end
 	 
 end
