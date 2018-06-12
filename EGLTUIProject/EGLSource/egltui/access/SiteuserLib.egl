@@ -1,0 +1,388 @@
+package egltui.access;
+
+import egltui.primitivetypes.data.*;
+import egltui.data.*;
+import egltui.*;
+
+
+/***
+ * Important Development Note (Please read the following comments)
+ * All code contained in this file will be overwritten each time the Data Access Application Wizard is executed.
+ * If the contents of this file must be preserved, move all source code into the custom definitions area at the end of the file.
+ * NOTE: preservation of this file's content may result in the generation of duplicate resources.
+ * This will result in syntax and compilation errors.
+ * You will have to manually resolve all discrepancies by deleting duplicates.
+ ***/
+
+/***
+ * Important note
+ *
+ * Do not delete or modify BEGIN and END tags
+ * These tags allow preservation of hand modified code
+ * Modification of these tags will result in code loss
+ *
+ ***/
+
+/*
+ * Source transform is Data Access 
+ * Source UML Model name is /EGLTUIProject/eglderbyr7.uml
+ * Source UML model timestamp is 10/31/08 9:24 AM
+ * Generated from UML element egltui::SITEUSER#_N2_GOKdPEd2IK99MKtYm3w
+ */
+LIBRARY SiteuserLib 
+	
+	// Allows unqualified references to the functions in ConditionHandlingLib
+	use ConditionHandlingLib;
+  
+    /*
+     * Single Row Insert. Add (INSERT) a single Siteuser into the database.
+     * Note that you are responsible for all data validations, including unique primary key generation.
+     * Note: to see the SQL behind "add newRecord"
+     *     Place cursor between the words "add" and "newRecord"
+     *     Right-click and select: SQL Statement > View
+     */
+	//BEGIN AddSiteuser
+	// @generated - Delete generated tag to preserve modified code     
+	Function AddSiteuser(newRecord Siteuser, status StatusRec)
+	    // invoke local function to verify data values
+		if ( IsValid(newRecord) )
+		   // attempt to execute the following code, but catch failures onException
+			try
+				add newRecord;
+				HandleSuccess(status);
+			onException (exception SQLException)
+				HandleException(status, exception);
+			end
+		else
+			HandleInvalidDBRecord(status);			
+		end
+	end
+	//END AddSiteuser
+	
+	/*
+	 * Multiple Row Insert. Add (INSERT) an array of Siteuser records into the database.
+	 * Note that you are responsible for all data validations, including unique primary key generation.
+	 */
+	//BEGIN AddSiteuserList
+	// @generated - Delete generated tag to preserve modified code  	 
+	Function AddSiteuserList(newRecordList Siteuser[], status StatusRec)
+	    // Loop through the array
+		for (i int from 1 to newRecordList.getSize())
+		    // Pass each Siteuser record to the add function
+			AddSiteuser(newRecordList[i], status);
+			if (status.succeeded)
+				continue;
+			else
+				exit;
+			end
+		end
+	end
+	//END AddSiteuserList
+	
+	/*
+	 * Single Row Select. Return a single row from the table into the Siteuser record.
+	 * Note: to see the SQL behind "get returnRecord"
+     *     Place cursor between the words "get" and "returnRecord"
+     *     Right-click and select: SQL Statement > View	 
+     *     To insert custom SQL clauses, select SQL Statement > Add instead of SQL Statement > View
+	 */
+	//BEGIN GetSiteuser
+	// @generated - Delete generated tag to preserve modified code  	 
+	Function GetSiteuser(searchRecord Siteuser inout, status StatusRec)
+		try
+			get searchRecord;
+			
+			if (SysVar.sqlData.sqlCode == 100)		
+				HandleDBRecordNotFound(status, "EGL.SITEUSER");
+			else
+				HandleSuccess(status);
+			end	
+		onException (exception SQLException)
+			HandleException(status, exception);  
+		end	
+	end 
+	//END GetSiteuser
+		
+	/*
+	 * Multiple Row Select. Return all rows from the table into the SiteuserList array
+     * Note: to see the SQL behind "get siteuserArray"
+     *     Place cursor between the words "get" and "siteuserArray"
+     *     Right-click and select: SQL Statement > View	 
+     *     To insert custom SQL clauses, select SQL Statement > Add instead of SQL Statement > View
+	 */
+	//BEGIN GetSiteuserListAll
+	// @generated - Delete generated tag to preserve modified code  	 
+	Function GetSiteuserListAll(siteuserArray Siteuser[]  out, status StatusRec)
+		try
+			get siteuserArray;
+			if (siteuserArray.getSize() == 0)
+				HandleDBRecordNotFound(status, "EGL.SITEUSER"); 
+			else
+				HandleSuccess(status);
+			end	
+		onException (exception SQLException)
+			HandleException(status, exception);  
+		end	
+	end
+	//END GetSiteuserListAll
+		
+    /*
+     * Multiple Row Select with Prepared Statement and SQL/Programmatic Paging
+     * Returns a dynamic array of rows and allows you to specify paging (for "Programmatic Paging").
+     * This function also provides an example of a Prepared SQL statement.
+     * The prepared statement can be used as a model for dynamic search pages and other requirements.
+     * See the file ControlStructures.egl for explanations of referenced control structures.
+     * Note that fromTablesWhere and blockingFactor must be set by the calling function prior to invoking this function.
+     * The selectStatement can optionally be modified in order to improve run-time DBMS performance.
+     */
+	//BEGIN GetSiteuserList(listSpec ListSpecification, listOut Siteuser[] out, status StatusRec)
+	// @generated - Delete generated tag to preserve modified code       
+	Function GetSiteuserList(listSpec ListSpecification, listOut Siteuser[] out, status StatusRec)
+	    // an internal copy of Siteuser records in a dynamic array
+		siteuserList Siteuser[0];
+		temp Siteuser;
+		i int = 1;
+		try	
+		    // If the SQL statement must be prepared
+			if ( !listSpec.initialized )
+				// Prepare the dynamic SQL statement to retrieve the data
+				prepare selectStatement from "SELECT EGL.SITEUSER.* " + listSpec.fromTablesWhere;
+				// Prepare the dynamic SQL statement to find out how many rows
+				prepare getRowCount from "SELECT COUNT(*) " + listSpec.fromTablesWhere;
+				// Get using performance-oriented count(1) select
+				get with getRowCount into listSpec.rowCount;
+				// Calculate the number of pages
+				listSpec.pageCount = listSpec.rowCount / listSpec.blockingFactor;
+				
+				// Add additional page if rows remain after calculating full pages
+				if ((listSpec.rowCount % listSpec.blockingFactor) != 0)
+					listSpec.pageCount = listSpec.pageCount + 1;
+				end
+				listSpec.initialized = true;
+			end
+			
+			if (listSpec.rowCount == 0)
+				return;
+			end
+			
+			if (listSpec.position > listSpec.rowCount)
+				listSpec.position = (listSpec.pageCount - 1) * listSpec.blockingFactor + 1;
+			end
+			
+			// Calculate the number of rows that requested page contains.
+			// Create an array whose size equals the number of rows on the page.
+			if (listSpec.position + listSpec.blockingFactor > listSpec.rowCount)
+				siteuserList.resize(listSpec.rowCount - listSpec.position + 1);
+			else
+				siteuserList.resize(listSpec.blockingFactor);
+			end
+			
+			// Open the cursor on the above dynamic SQL Select statement.
+			open resultSet scroll with selectStatement;
+			
+			// Position into the list according to the listSpec.position passed to this function
+			// This causes a read of the first element.
+			get absolute(listSpec.position) from resultSet into temp;
+			siteuserList[i] = temp;
+			
+			// Get the rest
+			if ( (listSpec.position+1) <= listSpec.rowCount)
+				for ( i from 2 to siteuserList.getSize() )
+					// Return subsequent rows from the resultSet to the Siteuser array
+					get next from resultSet into temp;
+				    siteuserList[i] = temp;
+				end
+			end
+		
+			HandleSuccess(status);
+			
+			// Update the paging position
+			listSpec.position = listSpec.position + siteuserList.getSize();
+			// Return the temp rows to the calling-routine
+			listOut = siteuserList;
+			
+		onException (exception SQLException)
+			HandleException(status, exception);
+		end	
+	end
+	//END GetSiteuserList(listSpec ListSpecification, listOut Siteuser[] out, status StatusRec)
+	
+	/*
+	 * Update one Siteuser row
+	 * Consider creating a number of these update statements for efficiency.
+	 * Column specific functions would prevent superfluous value updates.
+	 */
+	
+	//BEGIN UpdateSiteuser
+	// @generated - Delete generated tag to preserve modified code  	 
+	Function UpdateSiteuser(updateRecord Siteuser, status StatusRec)
+		try
+			if ( IsValid(updateRecord) )
+				replace updateRecord noCursor;				
+				HandleSuccess(status);
+			end
+		onException (exception SQLException)
+			HandleException(status, exception);
+		end	
+	end	
+	//END UpdateSiteuser
+		
+	/*
+	 * Update from an array of Siteuser records
+	 * Note that you are responsible for all data validations, including unique primary key generation.
+	 * Foreign key (referential integrity) values for each new row must be validated.
+	 */
+	//BEGIN UpdateSiteuserList
+	// @generated - Delete generated tag to preserve modified code  	 
+	Function UpdateSiteuserList(siteuserList Siteuser[], status StatusRec)
+	    // Determine number of elements in the array
+		sz int = siteuserList.getSize();
+		for (i int from 1 to sz)
+		    // Pass each Siteuser record to the update function
+			UpdateSiteuser(siteuserList[i], status);
+			if (status.succeeded)
+				continue;
+			else
+				exit;
+			end
+		end
+	end
+	//END UpdateSiteuserList
+		
+	/*
+	 * Deletes the Siteuser (and any dependent rows if the referential integrity definition is ON DELETE CASCADE)
+	 * If it the referential integrity definition is ON DELETE RESTRICT you will need to handle dependent rows with additional functions.
+	 */
+
+	//BEGIN DeleteSiteuser
+	// @generated - Delete generated tag to preserve modified code  	 
+	Function DeleteSiteuser(deletionRecord Siteuser, status StatusRec)
+		try	
+			delete deletionRecord noCursor;
+			HandleSuccess(status);
+		onException (exception SQLException)
+			HandleException(status, exception);
+		end
+	end
+	//END DeleteSiteuser
+		
+	/*
+	 * Multiple Row Delete
+	 * Delete rows from the database, based on an array of Siteuser records.
+	 * You are responsible for all data validations and referential integrity constraints.
+	 * If dependent rows exist you will have to delete them first.
+	 */
+
+	//BEGIN DeleteSiteuserList
+	// @generated - Delete generated tag to preserve modified code  	 
+	Function DeleteSiteuserList(siteuserList Siteuser[], status StatusRec)
+		sz int = siteuserList.getSize();
+		for (i int from 1 to sz)
+			DeleteSiteuser(siteuserList[i], status);
+			if (status.succeeded)
+				continue;
+			else
+				exit;
+			end
+		end
+	end
+	//END DeleteSiteuserList
+	
+	/*** Utility functions ***/
+	 
+	/*
+	 * Tests to see that the specified Siteuser row still exists in the table.
+	 * This function helps ensure that you don't try to Insert a row that exists, or delete/update a row that no longer exists.
+	 */
+
+	//BEGIN Exists
+	// @generated - Delete generated tag to preserve modified code 
+	Function Exists(SiteuserId SiteuserId) returns( boolean )
+		try
+			
+			get into SiteuserId with #sql{
+				select SITEUSER_ID 
+				from EGL.SITEUSER
+				where
+					
+                   SITEUSER_ID = :SiteuserId
+				   };
+			
+			if (SysVar.sqlData.sqlCode == 0)
+				return(true);
+			else
+				return(false);
+			end
+		onException (exception AnyException)
+			return(false);
+		end
+	end
+	//END Exists
+		
+    /*
+     * This function returns true if the supplied record is valid.
+     * Customize to supply validation rules as needed.
+     * isValid() is called prior to updating or inserting a row into the database.
+     */
+	//BEGIN IsValid
+	// @generated - Delete generated tag to preserve modified code       
+	Function IsValid(testRecord Siteuser) returns( boolean )
+		return( true );
+	end
+	//END IsValid
+
+
+
+//BEGIN custom source definitions
+//TODO: Add additional code here
+	Function VerifyUserID(searchRecord Siteuser inout, status StatusRec)
+		try
+			get searchRecord
+				into searchRecord.SiteuserId, searchRecord.FirstName
+				with
+				#sql{
+					select
+						EGL.SITEUSER.SITEUSER_ID, EGL.SITEUSER.FIRSTNAME
+					from EGL.SITEUSER
+					where
+						EGL.SITEUSER.USER_ID = :searchRecord.userId 				
+				};
+			
+			if (SysVar.sqlData.sqlCode == 100)		
+				HandleDBRecordNotFound(status, "EGL.SITEUSER");
+			else
+				HandleSuccess(status);
+			end	
+			SysLib.commit();
+		onException (exception SQLException)
+			HandleException(status, exception);  
+		end	
+	end 
+
+	Function VerifyUserIDPassword(searchRecord Siteuser inout, status StatusRec)
+		try
+			get searchRecord
+				into searchRecord.SiteuserId, searchRecord.FirstName
+				with
+				#sql{
+					select
+						EGL.SITEUSER.SITEUSER_ID, EGL.SITEUSER.FIRSTNAME
+					from EGL.SITEUSER
+					where
+						EGL.SITEUSER.USER_ID = :searchRecord.userId 				
+					and	EGL.SITEUSER.PASS_WORD = :searchRecord.Password
+				};
+			
+			if (SysVar.sqlData.sqlCode == 100)		
+				HandleDBRecordNotFound(status, "EGL.SITEUSER");
+			else
+				HandleSuccess(status);
+			end	
+			SysLib.commit();
+		onException (exception SQLException)
+			HandleException(status, exception);  
+		end	
+	end 
+
+//END custom source definitions
+end

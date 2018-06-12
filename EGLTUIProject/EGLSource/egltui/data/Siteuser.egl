@@ -1,0 +1,60 @@
+package egltui.data;
+
+import egltui.primitivetypes.data.*;
+
+
+/***
+ * Important Development Note (Please read the following comments)
+ * All code contained in this file will be overwritten each time the Data Access Application Wizard is executed.
+ * If the contents of this file must be preserved, move all source code into the custom definitions area at the end of the file.
+ * NOTE: preservation of this file's content may result in the generation of duplicate resources.
+ * This will result in syntax and compilation errors.
+ * You will have to manually resolve all discrepancies by deleting duplicates.
+ ***/
+ 
+/* 
+ * Source transform is Data Definition 
+ * Source UML Model name is /EGLTUIProject/eglderbyr7.uml
+ * Source UML model timestamp is 10/31/08 9:24 AM
+ */
+// Generated from UML element egltui::SITEUSER#_N2_GOKdPEd2IK99MKtYm3w
+record Siteuser type sqlRecord { 
+        tablenames=[["EGL.SITEUSER"]],
+        keyItems=[SiteuserId]
+    } 
+
+	SiteuserId SiteuserId {column="EGL.SITEUSER.SITEUSER_ID"};
+	Firstname SiteuserFirstname {column="EGL.SITEUSER.FIRSTNAME", isSqlNullable=yes};
+	Lastname SiteuserLastname {column="EGL.SITEUSER.LASTNAME", isSqlNullable=yes};
+	UserId UserId {column="EGL.SITEUSER.USER_ID", isSqlNullable=yes};
+	PassWord SiteuserPassWord {column="EGL.SITEUSER.PASS_WORD", isSqlNullable=yes};
+	StreetAddress StreetAddress {column="EGL.SITEUSER.STREET_ADDRESS", isSqlNullable=yes};
+	City SiteuserCity {column="EGL.SITEUSER.CITY", isSqlNullable=yes};
+	State SiteuserState {column="EGL.SITEUSER.\"STATE\"", isSqlNullable=yes};
+	Zip Zip {column="EGL.SITEUSER.ZIP", isSqlNullable=yes};
+	SuType SuType {column="EGL.SITEUSER.SU_TYPE", isSqlNullable=yes};
+	ReceiveUpdates ReceiveUpdates {column="EGL.SITEUSER.RECEIVE_UPDATES", isSqlNullable=yes};
+	JoinClub JoinClub {column="EGL.SITEUSER.JOIN_CLUB", isSqlNullable=yes};
+	Comments Comments {column="EGL.SITEUSER.COMMENTS", sqlVariableLen=yes, isSqlNullable=yes};
+end
+
+record SiteuserSearch
+	SiteuserId SiteuserId?;
+	Firstname SiteuserFirstname?;
+	Lastname SiteuserLastname?;
+	UserId UserId?;
+	PassWord SiteuserPassWord?;
+	StreetAddress StreetAddress?;
+	City SiteuserCity?;
+	State SiteuserState?;
+	Zip Zip?;
+	SuType SuType?;
+	ReceiveUpdates ReceiveUpdates?;
+	JoinClub JoinClub?;
+	Comments Comments?;
+end 
+
+//BEGIN custom source definitions
+//TODO: Add additional code here
+//END custom source definitions
+ 

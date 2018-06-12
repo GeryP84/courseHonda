@@ -1,0 +1,364 @@
+package egltui.access;
+
+import egltui.primitivetypes.data.*;
+import egltui.data.*;
+import egltui.*;
+
+
+/***
+ * Important Development Note (Please read the following comments)
+ * All code contained in this file will be overwritten each time the Data Access Application Wizard is executed.
+ * If the contents of this file must be preserved, move all source code into the custom definitions area at the end of the file.
+ * NOTE: preservation of this file's content may result in the generation of duplicate resources.
+ * This will result in syntax and compilation errors.
+ * You will have to manually resolve all discrepancies by deleting duplicates.
+ ***/
+
+/***
+ * Important note
+ *
+ * Do not delete or modify BEGIN and END tags
+ * These tags allow preservation of hand modified code
+ * Modification of these tags will result in code loss
+ *
+ ***/
+
+/*
+ * Source transform is Data Access 
+ * Source UML Model name is /EGLTUIProject/eglderbyr7.uml
+ * Source UML model timestamp is 10/31/08 9:24 AM
+ * Generated from UML element egltui::ORDERS#_N21VSKdPEd2IK99MKtYm3w
+ */
+LIBRARY OrdersLib 
+	
+	// Allows unqualified references to the functions in ConditionHandlingLib
+	use ConditionHandlingLib;
+  
+    /*
+     * Single Row Insert. Add (INSERT) a single Orders into the database.
+     * Note that you are responsible for all data validations, including unique primary key generation.
+     * Note: to see the SQL behind "add newRecord"
+     *     Place cursor between the words "add" and "newRecord"
+     *     Right-click and select: SQL Statement > View
+     */
+	//BEGIN AddOrders
+	// @generated - Delete generated tag to preserve modified code     
+	Function AddOrders(newRecord Orders, status StatusRec)
+	    // invoke local function to verify data values
+		if ( IsValid(newRecord) )
+		   // attempt to execute the following code, but catch failures onException
+			try
+				add newRecord;
+				HandleSuccess(status);
+			onException (exception SQLException)
+				HandleException(status, exception);
+			end
+		else
+			HandleInvalidDBRecord(status);			
+		end
+	end
+	//END AddOrders
+	
+	/*
+	 * Multiple Row Insert. Add (INSERT) an array of Orders records into the database.
+	 * Note that you are responsible for all data validations, including unique primary key generation.
+	 */
+	//BEGIN AddOrdersList
+	// @generated - Delete generated tag to preserve modified code  	 
+	Function AddOrdersList(newRecordList Orders[], status StatusRec)
+	    // Loop through the array
+		for (i int from 1 to newRecordList.getSize())
+		    // Pass each Orders record to the add function
+			AddOrders(newRecordList[i], status);
+			if (status.succeeded)
+				continue;
+			else
+				exit;
+			end
+		end
+	end
+	//END AddOrdersList
+	
+	/*
+	 * Single Row Select. Return a single row from the table into the Orders record.
+	 * Note: to see the SQL behind "get returnRecord"
+     *     Place cursor between the words "get" and "returnRecord"
+     *     Right-click and select: SQL Statement > View	 
+     *     To insert custom SQL clauses, select SQL Statement > Add instead of SQL Statement > View
+	 */
+	//BEGIN GetOrders
+	// @generated - Delete generated tag to preserve modified code  	 
+	Function GetOrders(searchRecord Orders inout, status StatusRec)
+		try
+			get searchRecord;
+			
+			if (SysVar.sqlData.sqlCode == 100)		
+				HandleDBRecordNotFound(status, "EGL.ORDERS");
+			else
+				HandleSuccess(status);
+			end	
+		onException (exception SQLException)
+			HandleException(status, exception);  
+		end	
+	end 
+	//END GetOrders
+		
+	/*
+	 * Multiple Row Select. Return all rows from the table into the OrdersList array
+     * Note: to see the SQL behind "get ordersArray"
+     *     Place cursor between the words "get" and "ordersArray"
+     *     Right-click and select: SQL Statement > View	 
+     *     To insert custom SQL clauses, select SQL Statement > Add instead of SQL Statement > View
+	 */
+	//BEGIN GetOrdersListAll
+	// @generated - Delete generated tag to preserve modified code  	 
+	Function GetOrdersListAll(ordersArray Orders[]  out, status StatusRec)
+		try
+			get ordersArray;
+			if (ordersArray.getSize() == 0)
+				HandleDBRecordNotFound(status, "EGL.ORDERS"); 
+			else
+				HandleSuccess(status);
+			end	
+		onException (exception SQLException)
+			HandleException(status, exception);  
+		end	
+	end
+	//END GetOrdersListAll
+		
+    /*
+     * Multiple Row Select with Prepared Statement and SQL/Programmatic Paging
+     * Returns a dynamic array of rows and allows you to specify paging (for "Programmatic Paging").
+     * This function also provides an example of a Prepared SQL statement.
+     * The prepared statement can be used as a model for dynamic search pages and other requirements.
+     * See the file ControlStructures.egl for explanations of referenced control structures.
+     * Note that fromTablesWhere and blockingFactor must be set by the calling function prior to invoking this function.
+     * The selectStatement can optionally be modified in order to improve run-time DBMS performance.
+     */
+	//BEGIN GetOrdersList(listSpec ListSpecification, listOut Orders[] out, status StatusRec)
+	// @generated - Delete generated tag to preserve modified code       
+	Function GetOrdersList(listSpec ListSpecification, listOut Orders[] out, status StatusRec)
+	    // an internal copy of Orders records in a dynamic array
+		ordersList Orders[0];
+		temp Orders;
+		i int = 1;
+		try	
+		    // If the SQL statement must be prepared
+			if ( !listSpec.initialized )
+				// Prepare the dynamic SQL statement to retrieve the data
+				prepare selectStatement from "SELECT EGL.ORDERS.* " + listSpec.fromTablesWhere;
+				// Prepare the dynamic SQL statement to find out how many rows
+				prepare getRowCount from "SELECT COUNT(*) " + listSpec.fromTablesWhere;
+				// Get using performance-oriented count(1) select
+				get with getRowCount into listSpec.rowCount;
+				// Calculate the number of pages
+				listSpec.pageCount = listSpec.rowCount / listSpec.blockingFactor;
+				
+				// Add additional page if rows remain after calculating full pages
+				if ((listSpec.rowCount % listSpec.blockingFactor) != 0)
+					listSpec.pageCount = listSpec.pageCount + 1;
+				end
+				listSpec.initialized = true;
+			end
+			
+			if (listSpec.rowCount == 0)
+				return;
+			end
+			
+			if (listSpec.position > listSpec.rowCount)
+				listSpec.position = (listSpec.pageCount - 1) * listSpec.blockingFactor + 1;
+			end
+			
+			// Calculate the number of rows that requested page contains.
+			// Create an array whose size equals the number of rows on the page.
+			if (listSpec.position + listSpec.blockingFactor > listSpec.rowCount)
+				ordersList.resize(listSpec.rowCount - listSpec.position + 1);
+			else
+				ordersList.resize(listSpec.blockingFactor);
+			end
+			
+			// Open the cursor on the above dynamic SQL Select statement.
+			open resultSet scroll with selectStatement;
+			
+			// Position into the list according to the listSpec.position passed to this function
+			// This causes a read of the first element.
+			get absolute(listSpec.position) from resultSet into temp;
+			ordersList[i] = temp;
+			
+			// Get the rest
+			if ( (listSpec.position+1) <= listSpec.rowCount)
+				for ( i from 2 to ordersList.getSize() )
+					// Return subsequent rows from the resultSet to the Orders array
+					get next from resultSet into temp;
+				    ordersList[i] = temp;
+				end
+			end
+		
+			HandleSuccess(status);
+			
+			// Update the paging position
+			listSpec.position = listSpec.position + ordersList.getSize();
+			// Return the temp rows to the calling-routine
+			listOut = ordersList;
+			
+		onException (exception SQLException)
+			HandleException(status, exception);
+		end	
+	end
+	//END GetOrdersList(listSpec ListSpecification, listOut Orders[] out, status StatusRec)
+	
+	/*
+	 * Update one Orders row
+	 * Consider creating a number of these update statements for efficiency.
+	 * Column specific functions would prevent superfluous value updates.
+	 */
+	
+	//BEGIN UpdateOrders
+	// @generated - Delete generated tag to preserve modified code  	 
+	Function UpdateOrders(updateRecord Orders, status StatusRec)
+		try
+			if ( IsValid(updateRecord) )
+				replace updateRecord noCursor;				
+				HandleSuccess(status);
+			end
+		onException (exception SQLException)
+			HandleException(status, exception);
+		end	
+	end	
+	//END UpdateOrders
+		
+	/*
+	 * Update from an array of Orders records
+	 * Note that you are responsible for all data validations, including unique primary key generation.
+	 * Foreign key (referential integrity) values for each new row must be validated.
+	 */
+	//BEGIN UpdateOrdersList
+	// @generated - Delete generated tag to preserve modified code  	 
+	Function UpdateOrdersList(ordersList Orders[], status StatusRec)
+	    // Determine number of elements in the array
+		sz int = ordersList.getSize();
+		for (i int from 1 to sz)
+		    // Pass each Orders record to the update function
+			UpdateOrders(ordersList[i], status);
+			if (status.succeeded)
+				continue;
+			else
+				exit;
+			end
+		end
+	end
+	//END UpdateOrdersList
+		
+	/*
+	 * Deletes the Orders (and any dependent rows if the referential integrity definition is ON DELETE CASCADE)
+	 * If it the referential integrity definition is ON DELETE RESTRICT you will need to handle dependent rows with additional functions.
+	 */
+
+	//BEGIN DeleteOrders
+	// @generated - Delete generated tag to preserve modified code  	 
+	Function DeleteOrders(deletionRecord Orders, status StatusRec)
+		try	
+			delete deletionRecord noCursor;
+			HandleSuccess(status);
+		onException (exception SQLException)
+			HandleException(status, exception);
+		end
+	end
+	//END DeleteOrders
+		
+	/*
+	 * Multiple Row Delete
+	 * Delete rows from the database, based on an array of Orders records.
+	 * You are responsible for all data validations and referential integrity constraints.
+	 * If dependent rows exist you will have to delete them first.
+	 */
+
+	//BEGIN DeleteOrdersList
+	// @generated - Delete generated tag to preserve modified code  	 
+	Function DeleteOrdersList(ordersList Orders[], status StatusRec)
+		sz int = ordersList.getSize();
+		for (i int from 1 to sz)
+			DeleteOrders(ordersList[i], status);
+			if (status.succeeded)
+				continue;
+			else
+				exit;
+			end
+		end
+	end
+	//END DeleteOrdersList
+	
+	/*** Utility functions ***/
+	 
+	/*
+	 * Tests to see that the specified Orders row still exists in the table.
+	 * This function helps ensure that you don't try to Insert a row that exists, or delete/update a row that no longer exists.
+	 */
+
+	//BEGIN Exists
+	// @generated - Delete generated tag to preserve modified code 
+	Function Exists(OrderId OrderId) returns( boolean )
+		try
+			
+			get into OrderId with #sql{
+				select ORDERID 
+				from EGL.ORDERS
+				where
+					
+                   ORDER_ID = :OrderId
+				   };
+			
+			if (SysVar.sqlData.sqlCode == 0)
+				return(true);
+			else
+				return(false);
+			end
+		onException (exception AnyException)
+			return(false);
+		end
+	end
+	//END Exists
+		
+    /*
+     * This function returns true if the supplied record is valid.
+     * Customize to supply validation rules as needed.
+     * isValid() is called prior to updating or inserting a row into the database.
+     */
+	//BEGIN IsValid
+	// @generated - Delete generated tag to preserve modified code       
+	Function IsValid(testRecord Orders) returns( boolean )
+		return( true );
+	end
+	//END IsValid
+
+
+
+//BEGIN custom source definitions
+//TODO: Add additional code here
+
+	Function GetCustomerOrdersListAll(CustomerID CustomerID in, ordersArray Orders[]  out, status StatusRec)
+		try
+			get ordersArray with
+				#sql{
+					select
+						EGL.ORDERS.ORDERID, EGL.ORDERS.CUSTOMERID, 
+						EGL.ORDERS.ORDERAMOUNT, EGL.ORDERS.ORDERDETAILS, 
+						EGL.ORDERS.ORDERDATE, EGL.ORDERS.ORDERSTATUS
+					from EGL.ORDERS
+					where EGL.ORDERS.CUSTOMERID = :CustomerID
+					order by
+						EGL.ORDERS.ORDER_ID asc
+				}
+			;
+			if (ordersArray.getSize() == 0)
+				HandleDBRecordNotFound(status, "EGL.ORDERS"); 
+			else
+				HandleSuccess(status);
+			end	
+		onException (exception SQLException)
+			HandleException(status, exception);  
+		end	
+	end
+
+//END custom source definitions
+end

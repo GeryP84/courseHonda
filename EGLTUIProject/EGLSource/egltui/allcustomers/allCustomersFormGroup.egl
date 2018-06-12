@@ -1,0 +1,33 @@
+package egltui.allcustomers;
+
+
+FormGroup allCustomersFormGroup
+Form custList type textForm	// 
+ { screenSizes = [[24,80]], FormSize = [24, 80], Position = [1, 1], 
+  msgField = formMSG}
+  
+  
+  
+// Start of Constant fields
+
+ formMSG char(76)  // Message Text
+  { Position = [22, 3], fieldLen = 76, color = red, 
+    highlight = noHighlight, intensity = bold, protect = skipProtect, align = left};
+		firstName char(15)[15] {Position = [6, 2], highlight = underline, color = green, protect = noProtect};
+		lastName char(20)[15] {Position = [6, 19], highlight = underline, color = green, protect = noProtect};
+		city char(20)[15] {Position = [6, 41], highlight = underline, color = green, protect = noProtect};
+		state char(2)[15] {Position = [6, 63], highlight = underline, color = green, protect = noProtect};
+		* {fieldLen = 15, Position = [5, 2], Value = "First Name", color = cyan, protect = skipProtect};
+		* {fieldLen = 20, Position = [5, 19], Value = "Last Name", color = cyan, protect = skipProtect};
+		* {fieldLen = 15, Position = [5, 41], Value = "City", color = cyan, protect = skipProtect};
+		* {fieldLen = 5, Position = [5, 61], Value = "State", color = cyan, protect = skipProtect};
+		* {Value = "List of Customers", fieldLen = 20, Position = [1, 28], Color = yellow, intensity = bold, protect = skipProtect};
+		screenName char(9) {Position = [1, 1], color = green, protect = skipProtect};
+		screenDate char(10) {Position = [1, 62], color = green, protect = skipProtect};
+		* {fieldLen = 75, Position = [23, 3], Value = "      F3=Exit;  Enter=Rebuild List based on Start Field", color = cyan, protect = skipProtect};
+		* {Position = [3, 2], value = "Start from Last Name:", color = cyan, protect = skipProtect};
+		StartName char(10) {UpperCase = no, Position = [3, 24], highlight = underline, color = green, protect = noProtect};
+
+
+End //form
+End // Group

@@ -1,0 +1,33 @@
+package egltui.helloworld;
+
+// form group with screen and print floating areas
+//
+formGroup helloGroup
+	{ScreenFloatingAreas = [
+		@ScreenFloatingArea{screenSize=[24, 80], bottomMargin=0, topMargin=0, leftMargin=0, rightMargin=0}
+	], 
+	
+	validationBypassKeys = [pf2], helpKey = pf1, 
+	pfKeyEquate = yes}
+	form HelloWorld1 type textForm
+		{ FormSize = [24, 80], Position = [1, 1]}
+		OutputField char(20) {Value = "Hello World !!!!", Position = [3, 12], color = green, protect = skipProtect};
+		InputField char(20) {Position = [6, 15], highlight = underline, color = green, protect = noProtect};
+		FKeyLabel char(25) {Value = "Press F5 for next screen", Position = [20, 19], color = green, protect = skipProtect};
+	end
+
+	form HelloWorld2 type textForm
+ 		{ FormSize = [24, 80], Position = [1, 1]}
+ 	 	OutputField char(35) {Value = "Hello World !!!!  THIS IS SCREEN 2", 
+  	            Position = [1, 9], color = green, protect = skipProtect};
+  		OutputField2 char(20) {Position = [6, 19], 
+  	            highlight = underline, color = green, protect = noProtect};
+  		FKeyLabel char(34) {Value = "Press Enter to return to screen 1", 
+  	            Position = [20, 20], color = green, protect = skipProtect};
+	end
+end
+
+
+
+
+

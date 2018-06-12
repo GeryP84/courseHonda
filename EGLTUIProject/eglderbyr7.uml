@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_N1WHcKdPEd2IK99MKtYm3w" name="egltui">
+  <packagedElement xmi:type="uml:Class" xmi:id="_N2sLQKdPEd2IK99MKtYm3w" name="CUSTOMER">
+    <ownedAttribute xmi:id="_N2sLQ6dPEd2IK99MKtYm3w" name="CUSTOMER_ID" type="_N2sLQqdPEd2IK99MKtYm3w">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_N2sLRadPEd2IK99MKtYm3w" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_N2sLRKdPEd2IK99MKtYm3w" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_N2sLR6dPEd2IK99MKtYm3w" name="FIRST_NAME" type="_N2sLRqdPEd2IK99MKtYm3w">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_N2sLSadPEd2IK99MKtYm3w" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_N2sLSKdPEd2IK99MKtYm3w" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_N2sLS6dPEd2IK99MKtYm3w" name="LAST_NAME" type="_N2sLSqdPEd2IK99MKtYm3w">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_N2sLTadPEd2IK99MKtYm3w" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_N2sLTKdPEd2IK99MKtYm3w" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_N2sLT6dPEd2IK99MKtYm3w" name="PASSWORD" type="_N2sLTqdPEd2IK99MKtYm3w">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_N2sLUadPEd2IK99MKtYm3w" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_N2sLUKdPEd2IK99MKtYm3w" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_N2sLU6dPEd2IK99MKtYm3w" name="PHONE" type="_N2sLUqdPEd2IK99MKtYm3w">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_N2sLVadPEd2IK99MKtYm3w" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_N2sLVKdPEd2IK99MKtYm3w" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_N2sLV6dPEd2IK99MKtYm3w" name="EMAIL_ADDRESS" type="_N2sLVqdPEd2IK99MKtYm3w">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_N2sLWadPEd2IK99MKtYm3w" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_N2sLWKdPEd2IK99MKtYm3w" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_N21VMadPEd2IK99MKtYm3w" name="STREET" type="_N21VMKdPEd2IK99MKtYm3w">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_N21VM6dPEd2IK99MKtYm3w" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_N21VMqdPEd2IK99MKtYm3w" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_N21VNadPEd2IK99MKtYm3w" name="APARTMENT" type="_N21VNKdPEd2IK99MKtYm3w">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_N21VN6dPEd2IK99MKtYm3w" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_N21VNqdPEd2IK99MKtYm3w" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_N21VOadPEd2IK99MKtYm3w" name="CITY" type="_N21VOKdPEd2IK99MKtYm3w">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_N21VO6dPEd2IK99MKtYm3w" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_N21VOqdPEd2IK99MKtYm3w" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_N21VPadPEd2IK99MKtYm3w" name="STATE" type="_N21VPKdPEd2IK99MKtYm3w">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_N21VP6dPEd2IK99MKtYm3w" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_N21VPqdPEd2IK99MKtYm3w" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_N21VQadPEd2IK99MKtYm3w" name="POSTALCODE" type="_N21VQKdPEd2IK99MKtYm3w">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_N21VQ6dPEd2IK99MKtYm3w" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_N21VQqdPEd2IK99MKtYm3w" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_N21VRadPEd2IK99MKtYm3w" name="DIRECTIONS" type="_N21VRKdPEd2IK99MKtYm3w">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_N21VR6dPEd2IK99MKtYm3w" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_N21VRqdPEd2IK99MKtYm3w" value="1"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_N2sLQadPEd2IK99MKtYm3w" name="primitivetypes">
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_N2sLQqdPEd2IK99MKtYm3w" name="CustomerId"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_N2sLRqdPEd2IK99MKtYm3w" name="FirstName"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_N2sLSqdPEd2IK99MKtYm3w" name="LastName"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_N2sLTqdPEd2IK99MKtYm3w" name="Password"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_N2sLUqdPEd2IK99MKtYm3w" name="Phone"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_N2sLVqdPEd2IK99MKtYm3w" name="EmailAddress"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_N21VMKdPEd2IK99MKtYm3w" name="Street"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_N21VNKdPEd2IK99MKtYm3w" name="Apartment"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_N21VOKdPEd2IK99MKtYm3w" name="City"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_N21VPKdPEd2IK99MKtYm3w" name="State"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_N21VQKdPEd2IK99MKtYm3w" name="Postalcode"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_N21VRKdPEd2IK99MKtYm3w" name="Directions"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_N21VSadPEd2IK99MKtYm3w" name="OrderId"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_N21VTadPEd2IK99MKtYm3w" name="OrdersCustomerId"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_N21VUadPEd2IK99MKtYm3w" name="OrderAmount"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_N21VVadPEd2IK99MKtYm3w" name="OrderDetails"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_N2_GMKdPEd2IK99MKtYm3w" name="OrderDate"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_N2_GNKdPEd2IK99MKtYm3w" name="OrderStatus"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_N2_GOadPEd2IK99MKtYm3w" name="SiteuserId"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_N2_GPadPEd2IK99MKtYm3w" name="SiteuserFirstname"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_N2_GQadPEd2IK99MKtYm3w" name="SiteuserLastname"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_N2_GRadPEd2IK99MKtYm3w" name="UserId"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_N2_GSadPEd2IK99MKtYm3w" name="SiteuserPassWord"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_N2_GTadPEd2IK99MKtYm3w" name="StreetAddress"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_N2_GUadPEd2IK99MKtYm3w" name="SiteuserCity"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_N3IQIqdPEd2IK99MKtYm3w" name="SiteuserState"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_N3IQJqdPEd2IK99MKtYm3w" name="Zip"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_N3IQKqdPEd2IK99MKtYm3w" name="SuType"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_N3IQLqdPEd2IK99MKtYm3w" name="ReceiveUpdates"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_N3IQMqdPEd2IK99MKtYm3w" name="JoinClub"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_N3IQNqdPEd2IK99MKtYm3w" name="Comments"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_N21VSKdPEd2IK99MKtYm3w" name="ORDERS">
+    <ownedAttribute xmi:id="_N21VSqdPEd2IK99MKtYm3w" name="ORDER_ID" type="_N21VSadPEd2IK99MKtYm3w">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_N21VTKdPEd2IK99MKtYm3w" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_N21VS6dPEd2IK99MKtYm3w" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_N21VTqdPEd2IK99MKtYm3w" name="CUSTOMER_ID" type="_N21VTadPEd2IK99MKtYm3w">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_N21VUKdPEd2IK99MKtYm3w" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_N21VT6dPEd2IK99MKtYm3w" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_N21VUqdPEd2IK99MKtYm3w" name="ORDER_AMOUNT" type="_N21VUadPEd2IK99MKtYm3w">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_N21VVKdPEd2IK99MKtYm3w" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_N21VU6dPEd2IK99MKtYm3w" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_N21VVqdPEd2IK99MKtYm3w" name="ORDER_DETAILS" type="_N21VVadPEd2IK99MKtYm3w">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_N21VWKdPEd2IK99MKtYm3w" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_N21VV6dPEd2IK99MKtYm3w" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_N2_GMadPEd2IK99MKtYm3w" name="ORDER_DATE" type="_N2_GMKdPEd2IK99MKtYm3w">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_N2_GM6dPEd2IK99MKtYm3w" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_N2_GMqdPEd2IK99MKtYm3w" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_N2_GNadPEd2IK99MKtYm3w" name="ORDER_STATUS" type="_N2_GNKdPEd2IK99MKtYm3w">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_N2_GN6dPEd2IK99MKtYm3w" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_N2_GNqdPEd2IK99MKtYm3w" value="1"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_N2_GOKdPEd2IK99MKtYm3w" name="SITEUSER">
+    <ownedAttribute xmi:id="_N2_GOqdPEd2IK99MKtYm3w" name="SITEUSER_ID" type="_N2_GOadPEd2IK99MKtYm3w">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_N2_GPKdPEd2IK99MKtYm3w" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_N2_GO6dPEd2IK99MKtYm3w" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_N2_GPqdPEd2IK99MKtYm3w" name="FIRSTNAME" type="_N2_GPadPEd2IK99MKtYm3w">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_N2_GQKdPEd2IK99MKtYm3w" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_N2_GP6dPEd2IK99MKtYm3w" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_N2_GQqdPEd2IK99MKtYm3w" name="LASTNAME" type="_N2_GQadPEd2IK99MKtYm3w">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_N2_GRKdPEd2IK99MKtYm3w" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_N2_GQ6dPEd2IK99MKtYm3w" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_N2_GRqdPEd2IK99MKtYm3w" name="USER_ID" type="_N2_GRadPEd2IK99MKtYm3w">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_N2_GSKdPEd2IK99MKtYm3w" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_N2_GR6dPEd2IK99MKtYm3w" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_N2_GSqdPEd2IK99MKtYm3w" name="PASS_WORD" type="_N2_GSadPEd2IK99MKtYm3w">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_N2_GTKdPEd2IK99MKtYm3w" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_N2_GS6dPEd2IK99MKtYm3w" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_N2_GTqdPEd2IK99MKtYm3w" name="STREET_ADDRESS" type="_N2_GTadPEd2IK99MKtYm3w">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_N2_GUKdPEd2IK99MKtYm3w" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_N2_GT6dPEd2IK99MKtYm3w" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_N2_GUqdPEd2IK99MKtYm3w" name="CITY" type="_N2_GUadPEd2IK99MKtYm3w">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_N3IQIadPEd2IK99MKtYm3w" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_N3IQIKdPEd2IK99MKtYm3w" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_N3IQI6dPEd2IK99MKtYm3w" name="STATE" type="_N3IQIqdPEd2IK99MKtYm3w">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_N3IQJadPEd2IK99MKtYm3w" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_N3IQJKdPEd2IK99MKtYm3w" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_N3IQJ6dPEd2IK99MKtYm3w" name="ZIP" type="_N3IQJqdPEd2IK99MKtYm3w">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_N3IQKadPEd2IK99MKtYm3w" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_N3IQKKdPEd2IK99MKtYm3w" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_N3IQK6dPEd2IK99MKtYm3w" name="SU_TYPE" type="_N3IQKqdPEd2IK99MKtYm3w">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_N3IQLadPEd2IK99MKtYm3w" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_N3IQLKdPEd2IK99MKtYm3w" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_N3IQL6dPEd2IK99MKtYm3w" name="RECEIVE_UPDATES" type="_N3IQLqdPEd2IK99MKtYm3w">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_N3IQMadPEd2IK99MKtYm3w" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_N3IQMKdPEd2IK99MKtYm3w" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_N3IQM6dPEd2IK99MKtYm3w" name="JOIN_CLUB" type="_N3IQMqdPEd2IK99MKtYm3w">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_N3IQNadPEd2IK99MKtYm3w" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_N3IQNKdPEd2IK99MKtYm3w" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_N3IQN6dPEd2IK99MKtYm3w" name="COMMENTS" type="_N3IQNqdPEd2IK99MKtYm3w">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_N3IQOadPEd2IK99MKtYm3w" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_N3IQOKdPEd2IK99MKtYm3w" value="1"/>
+    </ownedAttribute>
+  </packagedElement>
+</uml:Model>

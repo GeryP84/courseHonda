@@ -1,0 +1,55 @@
+package egltui.logon;
+
+FormGroup xyzLogFormGroup
+Form Login type textForm	// 
+ { screenSizes = [[24,80]], FormSize = [24, 80], Position = [1, 1], 
+  msgField = formMSG}
+		// Constant Fields
+		* {fieldLen = 78, Position = [1, 1], Value = "*****************************************************************************", Color = green, intensity = bold, protect = skipProtect};
+		* {fieldLen = 78, Position = [2, 1], Value = "*****************************************************************************", Color = green, intensity = bold, protect = skipProtect};
+		* {fieldLen = 78, Position = [3, 1], value = "****                                                                     ****", color = green, intensity = bold, protect = skipProtect};
+		* {fieldLen = 78, Position = [4, 1], value = "**      XXXXX     XXXXX    YYYY    YYYY   ZZZZZZZZZZZ                     ***", color = green, intensity = bold, protect = skipProtect};
+		* {fieldLen = 78, Position = [5, 1], value = "*        XXXXX   XXXXX      YYYY  YYYY    ZZZZZZZZZZZ                      **", color = green, intensity = bold, protect = skipProtect};
+		* {fieldLen = 78, Position = [6, 1], value = "*         XXXXX XXXXX        YYYY YYY          ZZZZZ                        *", color = green, intensity = bold, protect = skipProtect};
+		* {fieldLen = 78, Position = [7, 1], value = "*          XXXXXXXXX          YYYYYY          ZZZZZ      cccc     oooo      *", color = green, intensity = bold, protect = skipProtect};
+		* {fieldLen = 78, Position = [8, 1], value = "*         XXXXX XXXXX          YYYY         ZZZZZ      ccc ccc   ooo ooo    *", color = green, intensity = bold, protect = skipProtect};
+		* {fieldLen = 78, Position = [9, 1], Value = "*        XXXXX   XXXXX         YYYY       ZZZZZ       ccc       ooo   ooo   *", color = green, intensity = bold, protect = skipProtect};
+		* {fieldLen = 78, Position = [10, 1], Value = "**     XXXXX       XXXXX       YYYY     ZZZZZZZZZZZZ  ccc ccc   ooo ooo    **", color = green, intensity = bold, protect = skipProtect};
+		* {fieldLen = 78, Position = [11, 1], Value = "***   XXXXX          XXXXX     YYYY     ZZZZZZZZZZZZ   cccc      oooo.    ***", color = green, intensity = bold, protect = skipProtect};
+		* {fieldLen = 78, Position = [12, 1], value = "****                                                                     ****", color = green, intensity = bold, protect = skipProtect};
+		* {fieldLen = 78, Position = [13, 1], Value = "*****************************************************************************", color = green, intensity = bold, protect = skipProtect};
+		* {fieldLen = 78, Position = [14, 1], Value = "*****************************************************************************", color = green, intensity = bold, protect = skipProtect};
+		* {fieldLen = 8, Position = [17, 20], value = "User ID:", color = cyan, protect = skipProtect};
+		* {fieldLen = 9, Position = [18, 19], value = "Password:", color = cyan, protect = skipProtect};
+		
+		* {fieldLen = 28, Position = [16, 18], Value = "To Login, please enter your", color = cyan, protect = skipProtect};
+		* {fieldLen = 24, Position = [20, 19], value = "Press Enter to continue", color = cyan, protect = skipProtect};
+		* {fieldLen = 5, Position = [15, 1], value = "****", color = cyan, protect = skipProtect};
+		* {fieldLen = 3, Position = [16, 1], value = "***", color = cyan, protect = skipProtect};
+		* {fieldLen = 3, Position = [17, 1], value = "**", color = cyan, protect = skipProtect};
+		* {fieldLen = 3, Position = [18, 1], value = "*", color = cyan, protect = skipProtect};
+		* {fieldLen = 3, Position = [19, 1], value = "*", color = cyan, protect = skipProtect};
+		* {fieldLen = 3, Position = [20, 1], value = "**", color = cyan, protect = skipProtect};
+		* {fieldLen = 3, Position = [21, 1], value = "***", color = cyan, protect = skipProtect};
+		* {fieldLen = 4, Position = [22, 1], value = "****", color = cyan, protect = skipProtect};
+		* {fieldLen = 78, Position = [24, 1], Value = "*****************************************************************************", color = cyan, protect = skipProtect};
+		* {fieldLen = 78, Position = [23, 1], Value = "*****************************************************************************", color = cyan, protect = skipProtect};
+		* {fieldLen = 4, Position = [22, 74], value = "****", color = cyan, protect = skipProtect};
+		* {fieldLen = 3, Position = [21, 75], value = "***", color = cyan, protect = skipProtect};
+		* {fieldLen = 3, Position = [20, 75], value = " **", color = cyan, protect = skipProtect};
+		* {fieldLen = 3, Position = [19, 75], value = "  *", color = cyan, protect = skipProtect};
+		* {fieldLen = 3, Position = [18, 75], value = "  *", color = cyan, protect = skipProtect};
+		* {fieldLen = 3, Position = [17, 75], value = " **", color = cyan, protect = skipProtect};
+		* {fieldLen = 4, Position = [16, 74], value = " ***", color = cyan, protect = skipProtect};
+		* {fieldLen = 4, Position = [15, 74], Value = "****", color = cyan, protect = skipProtect};
+		// Variable Fields
+		userName char(10) {Position = [17, 30], highlight = underline, color = green, protect = noProtect};
+		passWord char(10) {Highlight = underline, Align = left, Position = [18, 30], color = green, protect = noProtect};
+		todaysDate char(10) {Position = [15, 60], color = green, protect = skipProtect};
+		mapTime char(8) {Position = [16, 60], color = green, protect = skipProtect};
+		formMSG char(68)  // Message Text
+  	 	{Position = [21, 6], fieldLen = 68, color = red, highlight = noHighlight, intensity = bold, protect = skipProtect};
+  	 	fkeyLine1 char(67) {Position = [22, 6], color = green, protect = skipProtect};
+
+End //form
+End // Group

@@ -1,0 +1,46 @@
+package egltui.data;
+
+import egltui.primitivetypes.data.*;
+
+
+/***
+ * Important Development Note (Please read the following comments)
+ * All code contained in this file will be overwritten each time the Data Access Application Wizard is executed.
+ * If the contents of this file must be preserved, move all source code into the custom definitions area at the end of the file.
+ * NOTE: preservation of this file's content may result in the generation of duplicate resources.
+ * This will result in syntax and compilation errors.
+ * You will have to manually resolve all discrepancies by deleting duplicates.
+ ***/
+ 
+/* 
+ * Source transform is Data Definition 
+ * Source UML Model name is /EGLTUIProject/eglderbyr7.uml
+ * Source UML model timestamp is 10/31/08 9:24 AM
+ */
+// Generated from UML element egltui::ORDERS#_N21VSKdPEd2IK99MKtYm3w
+record Orders type sqlRecord { 
+        tablenames=[["EGL.ORDERS"]],
+        keyItems=[OrderId]
+    } 
+
+	OrderId OrderId {column="EGL.ORDERS.ORDERID"};
+	CustomerId OrdersCustomerId {column="EGL.ORDERS.CUSTOMERID", isSqlNullable=yes};
+	OrderAmount OrderAmount {column="EGL.ORDERS.ORDERAMOUNT", isSqlNullable=yes};
+	OrderDetails OrderDetails {column="EGL.ORDERS.ORDERDETAILS", sqlVariableLen=yes, isSqlNullable=yes};
+	OrderDate OrderDate {column="EGL.ORDERS.ORDERDATE", isSqlNullable=yes};
+	OrderStatus OrderStatus {column="EGL.ORDERS.ORDERSTATUS", isSqlNullable=yes};
+end
+
+record OrdersSearch
+	OrderId OrderId?;
+	CustomerId OrdersCustomerId?;
+	OrderAmount OrderAmount?;
+	OrderDetails OrderDetails?;
+	OrderDate OrderDate?;
+	OrderStatus OrderStatus?;
+end 
+
+//BEGIN custom source definitions
+//TODO: Add additional code here
+//END custom source definitions
+ 

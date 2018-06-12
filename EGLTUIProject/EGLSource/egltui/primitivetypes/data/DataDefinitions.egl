@@ -1,0 +1,109 @@
+package egltui.primitivetypes.data;
+
+
+/***
+ * Important Development Note (Please read the following comments)
+ * All code contained in this file will be overwritten each time the Data Access Application Wizard is executed.
+ * If the contents of this file must be preserved, move all source code into the custom definitions area at the end of the file.
+ * NOTE: preservation of this file's content may result in the generation of duplicate resources.
+ * This will result in syntax and compilation errors.
+ * You will have to manually resolve all discrepancies by deleting duplicates.
+ ***/
+ 
+// Generated from UML element egltui::primitivetypes::CustomerId#_N2sLQqdPEd2IK99MKtYm3w
+dataitem CustomerId INT end
+
+// Generated from UML element egltui::primitivetypes::FirstName#_N2sLRqdPEd2IK99MKtYm3w
+dataitem FirstName CHAR(30) end
+
+// Generated from UML element egltui::primitivetypes::LastName#_N2sLSqdPEd2IK99MKtYm3w
+dataitem LastName CHAR(30) end
+
+// Generated from UML element egltui::primitivetypes::Password#_N2sLTqdPEd2IK99MKtYm3w
+dataitem Password CHAR(8) end
+
+// Generated from UML element egltui::primitivetypes::Phone#_N2sLUqdPEd2IK99MKtYm3w
+dataitem Phone CHAR(14) end
+
+// Generated from UML element egltui::primitivetypes::EmailAddress#_N2sLVqdPEd2IK99MKtYm3w
+dataitem EmailAddress CHAR(50) end
+
+// Generated from UML element egltui::primitivetypes::Street#_N21VMKdPEd2IK99MKtYm3w
+dataitem Street CHAR(30) end
+
+// Generated from UML element egltui::primitivetypes::Apartment#_N21VNKdPEd2IK99MKtYm3w
+dataitem Apartment CHAR(10) end
+
+// Generated from UML element egltui::primitivetypes::City#_N21VOKdPEd2IK99MKtYm3w
+dataitem City CHAR(30) end
+
+// Generated from UML element egltui::primitivetypes::State#_N21VPKdPEd2IK99MKtYm3w
+dataitem State CHAR(2) end
+
+// Generated from UML element egltui::primitivetypes::Postalcode#_N21VQKdPEd2IK99MKtYm3w
+dataitem Postalcode CHAR(10) end
+
+// Generated from UML element egltui::primitivetypes::Directions#_N21VRKdPEd2IK99MKtYm3w
+dataitem Directions CHAR(255) end
+
+// Generated from UML element egltui::primitivetypes::OrderId#_N21VSadPEd2IK99MKtYm3w
+dataitem OrderId INT end
+
+// Generated from UML element egltui::primitivetypes::OrdersCustomerId#_N21VTadPEd2IK99MKtYm3w
+dataitem OrdersCustomerId INT end
+
+// Generated from UML element egltui::primitivetypes::OrderAmount#_N21VUadPEd2IK99MKtYm3w
+dataitem OrderAmount DECIMAL(8, 2) end
+
+// Generated from UML element egltui::primitivetypes::OrderDetails#_N21VVadPEd2IK99MKtYm3w
+dataitem OrderDetails CHAR(111) end
+
+// Generated from UML element egltui::primitivetypes::OrderDate#_N2_GMKdPEd2IK99MKtYm3w
+dataitem OrderDate DATE end
+
+// Generated from UML element egltui::primitivetypes::OrderStatus#_N2_GNKdPEd2IK99MKtYm3w
+dataitem OrderStatus CHAR(12) end
+
+// Generated from UML element egltui::primitivetypes::SiteuserId#_N2_GOadPEd2IK99MKtYm3w
+dataitem SiteuserId INT end
+
+// Generated from UML element egltui::primitivetypes::SiteuserFirstname#_N2_GPadPEd2IK99MKtYm3w
+dataitem SiteuserFirstname CHAR(20) end
+
+// Generated from UML element egltui::primitivetypes::SiteuserLastname#_N2_GQadPEd2IK99MKtYm3w
+dataitem SiteuserLastname CHAR(20) end
+
+// Generated from UML element egltui::primitivetypes::UserId#_N2_GRadPEd2IK99MKtYm3w
+dataitem UserId CHAR(8) end
+
+// Generated from UML element egltui::primitivetypes::SiteuserPassWord#_N2_GSadPEd2IK99MKtYm3w
+dataitem SiteuserPassWord CHAR(8) end
+
+// Generated from UML element egltui::primitivetypes::StreetAddress#_N2_GTadPEd2IK99MKtYm3w
+dataitem StreetAddress CHAR(20) end
+
+// Generated from UML element egltui::primitivetypes::SiteuserCity#_N2_GUadPEd2IK99MKtYm3w
+dataitem SiteuserCity CHAR(20) end
+
+// Generated from UML element egltui::primitivetypes::SiteuserState#_N3IQIqdPEd2IK99MKtYm3w
+dataitem SiteuserState CHAR(2) end
+
+// Generated from UML element egltui::primitivetypes::Zip#_N3IQJqdPEd2IK99MKtYm3w
+dataitem Zip CHAR(5) end
+
+// Generated from UML element egltui::primitivetypes::SuType#_N3IQKqdPEd2IK99MKtYm3w
+dataitem SuType INT end
+
+// Generated from UML element egltui::primitivetypes::ReceiveUpdates#_N3IQLqdPEd2IK99MKtYm3w
+dataitem ReceiveUpdates INT end
+
+// Generated from UML element egltui::primitivetypes::JoinClub#_N3IQMqdPEd2IK99MKtYm3w
+dataitem JoinClub INT end
+
+// Generated from UML element egltui::primitivetypes::Comments#_N3IQNqdPEd2IK99MKtYm3w
+dataitem Comments CHAR(255) end
+
+
+//BEGIN custom source definitions
+//TODO: Add additional code here
+//END custom source definitions

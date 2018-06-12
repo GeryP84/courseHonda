@@ -1,0 +1,103 @@
+package egltui.opt1.custlist;
+
+import egltui.*;
+import egltui.access.CustomerLib;
+import egltui.data.Customer;
+import egltui.menu.xyzMenuProgram;
+import egltui.zzz.common.xyzTransferData;
+import egltui.opt2.custdetail.*;
+
+//Put EGL Source File Contents Here
+Program xyzCustListProgram type textUIProgram
+   {inputRecord=transferData}
+
+    transferData xyzTransferData;
+	customers Customer[];
+	status StatusRec;
+	i int;
+	size int;
+	startingName char(20);
+	
+	const linesOnScreen int =15;
+
+	use xyzCL1FormGroup.custList;
+	use CustomerLib;
+
+Function Main()
+	initialize();
+	CustomerLib.GetCustomerListAll(customers, status);
+	movetoform();
+    converseForm();
+End
+
+Function initialize();
+	move "xyzCL1" to custList.screenName;
+	custList.screenDate = dateTimeLib.currentDate();
+end
+
+Function movetoform()
+	size = customers.getSize();
+	if (size > linesOnScreen)// the number of records is more than the size of the screen array
+		size = linesOnScreen;// stop at the bottom of the screen array
+	end
+	for (i from 1 to size by 1)            // move data to screen
+		custList.firstName[i] = customers[i].FirstName;
+		custList.lastName[i] = customers[i].LastName;
+		custList.state[i] = customers[i].State;
+		custList.city[i] = customers[i].City;									
+	end
+	for (i from size+1 to linesOnScreen by 1)         // blank remaining rows
+		custList.firstName[i] = "";
+		custList.lastName[i] = "";
+		custList.state[i] = "";
+		custList.city[i] = "";
+	end
+	move "" to custList.StartName;                    // blank starting name
+
+end
+
+Function converseForm()
+	while (converseVar.eventKey not PF3
+	    && converseVar.eventKey not PF2)
+		converse custList;
+		case
+		  when (converseVar.eventKey is Enter)
+		  	if (custList.StartName != "")
+		  	  startingName = custList.startName;
+			  CustomerLib.GetCustomerListStartName(startingName, customers, status);
+			  if (status.succeeded)
+				movetoform();
+			  else
+				custList.formMSG = "Problem retrieving data";
+			  end
+			else
+	  		  custList.formMSG = "Please enter a few characters of the last name";			    
+			end
+		  when (converseVar.eventKey is PF5)
+		  	i = 1;
+		  	while (i <= linesOnScreen)
+		  		if (custList.lastName[i] is cursor)
+		  		  transferData.CustomerId = customers[i].customerID;
+		  		  transfer to xyzCustDetailProgram passing transferData;
+		  		else
+  		  		  i = i + 1;
+  		  		end
+		  	end
+		  otherwise
+			custList.formMSG = "Please enter a few characters of the last name";
+		end
+	end
+    
+    // done with List Program
+	case (converseVar.eventKey)
+		when(PF2)
+			  transferData.CustomerId = 0;
+	  		  transfer to xyzMenuProgram passing transferData;
+	    when(PF3)  
+	    	  exit program;
+	end
+		
+end // converseForm
+
+end // end program
+

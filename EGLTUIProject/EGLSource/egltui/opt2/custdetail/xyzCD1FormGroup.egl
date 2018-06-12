@@ -1,0 +1,44 @@
+package egltui.opt2.custdetail;
+
+FormGroup xyzCD1FormGroup
+Form custDetail type textForm	// 
+ { screenSizes = [[24,80]], FormSize = [24, 80], Position = [1, 1], 
+  msgField = formMSG}
+
+ formMSG char(76)  // Message Text
+  { Position = [22, 3], fieldLen = 76, color = red, 
+    highlight = noHighlight, intensity = bold, protect = skipProtect, align = left};
+		* {Value = "Customer Detail", fieldLen = 20, Position = [1, 28], Color = yellow, intensity = bold, protect = skipProtect};
+		screenName char(9) {Position = [1, 1], color = green, protect = skipProtect};
+		screenDate char(10) {Position = [1, 62], color = green, protect = skipProtect};
+		* {fieldLen = 75, Position = [23, 3], Value = "F2=Menu;  F3=Exit;  F4=List;  Enter=Process Action request", color = cyan, protect = skipProtect};
+		* {Position = [3, 2], value = "Action:", color = cyan, protect = skipProtect};
+		Action char(1) {UpperCase = yes, Position = [3, 10], highlight = underline, color = green, protect = noProtect};
+		* {Position = [3, 12], value = "(I=insert, S=select, U=update, D=delete", color = cyan, protect = skipProtect};
+		* {Position = [5, 2], value = "Customer ID", color = cyan, protect = skipProtect};
+		CustomerId int {Position = [5, 18], highlight = underline, color = green, protect = noProtect};
+		* {Position = [6, 2], value = "First Name", color = cyan, protect = skipProtect};
+		FirstName char(30) {Position = [6, 18], highlight = underline, color = green, protect = noProtect};
+		* {Position = [7, 2], value = "Last Name", color = cyan, protect = skipProtect};
+		LastName char(30) {Position = [7, 18], highlight = underline, color = green, protect = noProtect};
+		* {Position = [8, 2], value = "Password", color = cyan, protect = skipProtect};
+		Password char(8) {FieldLen = 8, Position = [8, 18], highlight = underline, color = green, protect = noProtect};
+		* {Position = [9, 2], value = "Phone", color = cyan, protect = skipProtect};
+		Phone char(14) {fieldLen = 14, Position = [9, 18], highlight = underline, color = green, protect = noProtect};
+		* {Position = [10, 2], value = "E-mail Address", color = cyan, protect = skipProtect};
+		EmailAddress char(50) {Position = [10, 18], highlight = underline, color = green, protect = noProtect};
+		* {Position = [11, 2], value = "Street", color = cyan, protect = skipProtect};
+		Street char(30) {FieldLen = 30, Position = [11, 18], highlight = underline, color = green, protect = noProtect};
+		* {Position = [12, 2], value = "Apartment", color = cyan, protect = skipProtect};
+		Apartment char(10) {FieldLen = 10, Position = [12, 18], highlight = underline, color = green, protect = noProtect};
+		* {Position = [13, 2], value = "City", color = cyan, protect = skipProtect};
+		City char(30) {fieldLen = 30, Position = [13, 18], highlight = underline, color = green, protect = noProtect};
+		* {Position = [14, 2], value = "State", color = cyan, protect = skipProtect};
+		State char(2) {fieldLen = 2, Position = [14, 18], highlight = underline, color = green, protect = noProtect};
+		* {Position = [15, 2], value = "Postalcode", color = cyan, protect = skipProtect};
+		Postalcode char(10) {FieldLen = 10, Position = [15, 18], highlight = underline, color = green, protect = noProtect};
+		* {Position = [16, 2], value = "Directions", color = cyan, protect = skipProtect};
+		Directions char(255) {Position = [16, 18], highlight = underline, color = green, protect = noProtect};
+
+End //form
+End // Group

@@ -1,0 +1,135 @@
+package egltui.demogrp;
+
+// form group with screen and print floating areas
+//
+formGroup DemoGroup
+	{ScreenFloatingAreas = [
+		@ScreenFloatingArea{screenSize=[24, 80], bottomMargin=0, topMargin=0, leftMargin=0, rightMargin=0}
+	], 
+	
+	validationBypassKeys = [pf2], helpKey = pf1, 
+	pfKeyEquate = yes}
+	form Form1 type textForm
+		{ FormSize = [24, 80], Position = [1, 1], msgField = Message1}
+		* {fieldLen = 49, Highlight = reverse, Position = [2, 14], value = "This is the screen Title Line.  It is a Constant.", Color = green, intensity = bold, protect = skipProtect};
+		Input1 char(24) {MinimumInput = 3, InputRequired = yes, Value = "Input Field", Position = [7, 7], highlight = underline, color = green, protect = noProtect};
+		Output1 char(32) {Value = "Output Field", Position = [7, 32], color = green, protect = skipProtect};
+		Array1 char(57)[2] {Position = [13, 7], color = green, Protect = noProtect , indexOrientation = down , columns = 1 , linesBetweenRows = 0 , spacesBetweenColumns = 1,
+	this[2]{Value = "Vertical Array, ELement 2"}
+};
+		Message1 char(68) {Value = "This is the Message Line", Position = [21, 7], color = red, intensity = bold, protect = skipProtect};
+		* {Position = [1, 26], value = "This is Another Title Line.", color = yellow, intensity = bold, protect = skipProtect};
+		* {Position = [4, 7], value = "Label Field", color = green, protect = skipProtect};
+		* {Position = [5, 7], value = "Instructions Field", color = cyan, protect = skipProtect};
+		* {Position = [6, 7], value = "Help Field. Note the properties for these fields.", color = yellow, protect = skipProtect};
+		Array2 char(20)[3] {Position = [12, 7], color = green, protect = skipProtect , indexOrientation = across , columns = 3 , linesBetweenRows = 0 , spacesBetweenColumns = 5,
+	this[1]{Value = "Row Array, Element 1"}
+,
+	this[2]{Value = "Row Array, Element 2"}
+,
+	this[3]{Value = "Row Array, Element 3"}
+};
+		Array3 char(20)[9] {Position = [15, 7], color = green, protect = skipProtect , indexOrientation = down , columns = 3 , linesBetweenRows = 0 , spacesBetweenColumns = 5};
+		PasswordField char(15) {Value = "Password Field", Position = [18, 7], highlight = underline, color = green, Intensity = invisible, protect = noProtect};
+		FKeyLine1 char(69) {Value = "Function Key Line 1 - This is a Variable Field.", Position = [23, 1], color = green, protect = skipProtect};
+	end
+	
+Form FormFromRecord type textForm
+  {helpKey = pf1, screenSizes = [[24, 80]],  
+   FormSize = [24, 80], Position = [1, 1], msgField = MessageLine}
+
+
+  MessageLine char(68) {IsBoolean = no, Masked = no, LowerCase = no, 
+    Value = "This is the Message line. ", Position = [22, 6], 
+    color = red, intensity = bold, protect = skipProtect};
+		* {Position = [6, 5], value = "First Name", color = green, protect = skipProtect};
+		firstName char(15) {Position = [6, 17], highlight = underline, color = green, protect = noProtect};
+		* {Position = [7, 5], value = "Last Name", color = green, protect = skipProtect};
+		lastName char(20) {Position = [7, 16], highlight = underline, color = green, protect = noProtect};
+		* {Position = [8, 5], value = "City", color = green, protect = skipProtect};
+		city char(20) {Position = [8, 11], highlight = underline, color = green, protect = noProtect};
+		* {Position = [9, 5], value = "State", color = green, protect = skipProtect};
+		state char(2) {Position = [9, 12], highlight = underline, color = green, protect = noProtect};
+End
+	form PartialForm type textForm
+		{ FormSize = [6, 51], Position = [2, 10]}
+	end
+	form PopupMenu1 type textForm
+//		{ FormSize = [16, 45], Position = [3, 16]}
+        { FormSize = [24,80], screenSizes=[[24,80]]}
+		* {Position = [3, 13], value = "--------------------------------------------", color = white};
+		* {Position = [18, 13], value = "--------------------------------------------", color = white};
+		* {Position = [4, 13], value = "|", color = white};
+		* {Position = [4, 56], value = "|", color = white};
+		* {Position = [5, 13], value = "|", color = white};
+		* {Position = [5, 56], value = "|", color = white};
+		* {Position = [6, 13], value = "|", color = white};
+		* {Position = [6, 56], value = "|", color = white};
+		* {Position = [7, 13], value = "|", color = white};
+		* {Position = [7, 56], value = "|", color = white};
+		* {Position = [8, 13], value = "|", color = white};
+		* {Position = [8, 56], value = "|", color = white};
+		* {Position = [9, 13], value = "|", color = white};
+		* {Position = [9, 56], value = "|", color = white};
+		* {Position = [10, 13], value = "|", color = white};
+		* {Position = [10, 56], value = "|", color = white};
+		* {Position = [11, 13], value = "|", color = white};
+		* {Position = [11, 56], value = "|", color = white};
+		* {Position = [12, 13], value = "|", color = white};
+		* {Position = [12, 56], value = "|", color = white};
+		* {Position = [13, 13], value = "|", color = white};
+		* {Position = [13, 56], value = "|", color = white};
+		* {Position = [14, 13], value = "|", color = white};
+		* {Position = [14, 56], value = "|", color = white};
+		* {Position = [15, 13], value = "|", color = white};
+		* {Position = [15, 56], value = "|", color = white};
+		* {Position = [16, 13], value = "|", color = white};
+		* {Position = [16, 56], value = "|", color = white};
+		* {Position = [17, 13], value = "|", color = white};
+		* {Position = [17, 56], value = "|", color = white};
+		* {Position = [4, 24], value = "Title of Popup Menu", color = yellow, intensity = bold, protect = skipProtect};
+		* {fieldLen = 35, Position = [6, 15], Value = "Click on an option and Press Enter.", color = yellow, protect = skipProtect};
+		VariableFormField1 char(1)[5] {Position = [8, 15], highlight = underline, color = green, protect = noProtect};
+		VariableFormField2 char(38)[5] {Position = [8, 17], color = green, protect = skipProtect,
+	this[1]{Value = "Option A"}
+,
+	this[2]{Value = "Option B"}
+,
+	this[3]{Value = "Option C"}
+,
+	this[4]{Value = "Option D"}
+,
+	this[5]{Value = "Option E"}
+};
+		* {Position = [13, 15], value = "This is additional help text.", color = yellow, protect = skipProtect};
+	end
+	form PopupForm1 type textForm
+		{ FormSize = [15, 42], Position = [6, 15]}
+		* {Position = [1, 1], value = "-----------------------------------------", color = blue};
+		* {Position = [15, 1], value = "-----------------------------------------", color = blue};
+		* {Position = [4, 1], value = "-----------------------------------------", color = blue};
+		* {Position = [12, 1], value = "-----------------------------------------", color = blue};
+		* {Position = [2, 1], value = "|", color = blue};
+		* {Position = [2, 41], value = "|", color = blue};
+		* {Position = [3, 1], value = "|", color = blue};
+		* {Position = [3, 41], value = "|", color = blue};
+		* {Position = [5, 1], value = "|", color = blue};
+		* {Position = [5, 41], value = "|", color = blue};
+		* {Position = [6, 1], value = "|", color = blue};
+		* {Position = [6, 41], value = "|", color = blue};
+		* {Position = [7, 1], value = "|", color = blue};
+		* {Position = [7, 41], value = "|", color = blue};
+		* {Position = [8, 1], value = "|", color = blue};
+		* {Position = [8, 41], value = "|", color = blue};
+		* {Position = [9, 1], value = "|", color = blue};
+		* {Position = [9, 41], value = "|", color = blue};
+		* {Position = [10, 1], value = "|", color = blue};
+		* {Position = [10, 41], value = "|", color = blue};
+		* {Position = [11, 1], value = "|", color = blue};
+		* {Position = [11, 41], value = "|", color = blue};
+		* {Position = [13, 1], value = "|", color = blue};
+		* {Position = [13, 41], value = "|", color = blue};
+		* {Position = [14, 1], value = "|", color = blue};
+		* {Position = [14, 41], value = "|", color = blue};
+	end
+end

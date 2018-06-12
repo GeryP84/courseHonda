@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.etools.tpm.framework.transform.model:TransformModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.etools.egl.uml.transform.maint.model="http:///com/ibm/etools/egl/uml/transform/maint/model/maintmodel.ecore" xmlns:com.ibm.etools.tpm.framework.transform.model="http:///com/ibm/etools/tpm/framework/transform/model/transformModel.ecore" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" targetModelFile="\EGLTUIProject\eglderbyr7.uml">
+  <appliedTransforms transformID="com.ibm.etools.egl.uml.transform.maint.root"/>
+  <modelObjectParameters>
+    <targetModelObject xsi:type="uml:Model" href="eglderbyr7.uml#_N1WHcKdPEd2IK99MKtYm3w"/>
+    <transform transformID="com.ibm.etools.egl.uml.transform.maint.root">
+      <transformParameter xsi:type="com.ibm.etools.egl.uml.transform.maint.model:ModelParameters" fullyQualify="true" databaseType="Derby 10.1" OutputComponents="DATA_AND_ACCESS"/>
+    </transform>
+  </modelObjectParameters>
+  <modelObjectParameters>
+    <targetModelObject xsi:type="uml:PrimitiveType" href="eglderbyr7.uml#_N2sLQqdPEd2IK99MKtYm3w"/>
+    <transform transformID="com.ibm.etools.egl.uml.transform.maint.root">
+      <transformParameter xsi:type="com.ibm.etools.egl.uml.transform.maint.model:PrimitiveTypeParameters" length="1" type="INT" columnType="INTEGER"/>
+    </transform>
+  </modelObjectParameters>
+  <modelObjectParameters>
+    <targetModelObject xsi:type="uml:Property" href="eglderbyr7.uml#_N2sLQ6dPEd2IK99MKtYm3w"/>
+    <transform transformID="com.ibm.etools.egl.uml.transform.maint.root">
+      <transformParameter xsi:type="com.ibm.etools.egl.uml.transform.maint.model:PropertyParameters" columnName="CUSTOMER_ID" fieldName="CustomerId" key="true"/>
+    </transform>
+  </modelObjectParameters>
+  <modelObjectParameters>
+    <targetModelObject xsi:type="uml:PrimitiveType" href="eglderbyr7.uml#_N2sLRqdPEd2IK99MKtYm3w"/>
+    <transform transformID="com.ibm.etools.egl.uml.transform.maint.root">
+      <transformParameter xsi:type="com.ibm.etools.egl.uml.transform.maint.model:PrimitiveTypeParameters" length="30" type="CHAR" columnType="VARCHAR"/>
+    </transform>
+  </modelObjectParameters>
+  <modelObjectParameters>
+    <targetModelObject xsi:type="uml:Property" href="eglderbyr7.uml#_N2sLR6dPEd2IK99MKtYm3w"/>
+    <transform transformID="com.ibm.etools.egl.uml.transform.maint.root">
+      <transformParameter xsi:type="com.ibm.etools.egl.uml.transform.maint.model:PropertyParameters" columnName="FIRST_NAME" fieldName="FirstName" nullable="true"/>
+    </transform>
+  </modelObjectParameters>
+  <modelObjectParameters>
+    <targetModelObject xsi:type="uml:PrimitiveType" href="eglderbyr7.uml#_N2sLSqdPEd2IK99MKtYm3w"/>
+    <transform transformID="com.ibm.etools.egl.uml.transform.maint.root">
+      <transformParameter xsi:type="com.ibm.etools.egl.uml.transform.maint.model:PrimitiveTypeParameters" length="30" type="CHAR" columnType="VARCHAR"/>
+    </transform>
+  </modelObjectParameters>
+  <modelObjectParameters>
+    <targetModelObject xsi:type="uml:Property" href="eglderbyr7.uml#_N2sLS6dPEd2IK99MKtYm3w"/>
+    <transform transformID="com.ibm.etools.egl.uml.transform.maint.root">
+      <transformParameter xsi:type="com.ibm.etools.egl.uml.transform.maint.model:PropertyParameters" columnName="LAST_NAME" fieldName="LastName" nullable="true"/>
+    </transform>
+  </modelObjectParameters>
+  <modelObjectParameters>
+    <targetModelObject xsi:type="uml:PrimitiveType" href="eglderbyr7.uml#_N2sLTqdPEd2IK99MKtYm3w"/>
+    <transform transformID="com.ibm.etools.egl.uml.transform.maint.root">
+      <transformParameter xsi:type="com.ibm.etools.egl.uml.transform.maint.model:PrimitiveTypeParameters" length="8" type="CHAR" columnType="CHAR"/>
+    </transform>
+  </modelObjectParameters>
+  <modelObjectParameters>
+    <targetModelObject xsi:type="uml:Property" href="eglderbyr7.uml#_N2sLT6dPEd2IK99MKtYm3w"/>
+    <transform transformID="com.ibm.etools.egl.uml.transform.maint.root">
+      <transformParameter xsi:type="com.ibm.etools.egl.uml.transform.maint.model:PropertyParameters" columnName="PASSWORD" fieldName="Password" nullable="true"/>
+    </transform>
+  </modelObjectParameters>
+  <modelObjectParameters>
+    <targetModelObject xsi:type="uml:PrimitiveType" href="eglderbyr7.uml#_N2sLUqdPEd2IK99MKtYm3w"/>
+    <transform transformID="com.ibm.etools.egl.uml.transform.maint.root">
+      <transformParameter xsi:type="com.ibm.etools.egl.uml.transform.maint.model:PrimitiveTypeParameters" length="14" type="CHAR" columnType="VARCHAR"/>
+    </transform>
+  </modelObjectParameters>
+  <modelObjectParameters>
+    <targetModelObject xsi:type="uml:Property" href="eglderbyr7.uml#_N2sLU6dPEd2IK99MKtYm3w"/>
+    <transform transformID="com.ibm.etools.egl.uml.transform.maint.root">
+      <transformParameter xsi:type="com.ibm.etools.egl.uml.transform.maint.model:PropertyParameters" columnName="PHONE" fieldName="Phone" nullable="true"/>
+    </transform>
+  </modelObjectParameters>
+  <modelObjectParameters>
+    <targetModelObject xsi:type="uml:PrimitiveType" href="eglderbyr7.uml#_N2sLVqdPEd2IK99MKtYm3w"/>
+    <transform transformID="com.ibm.etools.egl.uml.transform.maint.root">
+      <transformParameter xsi:type="com.ibm.etools.egl.uml.transform.maint.model:PrimitiveTypeParameters" length="50" type="CHAR" columnType="VARCHAR"/>
+    </transform>
+  </modelObjectParameters>
+  <modelObjectParameters>
+    <targetModelObject xsi:type="uml:Property" href="eglderbyr7.uml#_N2sLV6dPEd2IK99MKtYm3w"/>
+    <transform transformID="com.ibm.etools.egl.uml.transform.maint.root">
+      <transformParameter xsi:type="com.ibm.etools.egl.uml.transform.maint.model:PropertyParameters" columnName="EMAIL_ADDRESS" fieldName="EmailAddress" nullable="true"/>
+    </transform>
+  </modelObjectParameters>
+  <modelObjectParameters>
+    <targetModelObject xsi:type="uml:PrimitiveType" href="eglderbyr7.uml#_N21VMKdPEd2IK99MKtYm3w"/>
+    <transform transformID="com.ibm.etools.egl.uml.transform.maint.root">
+      <transformParameter xsi:type="com.ibm.etools.egl.uml.transform.maint.model:PrimitiveTypeParameters" length="30" type="CHAR" columnType="VARCHAR"/>
+    </transform>
+  </modelObjectParameters>
+  <modelObjectParameters>
+    <targetModelObject xsi:type="uml:Property" href="eglderbyr7.uml#_N21VMadPEd2IK99MKtYm3w"/>
+    <transform transformID="com.ibm.etools.egl.uml.transform.maint.root">
+      <transformParameter xsi:type="com.ibm.etools.egl.uml.transform.maint.model:PropertyParameters" columnName="STREET" fieldName="Street" nullable="true"/>
+    </transform>
+  </modelObjectParameters>
+  <modelObjectParameters>
+    <targetModelObject xsi:type="uml:PrimitiveType" href="eglderbyr7.uml#_N21VNKdPEd2IK99MKtYm3w"/>
+    <transform transformID="com.ibm.etools.egl.uml.transform.maint.root">
+      <transformParameter xsi:type="com.ibm.etools.egl.uml.transform.maint.model:PrimitiveTypeParameters" length="10" type="CHAR" columnType="VARCHAR"/>
+    </transform>
+  </modelObjectParameters>
+  <modelObjectParameters>
+    <targetModelObject xsi:type="uml:Property" href="eglderbyr7.uml#_N21VNadPEd2IK99MKtYm3w"/>
+    <transform transformID="com.ibm.etools.egl.uml.transform.maint.root">
+      <transformParameter xsi:type="com.ibm.etools.egl.uml.transform.maint.model:PropertyParameters" columnName="APARTMENT" fieldName="Apartment" nullable="true"/>
+    </transform>
+  </modelObjectParameters>
+  <modelObjectParameters>
+    <targetModelObject xsi:type="uml:PrimitiveType" href="eglderbyr7.uml#_N21VOKdPEd2IK99MKtYm3w"/>
+    <transform transformID="com.ibm.etools.egl.uml.transform.maint.root">
+      <transformParameter xsi:type="com.ibm.etools.egl.uml.transform.maint.model:PrimitiveTypeParameters" length="30" type="CHAR" columnType="VARCHAR"/>
+    </transform>
+  </modelObjectParameters>
+  <modelObjectParameters>
+    <targetModelObject xsi:type="uml:Property" href="eglderbyr7.uml#_N21VOadPEd2IK99MKtYm3w"/>
+    <transform transformID="com.ibm.etools.egl.uml.transform.maint.root">
+      <transformParameter xsi:type="com.ibm.etools.egl.uml.transform.maint.model:PropertyParameters" columnName="CITY" fieldName="City" nullable="true"/>
+    </transform>
+  </modelObjectParameters>
+  <modelObjectParameters>
+    <targetModelObject xsi:type="uml:PrimitiveType" href="eglderbyr7.uml#_N21VPKdPEd2IK99MKtYm3w"/>
+    <transform transformID="com.ibm.etools.egl.uml.transform.maint.root">
+      <transformParameter xsi:type="com.ibm.etools.egl.uml.transform.maint.model:PrimitiveTypeParameters" length="2" type="CHAR" columnType="CHAR"/>
+    </transform>
+  </modelObjectParameters>
+  <modelObjectParameters>
+    <targetModelObject xsi:type="uml:Property" href="eglderbyr7.uml#_N21VPadPEd2IK99MKtYm3w"/>
+    <transform transformID="com.ibm.etools.egl.uml.transform.maint.root">
+      <transformParameter xsi:type="com.ibm.etools.egl.uml.transform.maint.model:PropertyParameters" columnName="STATE" fieldName="State" nullable="true"/>
+    </transform>
+  </modelObjectParameters>
+  <modelObjectParameters>
+    <targetModelObject xsi:type="uml:PrimitiveType" href="eglderbyr7.uml#_N21VQKdPEd2IK99MKtYm3w"/>
+    <transform transformID="com.ibm.etools.egl.uml.transform.maint.root">
+      <transformParameter xsi:type="com.ibm.etools.egl.uml.transform.maint.model:PrimitiveTypeParameters" length="10" type="CHAR" columnType="VARCHAR"/>
+    </transform>
+  </modelObjectParameters>
+  <modelObjectParameters>
+    <targetModelObject xsi:type="uml:Property" href="eglderbyr7.uml#_N21VQadPEd2IK99MKtYm3w"/>
+    <transform transformID="com.ibm.etools.egl.uml.transform.maint.root">
+      <transformParameter xsi:type="com.ibm.etools.egl.uml.transform.maint.model:PropertyParameters" columnName="POSTALCODE" fieldName="Postalcode" nullable="true"/>
+    </transform>
+  </modelObjectParameters>
+  <modelObjectParameters>
+    <targetModelObject xsi:type="uml:PrimitiveType" href="eglderbyr7.uml#_N21VRKdPEd2IK99MKtYm3w"/>
+    <transform transformID="com.ibm.etools.egl.uml.transform.maint.root">
+      <transformParameter xsi:type="com.ibm.etools.egl.uml.transform.maint.model:PrimitiveTypeParameters" length="255" type="CHAR" columnType="VARCHAR"/>
+    </transform>
+  </modelObjectParameters>
+  <modelObjectParameters>
+    <targetModelObject xsi:type="uml:Property" href="eglderbyr7.uml#_N21VRadPEd2IK99MKtYm3w"/>
+    <transform transformID="com.ibm.etools.egl.uml.transform.maint.root">
+      <transformParameter xsi:type="com.ibm.etools.egl.uml.transform.maint.model:PropertyParameters" columnName="DIRECTIONS" fieldName="Directions" nullable="true"/>
+    </transform>
+  </modelObjectParameters>
+  <modelObjectParameters>
+    <targetModelObject xsi:type="uml:PrimitiveType" href="eglderbyr7.uml#_N21VSadPEd2IK99MKtYm3w"/>
+    <transform transformID="com.ibm.etools.egl.uml.transform.maint.root">
+      <transformParameter xsi:type="com.ibm.etools.egl.uml.transform.maint.model:PrimitiveTypeParameters" length="1" type="INT" columnType="INTEGER"/>
+    </transform>
+  </modelObjectParameters>
+  <modelObjectParameters>
+    <targetModelObject xsi:type="uml:Property" href="eglderbyr7.uml#_N21VSqdPEd2IK99MKtYm3w"/>
+    <transform transformID="com.ibm.etools.egl.uml.transform.maint.root">
+      <transformParameter xsi:type="com.ibm.etools.egl.uml.transform.maint.model:PropertyParameters" columnName="ORDER_ID" fieldName="OrderId" key="true"/>
+    </transform>
+  </modelObjectParameters>
+  <modelObjectParameters>
+    <targetModelObject xsi:type="uml:PrimitiveType" href="eglderbyr7.uml#_N21VTadPEd2IK99MKtYm3w"/>
+    <transform transformID="com.ibm.etools.egl.uml.transform.maint.root">
+      <transformParameter xsi:type="com.ibm.etools.egl.uml.transform.maint.model:PrimitiveTypeParameters" length="1" type="INT" columnType="INTEGER"/>
+    </transform>
+  </modelObjectParameters>
+  <modelObjectParameters>
+    <targetModelObject xsi:type="uml:Property" href="eglderbyr7.uml#_N21VTqdPEd2IK99MKtYm3w"/>
+    <transform transformID="com.ibm.etools.egl.uml.transform.maint.root">
+      <transformParameter xsi:type="com.ibm.etools.egl.uml.transform.maint.model:PropertyParameters" columnName="CUSTOMER_ID" fieldName="CustomerId" nullable="true"/>
+    </transform>
+  </modelObjectParameters>
+  <modelObjectParameters>
+    <targetModelObject xsi:type="uml:PrimitiveType" href="eglderbyr7.uml#_N21VUadPEd2IK99MKtYm3w"/>
+    <transform transformID="com.ibm.etools.egl.uml.transform.maint.root">
+      <transformParameter xsi:type="com.ibm.etools.egl.uml.transform.maint.model:PrimitiveTypeParameters" length="8" decimals="2" type="DECIMAL" columnType="DECIMAL"/>
+    </transform>
+  </modelObjectParameters>
+  <modelObjectParameters>
+    <targetModelObject xsi:type="uml:Property" href="eglderbyr7.uml#_N21VUqdPEd2IK99MKtYm3w"/>
+    <transform transformID="com.ibm.etools.egl.uml.transform.maint.root">
+      <transformParameter xsi:type="com.ibm.etools.egl.uml.transform.maint.model:PropertyParameters" columnName="ORDER_AMOUNT" fieldName="OrderAmount" nullable="true"/>
+    </transform>
+  </modelObjectParameters>
+  <modelObjectParameters>
+    <targetModelObject xsi:type="uml:PrimitiveType" href="eglderbyr7.uml#_N21VVadPEd2IK99MKtYm3w"/>
+    <transform transformID="com.ibm.etools.egl.uml.transform.maint.root">
+      <transformParameter xsi:type="com.ibm.etools.egl.uml.transform.maint.model:PrimitiveTypeParameters" length="111" type="CHAR" columnType="VARCHAR"/>
+    </transform>
+  </modelObjectParameters>
+  <modelObjectParameters>
+    <targetModelObject xsi:type="uml:Property" href="eglderbyr7.uml#_N21VVqdPEd2IK99MKtYm3w"/>
+    <transform transformID="com.ibm.etools.egl.uml.transform.maint.root">
+      <transformParameter xsi:type="com.ibm.etools.egl.uml.transform.maint.model:PropertyParameters" columnName="ORDER_DETAILS" fieldName="OrderDetails" nullable="true"/>
+    </transform>
+  </modelObjectParameters>
+  <modelObjectParameters>
+    <targetModelObject xsi:type="uml:PrimitiveType" href="eglderbyr7.uml#_N2_GMKdPEd2IK99MKtYm3w"/>
+    <transform transformID="com.ibm.etools.egl.uml.transform.maint.root">
+      <transformParameter xsi:type="com.ibm.etools.egl.uml.transform.maint.model:PrimitiveTypeParameters" length="1" type="DATE" columnType="DATE"/>
+    </transform>
+  </modelObjectParameters>
+  <modelObjectParameters>
+    <targetModelObject xsi:type="uml:Property" href="eglderbyr7.uml#_N2_GMadPEd2IK99MKtYm3w"/>
+    <transform transformID="com.ibm.etools.egl.uml.transform.maint.root">
+      <transformParameter xsi:type="com.ibm.etools.egl.uml.transform.maint.model:PropertyParameters" columnName="ORDER_DATE" fieldName="OrderDate" nullable="true"/>
+    </transform>
+  </modelObjectParameters>
+  <modelObjectParameters>
+    <targetModelObject xsi:type="uml:PrimitiveType" href="eglderbyr7.uml#_N2_GNKdPEd2IK99MKtYm3w"/>
+    <transform transformID="com.ibm.etools.egl.uml.transform.maint.root">
+      <transformParameter xsi:type="com.ibm.etools.egl.uml.transform.maint.model:PrimitiveTypeParameters" length="12" type="CHAR" columnType="CHAR"/>
+    </transform>
+  </modelObjectParameters>
+  <modelObjectParameters>
+    <targetModelObject xsi:type="uml:Property" href="eglderbyr7.uml#_N2_GNadPEd2IK99MKtYm3w"/>
+    <transform transformID="com.ibm.etools.egl.uml.transform.maint.root">
+      <transformParameter xsi:type="com.ibm.etools.egl.uml.transform.maint.model:PropertyParameters" columnName="ORDER_STATUS" fieldName="OrderStatus" nullable="true"/>
+    </transform>
+  </modelObjectParameters>
+  <modelObjectParameters>
+    <targetModelObject xsi:type="uml:PrimitiveType" href="eglderbyr7.uml#_N2_GOadPEd2IK99MKtYm3w"/>
+    <transform transformID="com.ibm.etools.egl.uml.transform.maint.root">
+      <transformParameter xsi:type="com.ibm.etools.egl.uml.transform.maint.model:PrimitiveTypeParameters" length="1" type="INT" columnType="INTEGER"/>
+    </transform>
+  </modelObjectParameters>
+  <modelObjectParameters>
+    <targetModelObject xsi:type="uml:Property" href="eglderbyr7.uml#_N2_GOqdPEd2IK99MKtYm3w"/>
+    <transform transformID="com.ibm.etools.egl.uml.transform.maint.root">
+      <transformParameter xsi:type="com.ibm.etools.egl.uml.transform.maint.model:PropertyParameters" columnName="SITEUSER_ID" fieldName="SiteuserId" key="true"/>
+    </transform>
+  </modelObjectParameters>
+  <modelObjectParameters>
+    <targetModelObject xsi:type="uml:PrimitiveType" href="eglderbyr7.uml#_N2_GPadPEd2IK99MKtYm3w"/>
+    <transform transformID="com.ibm.etools.egl.uml.transform.maint.root">
+      <transformParameter xsi:type="com.ibm.etools.egl.uml.transform.maint.model:PrimitiveTypeParameters" length="20" type="CHAR" columnType="CHAR"/>
+    </transform>
+  </modelObjectParameters>
+  <modelObjectParameters>
+    <targetModelObject xsi:type="uml:Property" href="eglderbyr7.uml#_N2_GPqdPEd2IK99MKtYm3w"/>
+    <transform transformID="com.ibm.etools.egl.uml.transform.maint.root">
+      <transformParameter xsi:type="com.ibm.etools.egl.uml.transform.maint.model:PropertyParameters" columnName="FIRSTNAME" fieldName="Firstname" nullable="true"/>
+    </transform>
+  </modelObjectParameters>
+  <modelObjectParameters>
+    <targetModelObject xsi:type="uml:PrimitiveType" href="eglderbyr7.uml#_N2_GQadPEd2IK99MKtYm3w"/>
+    <transform transformID="com.ibm.etools.egl.uml.transform.maint.root">
+      <transformParameter xsi:type="com.ibm.etools.egl.uml.transform.maint.model:PrimitiveTypeParameters" length="20" type="CHAR" columnType="CHAR"/>
+    </transform>
+  </modelObjectParameters>
+  <modelObjectParameters>
+    <targetModelObject xsi:type="uml:Property" href="eglderbyr7.uml#_N2_GQqdPEd2IK99MKtYm3w"/>
+    <transform transformID="com.ibm.etools.egl.uml.transform.maint.root">
+      <transformParameter xsi:type="com.ibm.etools.egl.uml.transform.maint.model:PropertyParameters" columnName="LASTNAME" fieldName="Lastname" nullable="true"/>
+    </transform>
+  </modelObjectParameters>
+  <modelObjectParameters>
+    <targetModelObject xsi:type="uml:PrimitiveType" href="eglderbyr7.uml#_N2_GRadPEd2IK99MKtYm3w"/>
+    <transform transformID="com.ibm.etools.egl.uml.transform.maint.root">
+      <transformParameter xsi:type="com.ibm.etools.egl.uml.transform.maint.model:PrimitiveTypeParameters" length="8" type="CHAR" columnType="CHAR"/>
+    </transform>
+  </modelObjectParameters>
+  <modelObjectParameters>
+    <targetModelObject xsi:type="uml:Property" href="eglderbyr7.uml#_N2_GRqdPEd2IK99MKtYm3w"/>
+    <transform transformID="com.ibm.etools.egl.uml.transform.maint.root">
+      <transformParameter xsi:type="com.ibm.etools.egl.uml.transform.maint.model:PropertyParameters" columnName="USER_ID" fieldName="UserId" nullable="true"/>
+    </transform>
+  </modelObjectParameters>
+  <modelObjectParameters>
+    <targetModelObject xsi:type="uml:PrimitiveType" href="eglderbyr7.uml#_N2_GSadPEd2IK99MKtYm3w"/>
+    <transform transformID="com.ibm.etools.egl.uml.transform.maint.root">
+      <transformParameter xsi:type="com.ibm.etools.egl.uml.transform.maint.model:PrimitiveTypeParameters" length="8" type="CHAR" columnType="CHAR"/>
+    </transform>
+  </modelObjectParameters>
+  <modelObjectParameters>
+    <targetModelObject xsi:type="uml:Property" href="eglderbyr7.uml#_N2_GSqdPEd2IK99MKtYm3w"/>
+    <transform transformID="com.ibm.etools.egl.uml.transform.maint.root">
+      <transformParameter xsi:type="com.ibm.etools.egl.uml.transform.maint.model:PropertyParameters" columnName="PASS_WORD" fieldName="PassWord" nullable="true"/>
+    </transform>
+  </modelObjectParameters>
+  <modelObjectParameters>
+    <targetModelObject xsi:type="uml:PrimitiveType" href="eglderbyr7.uml#_N2_GTadPEd2IK99MKtYm3w"/>
+    <transform transformID="com.ibm.etools.egl.uml.transform.maint.root">
+      <transformParameter xsi:type="com.ibm.etools.egl.uml.transform.maint.model:PrimitiveTypeParameters" length="20" type="CHAR" columnType="CHAR"/>
+    </transform>
+  </modelObjectParameters>
+  <modelObjectParameters>
+    <targetModelObject xsi:type="uml:Property" href="eglderbyr7.uml#_N2_GTqdPEd2IK99MKtYm3w"/>
+    <transform transformID="com.ibm.etools.egl.uml.transform.maint.root">
+      <transformParameter xsi:type="com.ibm.etools.egl.uml.transform.maint.model:PropertyParameters" columnName="STREET_ADDRESS" fieldName="StreetAddress" nullable="true"/>
+    </transform>
+  </modelObjectParameters>
+  <modelObjectParameters>
+    <targetModelObject xsi:type="uml:PrimitiveType" href="eglderbyr7.uml#_N2_GUadPEd2IK99MKtYm3w"/>
+    <transform transformID="com.ibm.etools.egl.uml.transform.maint.root">
+      <transformParameter xsi:type="com.ibm.etools.egl.uml.transform.maint.model:PrimitiveTypeParameters" length="20" type="CHAR" columnType="CHAR"/>
+    </transform>
+  </modelObjectParameters>
+  <modelObjectParameters>
+    <targetModelObject xsi:type="uml:Property" href="eglderbyr7.uml#_N2_GUqdPEd2IK99MKtYm3w"/>
+    <transform transformID="com.ibm.etools.egl.uml.transform.maint.root">
+      <transformParameter xsi:type="com.ibm.etools.egl.uml.transform.maint.model:PropertyParameters" columnName="CITY" fieldName="City" nullable="true"/>
+    </transform>
+  </modelObjectParameters>
+  <modelObjectParameters>
+    <targetModelObject xsi:type="uml:PrimitiveType" href="eglderbyr7.uml#_N3IQIqdPEd2IK99MKtYm3w"/>
+    <transform transformID="com.ibm.etools.egl.uml.transform.maint.root">
+      <transformParameter xsi:type="com.ibm.etools.egl.uml.transform.maint.model:PrimitiveTypeParameters" length="2" type="CHAR" columnType="CHAR"/>
+    </transform>
+  </modelObjectParameters>
+  <modelObjectParameters>
+    <targetModelObject xsi:type="uml:Property" href="eglderbyr7.uml#_N3IQI6dPEd2IK99MKtYm3w"/>
+    <transform transformID="com.ibm.etools.egl.uml.transform.maint.root">
+      <transformParameter xsi:type="com.ibm.etools.egl.uml.transform.maint.model:PropertyParameters" columnName="STATE" fieldName="State" nullable="true"/>
+    </transform>
+  </modelObjectParameters>
+  <modelObjectParameters>
+    <targetModelObject xsi:type="uml:PrimitiveType" href="eglderbyr7.uml#_N3IQJqdPEd2IK99MKtYm3w"/>
+    <transform transformID="com.ibm.etools.egl.uml.transform.maint.root">
+      <transformParameter xsi:type="com.ibm.etools.egl.uml.transform.maint.model:PrimitiveTypeParameters" length="5" type="CHAR" columnType="CHAR"/>
+    </transform>
+  </modelObjectParameters>
+  <modelObjectParameters>
+    <targetModelObject xsi:type="uml:Property" href="eglderbyr7.uml#_N3IQJ6dPEd2IK99MKtYm3w"/>
+    <transform transformID="com.ibm.etools.egl.uml.transform.maint.root">
+      <transformParameter xsi:type="com.ibm.etools.egl.uml.transform.maint.model:PropertyParameters" columnName="ZIP" fieldName="Zip" nullable="true"/>
+    </transform>
+  </modelObjectParameters>
+  <modelObjectParameters>
+    <targetModelObject xsi:type="uml:PrimitiveType" href="eglderbyr7.uml#_N3IQKqdPEd2IK99MKtYm3w"/>
+    <transform transformID="com.ibm.etools.egl.uml.transform.maint.root">
+      <transformParameter xsi:type="com.ibm.etools.egl.uml.transform.maint.model:PrimitiveTypeParameters" length="1" type="INT" columnType="INTEGER"/>
+    </transform>
+  </modelObjectParameters>
+  <modelObjectParameters>
+    <targetModelObject xsi:type="uml:Property" href="eglderbyr7.uml#_N3IQK6dPEd2IK99MKtYm3w"/>
+    <transform transformID="com.ibm.etools.egl.uml.transform.maint.root">
+      <transformParameter xsi:type="com.ibm.etools.egl.uml.transform.maint.model:PropertyParameters" columnName="SU_TYPE" fieldName="SuType" nullable="true"/>
+    </transform>
+  </modelObjectParameters>
+  <modelObjectParameters>
+    <targetModelObject xsi:type="uml:PrimitiveType" href="eglderbyr7.uml#_N3IQLqdPEd2IK99MKtYm3w"/>
+    <transform transformID="com.ibm.etools.egl.uml.transform.maint.root">
+      <transformParameter xsi:type="com.ibm.etools.egl.uml.transform.maint.model:PrimitiveTypeParameters" length="1" type="INT" columnType="INTEGER"/>
+    </transform>
+  </modelObjectParameters>
+  <modelObjectParameters>
+    <targetModelObject xsi:type="uml:Property" href="eglderbyr7.uml#_N3IQL6dPEd2IK99MKtYm3w"/>
+    <transform transformID="com.ibm.etools.egl.uml.transform.maint.root">
+      <transformParameter xsi:type="com.ibm.etools.egl.uml.transform.maint.model:PropertyParameters" columnName="RECEIVE_UPDATES" fieldName="ReceiveUpdates" nullable="true"/>
+    </transform>
+  </modelObjectParameters>
+  <modelObjectParameters>
+    <targetModelObject xsi:type="uml:PrimitiveType" href="eglderbyr7.uml#_N3IQMqdPEd2IK99MKtYm3w"/>
+    <transform transformID="com.ibm.etools.egl.uml.transform.maint.root">
+      <transformParameter xsi:type="com.ibm.etools.egl.uml.transform.maint.model:PrimitiveTypeParameters" length="1" type="INT" columnType="INTEGER"/>
+    </transform>
+  </modelObjectParameters>
+  <modelObjectParameters>
+    <targetModelObject xsi:type="uml:Property" href="eglderbyr7.uml#_N3IQM6dPEd2IK99MKtYm3w"/>
+    <transform transformID="com.ibm.etools.egl.uml.transform.maint.root">
+      <transformParameter xsi:type="com.ibm.etools.egl.uml.transform.maint.model:PropertyParameters" columnName="JOIN_CLUB" fieldName="JoinClub" nullable="true"/>
+    </transform>
+  </modelObjectParameters>
+  <modelObjectParameters>
+    <targetModelObject xsi:type="uml:PrimitiveType" href="eglderbyr7.uml#_N3IQNqdPEd2IK99MKtYm3w"/>
+    <transform transformID="com.ibm.etools.egl.uml.transform.maint.root">
+      <transformParameter xsi:type="com.ibm.etools.egl.uml.transform.maint.model:PrimitiveTypeParameters" length="255" type="CHAR" columnType="VARCHAR"/>
+    </transform>
+  </modelObjectParameters>
+  <modelObjectParameters>
+    <targetModelObject xsi:type="uml:Property" href="eglderbyr7.uml#_N3IQN6dPEd2IK99MKtYm3w"/>
+    <transform transformID="com.ibm.etools.egl.uml.transform.maint.root">
+      <transformParameter xsi:type="com.ibm.etools.egl.uml.transform.maint.model:PropertyParameters" columnName="COMMENTS" fieldName="Comments" nullable="true"/>
+    </transform>
+  </modelObjectParameters>
+  <modelObjectParameters>
+    <targetModelObject xsi:type="uml:Class" href="eglderbyr7.uml#_N2sLQKdPEd2IK99MKtYm3w"/>
+    <transform transformID="com.ibm.etools.egl.uml.transform.maint.root">
+      <transformParameter xsi:type="com.ibm.etools.egl.uml.transform.maint.model:ClassParameters" schemaName="EGL" tableName="CUSTOMER"/>
+    </transform>
+  </modelObjectParameters>
+  <modelObjectParameters>
+    <targetModelObject xsi:type="uml:Class" href="eglderbyr7.uml#_N21VSKdPEd2IK99MKtYm3w"/>
+    <transform transformID="com.ibm.etools.egl.uml.transform.maint.root">
+      <transformParameter xsi:type="com.ibm.etools.egl.uml.transform.maint.model:ClassParameters" schemaName="EGL" tableName="ORDERS"/>
+    </transform>
+  </modelObjectParameters>
+  <modelObjectParameters>
+    <targetModelObject xsi:type="uml:Class" href="eglderbyr7.uml#_N2_GOKdPEd2IK99MKtYm3w"/>
+    <transform transformID="com.ibm.etools.egl.uml.transform.maint.root">
+      <transformParameter xsi:type="com.ibm.etools.egl.uml.transform.maint.model:ClassParameters" schemaName="EGL" tableName="SITEUSER"/>
+    </transform>
+  </modelObjectParameters>
+  <modelOptions defaultTargetContainer="\EGLTUIProject" editorOriginated="false">
+    <defaultSourceElements>egltui</defaultSourceElements>
+    <defaultSourceElements>egltui::CUSTOMER</defaultSourceElements>
+    <defaultSourceElements>egltui::primitivetypes</defaultSourceElements>
+    <defaultSourceElements>egltui::ORDERS</defaultSourceElements>
+    <defaultSourceElements>egltui::SITEUSER</defaultSourceElements>
+  </modelOptions>
+</com.ibm.etools.tpm.framework.transform.model:TransformModel>

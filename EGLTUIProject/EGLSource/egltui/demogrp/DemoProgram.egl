@@ -1,0 +1,14 @@
+package egltui.demogrp;
+
+program DemoProgram type TextUIProgram {}
+
+use DemoGroup;
+
+Function main()
+  While (converseVar.eventKey not PF3)
+    //optionally, set Form1 empty;
+    converse Form1;
+  end
+end // end main function
+
+end // end program

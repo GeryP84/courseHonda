@@ -1,0 +1,21 @@
+package egltui.zzz.common;
+
+import egltui.primitivetypes.data.*;
+
+Record xyzTransferData type basicRecord
+  10 SiteuserFirstname SiteuserFirstname;
+  10 CustomerId CustomerId;
+end
+
+Record CustomerRec type BasicRecord
+  10 firstName 	FIRST_NAME;
+  10 lastName 	LAST_NAME;
+  10 city 		CITY;
+  10 state 		STATE;
+End
+
+DataItem FIRST_NAME Char(15) {DisplayName = "First Name"} End
+DataItem LAST_NAME 	Char(20) {DisplayName = "Last Name"} End
+DataItem CITY		Char(20) {DisplayName = "City"} End
+DataItem STATE		Char(2)  {DisplayName = "State"} End
+

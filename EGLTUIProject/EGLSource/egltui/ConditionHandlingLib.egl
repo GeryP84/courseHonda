@@ -1,0 +1,177 @@
+package egltui;
+ 
+
+/***
+ * Important Development Note (Please read the following comments)
+ * All code contained in this file will be overwritten each time the Data Access Application Wizard is executed.
+ * If the contents of this file must be preserved, move all source code into the custom definitions area at the end of the file.
+ * NOTE: preservation of this file's content may result in the generation of duplicate resources.
+ * This will result in syntax and compilation errors.
+ * You will have to manually resolve all discrepancies by deleting duplicates.
+ ***/
+ 
+/*
+ * These routines provide an abstraction layer to insulate end users from system errors.
+ * Generic return codes hide implementation details such as SQL codes.
+ * This framework should be expanded to implement site specific standards.
+ */
+ 
+/***
+ * Important note
+ *
+ * Do not delete or modify BEGIN and END tags
+ * These tags allow preservation of hand modified code
+ * Modification of these tags will result in code loss
+ *
+ ***/ 
+
+//Record that is used to communicate the outcome of a database access
+//BEGIN StatusRec
+// @generated - Delete generated tag to preserve modified code     
+Record StatusRec
+	// A value of true indicates an SQLCode of 0
+	succeeded boolean;
+	
+	// The statusCode returned to the calling routine
+	statusCode int?;
+	
+	// A custom success/failure message, for the calling routine
+	message string?;
+end
+//END StatusRec
+
+Library ConditionHandlingLib
+	// Public status codes
+	// Insert or update operaton failed (general)
+	InvalidDBRecord int = 1;
+	
+	// +100 SQLCODE
+	DBRecordNotFound int = 2;
+	
+	// Generic Java run-time error (may have nothing to do with SQL)
+	RuntimeError int = 3;
+	
+	// Generic SQL run-time error
+	DataAccessException int = 4;
+
+    /*
+     * consider adding the following additional status codes.
+     * Note that you will have to revise the "HandleException" routine.
+     * An alternative is to pass the SQLCODE back to the client for validation.
+	 */  
+	//BEGIN status codes
+	// @generated - Delete generated tag to preserve modified code     	 
+//	DuplicateKey			int = 5;		//Tried to Insert a row with a duplicate primary key
+//	AttemptChangePK			int = 6;		//Tried to Update a column that is part of a primary key
+//	ReferentialIntegrityViolation int = 7;	//Tried to delete a parent with dependent rows (on Delete Restrict)
+//	TableNotFound			int = 8;		//Dynamic SQL run-time SQL error.  Tablename not found (probably misspelled)
+//	ColumnNotFound			int = 9;		//Dynamic SQL run-time SQL error.  Column name not found (probably misspelled)
+//	InvaldSQLKeyWord		int = 10;		//Dynamic SQL run-time SQL error.  Misspelled SQL keyword
+//	InvalidSELECTInto		int = 11;		//A SELECT INTO or sub-select returned more than one row (-811)
+	//END status codes
+
+	//Simple error message scheme which can be easily extended
+	//BEGIN message strings
+	// @generated - Delete generated tag to preserve modified code     	
+	private InvalidDBRecordMessage string;	
+	private DBRecordNotFoundMessage string;
+	private loaded boolean = LoadMessages();
+	//END message strings
+	
+	//BEGIN LoadMessages
+	// @generated - Delete generated tag to preserve modified code     	
+	Function LoadMessages() returns(boolean)
+		InvalidDBRecordMessage = "Invalid Record cannot be added to database";	
+		DBRecordNotFoundMessage = "Database record in table {1} was not found";	
+		return(true);
+	end
+	//END LoadMessages
+	
+	//BEGIN HandleSuccess
+	// @generated - Delete generated tag to preserve modified code   	
+	Function HandleSuccess(status StatusRec)
+		status.succeeded = true;
+		status.statusCode = 0;
+		status.message = "SQL call succeeded";
+	end
+	//END HandleSuccess
+		
+	// Writes a generic message to the WAS console, describing the DBMS error condition
+	//BEGIN HandleException
+	// @generated - Delete generated tag to preserve modified code   	
+	Function HandleException(status StatusRec, exception SQLException)
+		status.succeeded = false;
+		status.statusCode = DataAccessException;
+		status.message = exception.message;
+		       
+        //Uncomment these lines to write the error msg to the WAS console
+		//You can read the message in the Console View during testing
+		//SysLib.writeStdout("Exception occurred: " + exception.sqlCode);
+		//SysLib.writeStdout("Message: " + exception.message);	
+	end
+	//END HandleException
+	
+	//Application conditions that are not system exceptions
+	//BEGIN HandleInvalidDBRecord
+	// @generated - Delete generated tag to preserve modified code   	
+	Function HandleInvalidDBRecord(status StatusRec)
+		status.succeeded = false;
+		status.statusCode = InvalidDBRecord;
+		status.message = InvalidDBRecordMessage;
+	end
+	//END HandleInvalidDBRecord
+	
+	// This routine is called for a +100 return code upon initial cursor open, or single-row SELECT, or Update, Delete
+	//BEGIN HandleDBRecordNotFound
+	// @generated - Delete generated tag to preserve modified code   	
+	Function HandleDBRecordNotFound(status StatusRec, tableName string)
+		inserts String[0];
+		inserts.appendElement(tableName);
+		status.succeeded = false;
+		status.statusCode = DBRecordNotFound;
+		status.message = bindMessage(DBRecordNotFoundMessage, inserts);
+	end
+	//END HandleDBRecordNotFound
+		
+	/*
+	 * Adds supplied string inserts into a message
+	 * Insert locations are indicated by tokens in the form "{n}", where n is the token index
+	 * Parameters:
+	 *     message is a string containing the message to be formatted
+	 *     inserts is a string array containing values to be used to replace insert tokens
+	 * Returns:
+	 *     a string representing the message with insert tokens replaced
+	 */
+	//BEGIN bindMessage
+	// @generated - Delete generated tag to preserve modified code   	 
+	Function bindMessage(message String in, inserts String[] in) returns (String)
+		value string = message; 
+		insertLength int = SysLib.size(inserts);
+		messageLength int;
+		i, index, remainder int;
+		
+		for (i from 1 to insertLength)
+			messageLength = StrLib.characterLen(value);
+			temp String;
+			substring String = "{" + i + "}";
+			index = StrLib.indexOf(value, substring);
+			if (index > 0)
+				if (index > 1)
+					temp = message[1:index - 1];
+				end
+				temp = temp + inserts[i];
+				remainder = index + StrLib.characterLen(substring);
+				if (remainder < messageLength)
+					temp = temp + value[remainder:messageLength];
+				end
+				value = temp;
+			end
+		end 
+		return (value);
+	end
+	//END bindMessage
+	
+	//BEGIN custom source definitions
+	//TODO: Add additional code here
+	//END custom source definitions
+end	

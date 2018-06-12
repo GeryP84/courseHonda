@@ -1,0 +1,5 @@
+<deploy package="egltui.demogrp" partName="DemoProgram" partType="Program" version="2">
+	<buildDescriptors>
+		<buildDescriptor name="EGLTUIProjectJavaBuildOptions" fileName="\EGLTUIProject\EGLSource\EGLTUIProject.eglbld" egldd="" genProject="EGLTUIProject"/>
+	</buildDescriptors>
+</deploy>

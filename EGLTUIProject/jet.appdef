@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?><EGLMODEL generateAccess="true" generateDDL="false" generateUI="false" id="0" modelDate="10/31/08 9:24 AM" modelEncoding="UTF-8" modelFile="/EGLTUIProject/eglderbyr7.uml" modelName="egltui" qualifySql="true" targetDBMSType="DB2">
+<SQLTABLE abstractTable="false" derived="false" id="1" javaGenName="CUSTOMER" name="CUSTOMER" resourceId="_N2sLQKdPEd2IK99MKtYm3w" schema="EGL" source="egltui::CUSTOMER">
+<COLUMN id="2" javaGenName="CUSTOMER_005fID" key="true" name="CUSTOMER_ID" nullable="false" resourceId="_N2sLQ6dPEd2IK99MKtYm3w" source="egltui::CUSTOMER::CUSTOMER_ID" type="INTEGER"/>
+<COLUMN id="3" javaGenName="FIRST_005fNAME" name="FIRST_NAME" nullable="true" resourceId="_N2sLR6dPEd2IK99MKtYm3w" source="egltui::CUSTOMER::FIRST_NAME" type="VARCHAR(30)"/>
+<COLUMN id="4" javaGenName="LAST_005fNAME" name="LAST_NAME" nullable="true" resourceId="_N2sLS6dPEd2IK99MKtYm3w" source="egltui::CUSTOMER::LAST_NAME" type="VARCHAR(30)"/>
+<COLUMN id="5" javaGenName="PASSWORD" name="PASSWORD" nullable="true" resourceId="_N2sLT6dPEd2IK99MKtYm3w" source="egltui::CUSTOMER::PASSWORD" type="CHAR(8)"/>
+<COLUMN id="6" javaGenName="PHONE" name="PHONE" nullable="true" resourceId="_N2sLU6dPEd2IK99MKtYm3w" source="egltui::CUSTOMER::PHONE" type="VARCHAR(14)"/>
+<COLUMN id="7" javaGenName="EMAIL_005fADDRESS" name="EMAIL_ADDRESS" nullable="true" resourceId="_N2sLV6dPEd2IK99MKtYm3w" source="egltui::CUSTOMER::EMAIL_ADDRESS" type="VARCHAR(50)"/>
+<COLUMN id="8" javaGenName="STREET" name="STREET" nullable="true" resourceId="_N21VMadPEd2IK99MKtYm3w" source="egltui::CUSTOMER::STREET" type="VARCHAR(30)"/>
+<COLUMN id="9" javaGenName="APARTMENT" name="APARTMENT" nullable="true" resourceId="_N21VNadPEd2IK99MKtYm3w" source="egltui::CUSTOMER::APARTMENT" type="VARCHAR(10)"/>
+<COLUMN id="10" javaGenName="CITY" name="CITY" nullable="true" resourceId="_N21VOadPEd2IK99MKtYm3w" source="egltui::CUSTOMER::CITY" type="VARCHAR(30)"/>
+<COLUMN id="11" javaGenName="&quot;STATE&quot;" name="&quot;STATE&quot;" nullable="true" resourceId="_N21VPadPEd2IK99MKtYm3w" source="egltui::CUSTOMER::STATE" type="CHAR(2)"/>
+<COLUMN id="12" javaGenName="POSTALCODE" name="POSTALCODE" nullable="true" resourceId="_N21VQadPEd2IK99MKtYm3w" source="egltui::CUSTOMER::POSTALCODE" type="VARCHAR(10)"/>
+<COLUMN id="13" javaGenName="DIRECTIONS" name="DIRECTIONS" nullable="true" resourceId="_N21VRadPEd2IK99MKtYm3w" source="egltui::CUSTOMER::DIRECTIONS" type="VARCHAR(255)"/>
+</SQLTABLE>
+<SQLTABLE abstractTable="false" derived="false" id="14" javaGenName="ORDERS" name="ORDERS" resourceId="_N21VSKdPEd2IK99MKtYm3w" schema="EGL" source="egltui::ORDERS">
+<COLUMN id="15" javaGenName="ORDER_005fID" key="true" name="ORDER_ID" nullable="false" resourceId="_N21VSqdPEd2IK99MKtYm3w" source="egltui::ORDERS::ORDER_ID" type="INTEGER"/>
+<COLUMN id="16" javaGenName="CUSTOMER_005fID" name="CUSTOMER_ID" nullable="true" resourceId="_N21VTqdPEd2IK99MKtYm3w" source="egltui::ORDERS::CUSTOMER_ID" type="INTEGER"/>
+<COLUMN id="17" javaGenName="ORDER_005fAMOUNT" name="ORDER_AMOUNT" nullable="true" resourceId="_N21VUqdPEd2IK99MKtYm3w" source="egltui::ORDERS::ORDER_AMOUNT" type="DECIMAL(8, 2)"/>
+<COLUMN id="18" javaGenName="ORDER_005fDETAILS" name="ORDER_DETAILS" nullable="true" resourceId="_N21VVqdPEd2IK99MKtYm3w" source="egltui::ORDERS::ORDER_DETAILS" type="VARCHAR(111)"/>
+<COLUMN id="19" javaGenName="ORDER_005fDATE" name="ORDER_DATE" nullable="true" resourceId="_N2_GMadPEd2IK99MKtYm3w" source="egltui::ORDERS::ORDER_DATE" type="DATE"/>
+<COLUMN id="20" javaGenName="ORDER_005fSTATUS" name="ORDER_STATUS" nullable="true" resourceId="_N2_GNadPEd2IK99MKtYm3w" source="egltui::ORDERS::ORDER_STATUS" type="CHAR(12)"/>
+</SQLTABLE>
+<SQLTABLE abstractTable="false" derived="false" id="21" javaGenName="SITEUSER" name="SITEUSER" resourceId="_N2_GOKdPEd2IK99MKtYm3w" schema="EGL" source="egltui::SITEUSER">
+<COLUMN id="22" javaGenName="SITEUSER_005fID" key="true" name="SITEUSER_ID" nullable="false" resourceId="_N2_GOqdPEd2IK99MKtYm3w" source="egltui::SITEUSER::SITEUSER_ID" type="INTEGER"/>
+<COLUMN id="23" javaGenName="FIRSTNAME" name="FIRSTNAME" nullable="true" resourceId="_N2_GPqdPEd2IK99MKtYm3w" source="egltui::SITEUSER::FIRSTNAME" type="CHAR(20)"/>
+<COLUMN id="24" javaGenName="LASTNAME" name="LASTNAME" nullable="true" resourceId="_N2_GQqdPEd2IK99MKtYm3w" source="egltui::SITEUSER::LASTNAME" type="CHAR(20)"/>
+<COLUMN id="25" javaGenName="USER_005fID" name="USER_ID" nullable="true" resourceId="_N2_GRqdPEd2IK99MKtYm3w" source="egltui::SITEUSER::USER_ID" type="CHAR(8)"/>
+<COLUMN id="26" javaGenName="PASS_005fWORD" name="PASS_WORD" nullable="true" resourceId="_N2_GSqdPEd2IK99MKtYm3w" source="egltui::SITEUSER::PASS_WORD" type="CHAR(8)"/>
+<COLUMN id="27" javaGenName="STREET_005fADDRESS" name="STREET_ADDRESS" nullable="true" resourceId="_N2_GTqdPEd2IK99MKtYm3w" source="egltui::SITEUSER::STREET_ADDRESS" type="CHAR(20)"/>
+<COLUMN id="28" javaGenName="CITY" name="CITY" nullable="true" resourceId="_N2_GUqdPEd2IK99MKtYm3w" source="egltui::SITEUSER::CITY" type="CHAR(20)"/>
+<COLUMN id="29" javaGenName="&quot;STATE&quot;" name="&quot;STATE&quot;" nullable="true" resourceId="_N3IQI6dPEd2IK99MKtYm3w" source="egltui::SITEUSER::STATE" type="CHAR(2)"/>
+<COLUMN id="30" javaGenName="ZIP" name="ZIP" nullable="true" resourceId="_N3IQJ6dPEd2IK99MKtYm3w" source="egltui::SITEUSER::ZIP" type="CHAR(5)"/>
+<COLUMN id="31" javaGenName="SU_005fTYPE" name="SU_TYPE" nullable="true" resourceId="_N3IQK6dPEd2IK99MKtYm3w" source="egltui::SITEUSER::SU_TYPE" type="INTEGER"/>
+<COLUMN id="32" javaGenName="RECEIVE_005fUPDATES" name="RECEIVE_UPDATES" nullable="true" resourceId="_N3IQL6dPEd2IK99MKtYm3w" source="egltui::SITEUSER::RECEIVE_UPDATES" type="INTEGER"/>
+<COLUMN id="33" javaGenName="JOIN_005fCLUB" name="JOIN_CLUB" nullable="true" resourceId="_N3IQM6dPEd2IK99MKtYm3w" source="egltui::SITEUSER::JOIN_CLUB" type="INTEGER"/>
+<COLUMN id="34" javaGenName="COMMENTS" name="COMMENTS" nullable="true" resourceId="_N3IQN6dPEd2IK99MKtYm3w" source="egltui::SITEUSER::COMMENTS" type="VARCHAR(255)"/>
+</SQLTABLE>
+<PACKAGE id="35" javaGenName="egltui.data" name="egltui.data" resourceId="">
+<DATAIMPORT part="egltui.primitivetypes.data"/>
+<SQLRECORD abstractRecord="false" id="36" isIntersect="false" javaGenName="Customer" name="Customer" resourceId="_N2sLQKdPEd2IK99MKtYm3w" source="egltui::CUSTOMER">
+<IMPORT part="egltui.primitivetypes.data"/>
+<SQLFIELD column="CUSTOMER_ID" id="37" identifier="true" javaGenName="CustomerId" name="CustomerId" nullable="false" readonly="false" resourceId="_N2sLQ6dPEd2IK99MKtYm3w" source="egltui::CUSTOMER::CUSTOMER_ID" sqlVariableLen="false" type="CustomerId" typeId="39"/>
+<SQLFIELD column="FIRST_NAME" id="40" identifier="false" javaGenName="FirstName" name="FirstName" nullable="true" readonly="false" resourceId="_N2sLR6dPEd2IK99MKtYm3w" source="egltui::CUSTOMER::FIRST_NAME" sqlVariableLen="true" type="FirstName" typeId="41"/>
+<SQLFIELD column="LAST_NAME" id="42" identifier="false" javaGenName="LastName" name="LastName" nullable="true" readonly="false" resourceId="_N2sLS6dPEd2IK99MKtYm3w" source="egltui::CUSTOMER::LAST_NAME" sqlVariableLen="true" type="LastName" typeId="43"/>
+<SQLFIELD column="PASSWORD" id="44" identifier="false" javaGenName="Password" name="Password" nullable="true" readonly="false" resourceId="_N2sLT6dPEd2IK99MKtYm3w" source="egltui::CUSTOMER::PASSWORD" sqlVariableLen="false" type="Password" typeId="45"/>
+<SQLFIELD column="PHONE" id="46" identifier="false" javaGenName="Phone" name="Phone" nullable="true" readonly="false" resourceId="_N2sLU6dPEd2IK99MKtYm3w" source="egltui::CUSTOMER::PHONE" sqlVariableLen="true" type="Phone" typeId="47"/>
+<SQLFIELD column="EMAIL_ADDRESS" id="48" identifier="false" javaGenName="EmailAddress" name="EmailAddress" nullable="true" readonly="false" resourceId="_N2sLV6dPEd2IK99MKtYm3w" source="egltui::CUSTOMER::EMAIL_ADDRESS" sqlVariableLen="true" type="EmailAddress" typeId="49"/>
+<SQLFIELD column="STREET" id="50" identifier="false" javaGenName="Street" name="Street" nullable="true" readonly="false" resourceId="_N21VMadPEd2IK99MKtYm3w" source="egltui::CUSTOMER::STREET" sqlVariableLen="true" type="Street" typeId="51"/>
+<SQLFIELD column="APARTMENT" id="52" identifier="false" javaGenName="Apartment" name="Apartment" nullable="true" readonly="false" resourceId="_N21VNadPEd2IK99MKtYm3w" source="egltui::CUSTOMER::APARTMENT" sqlVariableLen="true" type="Apartment" typeId="53"/>
+<SQLFIELD column="CITY" id="54" identifier="false" javaGenName="City" name="City" nullable="true" readonly="false" resourceId="_N21VOadPEd2IK99MKtYm3w" source="egltui::CUSTOMER::CITY" sqlVariableLen="true" type="City" typeId="55"/>
+<SQLFIELD column="&quot;STATE&quot;" id="56" identifier="false" javaGenName="State" name="State" nullable="true" readonly="false" resourceId="_N21VPadPEd2IK99MKtYm3w" source="egltui::CUSTOMER::STATE" sqlVariableLen="false" type="State" typeId="57"/>
+<SQLFIELD column="POSTALCODE" id="58" identifier="false" javaGenName="Postalcode" name="Postalcode" nullable="true" readonly="false" resourceId="_N21VQadPEd2IK99MKtYm3w" source="egltui::CUSTOMER::POSTALCODE" sqlVariableLen="true" type="Postalcode" typeId="59"/>
+<SQLFIELD column="DIRECTIONS" id="60" identifier="false" javaGenName="Directions" name="Directions" nullable="true" readonly="false" resourceId="_N21VRadPEd2IK99MKtYm3w" source="egltui::CUSTOMER::DIRECTIONS" sqlVariableLen="true" type="Directions" typeId="61"/>
+<TABLE name="EGL.CUSTOMER"/>
+</SQLRECORD>
+<SQLRECORD abstractRecord="false" id="62" isIntersect="false" javaGenName="Orders" name="Orders" resourceId="_N21VSKdPEd2IK99MKtYm3w" source="egltui::ORDERS">
+<IMPORT part="egltui.primitivetypes.data"/>
+<SQLFIELD column="ORDER_ID" id="63" identifier="true" javaGenName="OrderId" name="OrderId" nullable="false" readonly="false" resourceId="_N21VSqdPEd2IK99MKtYm3w" source="egltui::ORDERS::ORDER_ID" sqlVariableLen="false" type="OrderId" typeId="64"/>
+<SQLFIELD column="CUSTOMER_ID" id="65" identifier="false" javaGenName="CustomerId" name="CustomerId" nullable="true" readonly="false" resourceId="_N21VTqdPEd2IK99MKtYm3w" source="egltui::ORDERS::CUSTOMER_ID" sqlVariableLen="false" type="OrdersCustomerId" typeId="66"/>
+<SQLFIELD column="ORDER_AMOUNT" id="67" identifier="false" javaGenName="OrderAmount" name="OrderAmount" nullable="true" readonly="false" resourceId="_N21VUqdPEd2IK99MKtYm3w" source="egltui::ORDERS::ORDER_AMOUNT" sqlVariableLen="false" type="OrderAmount" typeId="68"/>
+<SQLFIELD column="ORDER_DETAILS" id="69" identifier="false" javaGenName="OrderDetails" name="OrderDetails" nullable="true" readonly="false" resourceId="_N21VVqdPEd2IK99MKtYm3w" source="egltui::ORDERS::ORDER_DETAILS" sqlVariableLen="true" type="OrderDetails" typeId="70"/>
+<SQLFIELD column="ORDER_DATE" id="71" identifier="false" javaGenName="OrderDate" name="OrderDate" nullable="true" readonly="false" resourceId="_N2_GMadPEd2IK99MKtYm3w" source="egltui::ORDERS::ORDER_DATE" sqlVariableLen="false" type="OrderDate" typeId="72"/>
+<SQLFIELD column="ORDER_STATUS" id="73" identifier="false" javaGenName="OrderStatus" name="OrderStatus" nullable="true" readonly="false" resourceId="_N2_GNadPEd2IK99MKtYm3w" source="egltui::ORDERS::ORDER_STATUS" sqlVariableLen="false" type="OrderStatus" typeId="74"/>
+<TABLE name="EGL.ORDERS"/>
+</SQLRECORD>
+<SQLRECORD abstractRecord="false" id="75" isIntersect="false" javaGenName="Siteuser" name="Siteuser" resourceId="_N2_GOKdPEd2IK99MKtYm3w" source="egltui::SITEUSER">
+<IMPORT part="egltui.primitivetypes.data"/>
+<SQLFIELD column="SITEUSER_ID" id="76" identifier="true" javaGenName="SiteuserId" name="SiteuserId" nullable="false" readonly="false" resourceId="_N2_GOqdPEd2IK99MKtYm3w" source="egltui::SITEUSER::SITEUSER_ID" sqlVariableLen="false" type="SiteuserId" typeId="77"/>
+<SQLFIELD column="FIRSTNAME" id="78" identifier="false" javaGenName="Firstname" name="Firstname" nullable="true" readonly="false" resourceId="_N2_GPqdPEd2IK99MKtYm3w" source="egltui::SITEUSER::FIRSTNAME" sqlVariableLen="false" type="SiteuserFirstname" typeId="79"/>
+<SQLFIELD column="LASTNAME" id="80" identifier="false" javaGenName="Lastname" name="Lastname" nullable="true" readonly="false" resourceId="_N2_GQqdPEd2IK99MKtYm3w" source="egltui::SITEUSER::LASTNAME" sqlVariableLen="false" type="SiteuserLastname" typeId="81"/>
+<SQLFIELD column="USER_ID" id="82" identifier="false" javaGenName="UserId" name="UserId" nullable="true" readonly="false" resourceId="_N2_GRqdPEd2IK99MKtYm3w" source="egltui::SITEUSER::USER_ID" sqlVariableLen="false" type="UserId" typeId="83"/>
+<SQLFIELD column="PASS_WORD" id="84" identifier="false" javaGenName="PassWord" name="PassWord" nullable="true" readonly="false" resourceId="_N2_GSqdPEd2IK99MKtYm3w" source="egltui::SITEUSER::PASS_WORD" sqlVariableLen="false" type="SiteuserPassWord" typeId="85"/>
+<SQLFIELD column="STREET_ADDRESS" id="86" identifier="false" javaGenName="StreetAddress" name="StreetAddress" nullable="true" readonly="false" resourceId="_N2_GTqdPEd2IK99MKtYm3w" source="egltui::SITEUSER::STREET_ADDRESS" sqlVariableLen="false" type="StreetAddress" typeId="87"/>
+<SQLFIELD column="CITY" id="88" identifier="false" javaGenName="City" name="City" nullable="true" readonly="false" resourceId="_N2_GUqdPEd2IK99MKtYm3w" source="egltui::SITEUSER::CITY" sqlVariableLen="false" type="SiteuserCity" typeId="89"/>
+<SQLFIELD column="&quot;STATE&quot;" id="90" identifier="false" javaGenName="State" name="State" nullable="true" readonly="false" resourceId="_N3IQI6dPEd2IK99MKtYm3w" source="egltui::SITEUSER::STATE" sqlVariableLen="false" type="SiteuserState" typeId="91"/>
+<SQLFIELD column="ZIP" id="92" identifier="false" javaGenName="Zip" name="Zip" nullable="true" readonly="false" resourceId="_N3IQJ6dPEd2IK99MKtYm3w" source="egltui::SITEUSER::ZIP" sqlVariableLen="false" type="Zip" typeId="93"/>
+<SQLFIELD column="SU_TYPE" id="94" identifier="false" javaGenName="SuType" name="SuType" nullable="true" readonly="false" resourceId="_N3IQK6dPEd2IK99MKtYm3w" source="egltui::SITEUSER::SU_TYPE" sqlVariableLen="false" type="SuType" typeId="95"/>
+<SQLFIELD column="RECEIVE_UPDATES" id="96" identifier="false" javaGenName="ReceiveUpdates" name="ReceiveUpdates" nullable="true" readonly="false" resourceId="_N3IQL6dPEd2IK99MKtYm3w" source="egltui::SITEUSER::RECEIVE_UPDATES" sqlVariableLen="false" type="ReceiveUpdates" typeId="97"/>
+<SQLFIELD column="JOIN_CLUB" id="98" identifier="false" javaGenName="JoinClub" name="JoinClub" nullable="true" readonly="false" resourceId="_N3IQM6dPEd2IK99MKtYm3w" source="egltui::SITEUSER::JOIN_CLUB" sqlVariableLen="false" type="JoinClub" typeId="99"/>
+<SQLFIELD column="COMMENTS" id="100" identifier="false" javaGenName="Comments" name="Comments" nullable="true" readonly="false" resourceId="_N3IQN6dPEd2IK99MKtYm3w" source="egltui::SITEUSER::COMMENTS" sqlVariableLen="true" type="Comments" typeId="101"/>
+<TABLE name="EGL.SITEUSER"/>
+</SQLRECORD>
+</PACKAGE>
+<PACKAGE id="38" javaGenName="egltui.primitivetypes.data" name="egltui.primitivetypes.data" resourceId="">
+<DATAITEM id="39" javaGenName="CustomerId" name="CustomerId" resourceId="_N2sLQqdPEd2IK99MKtYm3w" source="egltui::primitivetypes::CustomerId" type="INT"/>
+<DATAITEM id="41" javaGenName="FirstName" name="FirstName" resourceId="_N2sLRqdPEd2IK99MKtYm3w" source="egltui::primitivetypes::FirstName" type="CHAR(30)"/>
+<DATAITEM id="43" javaGenName="LastName" name="LastName" resourceId="_N2sLSqdPEd2IK99MKtYm3w" source="egltui::primitivetypes::LastName" type="CHAR(30)"/>
+<DATAITEM id="45" javaGenName="Password" name="Password" resourceId="_N2sLTqdPEd2IK99MKtYm3w" source="egltui::primitivetypes::Password" type="CHAR(8)"/>
+<DATAITEM id="47" javaGenName="Phone" name="Phone" resourceId="_N2sLUqdPEd2IK99MKtYm3w" source="egltui::primitivetypes::Phone" type="CHAR(14)"/>
+<DATAITEM id="49" javaGenName="EmailAddress" name="EmailAddress" resourceId="_N2sLVqdPEd2IK99MKtYm3w" source="egltui::primitivetypes::EmailAddress" type="CHAR(50)"/>
+<DATAITEM id="51" javaGenName="Street" name="Street" resourceId="_N21VMKdPEd2IK99MKtYm3w" source="egltui::primitivetypes::Street" type="CHAR(30)"/>
+<DATAITEM id="53" javaGenName="Apartment" name="Apartment" resourceId="_N21VNKdPEd2IK99MKtYm3w" source="egltui::primitivetypes::Apartment" type="CHAR(10)"/>
+<DATAITEM id="55" javaGenName="City" name="City" resourceId="_N21VOKdPEd2IK99MKtYm3w" source="egltui::primitivetypes::City" type="CHAR(30)"/>
+<DATAITEM id="57" javaGenName="State" name="State" resourceId="_N21VPKdPEd2IK99MKtYm3w" source="egltui::primitivetypes::State" type="CHAR(2)"/>
+<DATAITEM id="59" javaGenName="Postalcode" name="Postalcode" resourceId="_N21VQKdPEd2IK99MKtYm3w" source="egltui::primitivetypes::Postalcode" type="CHAR(10)"/>
+<DATAITEM id="61" javaGenName="Directions" name="Directions" resourceId="_N21VRKdPEd2IK99MKtYm3w" source="egltui::primitivetypes::Directions" type="CHAR(255)"/>
+<DATAITEM id="64" javaGenName="OrderId" name="OrderId" resourceId="_N21VSadPEd2IK99MKtYm3w" source="egltui::primitivetypes::OrderId" type="INT"/>
+<DATAITEM id="66" javaGenName="OrdersCustomerId" name="OrdersCustomerId" resourceId="_N21VTadPEd2IK99MKtYm3w" source="egltui::primitivetypes::OrdersCustomerId" type="INT"/>
+<DATAITEM id="68" javaGenName="OrderAmount" name="OrderAmount" resourceId="_N21VUadPEd2IK99MKtYm3w" source="egltui::primitivetypes::OrderAmount" type="DECIMAL(8, 2)"/>
+<DATAITEM id="70" javaGenName="OrderDetails" name="OrderDetails" resourceId="_N21VVadPEd2IK99MKtYm3w" source="egltui::primitivetypes::OrderDetails" type="CHAR(111)"/>
+<DATAITEM id="72" javaGenName="OrderDate" name="OrderDate" resourceId="_N2_GMKdPEd2IK99MKtYm3w" source="egltui::primitivetypes::OrderDate" type="DATE"/>
+<DATAITEM id="74" javaGenName="OrderStatus" name="OrderStatus" resourceId="_N2_GNKdPEd2IK99MKtYm3w" source="egltui::primitivetypes::OrderStatus" type="CHAR(12)"/>
+<DATAITEM id="77" javaGenName="SiteuserId" name="SiteuserId" resourceId="_N2_GOadPEd2IK99MKtYm3w" source="egltui::primitivetypes::SiteuserId" type="INT"/>
+<DATAITEM id="79" javaGenName="SiteuserFirstname" name="SiteuserFirstname" resourceId="_N2_GPadPEd2IK99MKtYm3w" source="egltui::primitivetypes::SiteuserFirstname" type="CHAR(20)"/>
+<DATAITEM id="81" javaGenName="SiteuserLastname" name="SiteuserLastname" resourceId="_N2_GQadPEd2IK99MKtYm3w" source="egltui::primitivetypes::SiteuserLastname" type="CHAR(20)"/>
+<DATAITEM id="83" javaGenName="UserId" name="UserId" resourceId="_N2_GRadPEd2IK99MKtYm3w" source="egltui::primitivetypes::UserId" type="CHAR(8)"/>
+<DATAITEM id="85" javaGenName="SiteuserPassWord" name="SiteuserPassWord" resourceId="_N2_GSadPEd2IK99MKtYm3w" source="egltui::primitivetypes::SiteuserPassWord" type="CHAR(8)"/>
+<DATAITEM id="87" javaGenName="StreetAddress" name="StreetAddress" resourceId="_N2_GTadPEd2IK99MKtYm3w" source="egltui::primitivetypes::StreetAddress" type="CHAR(20)"/>
+<DATAITEM id="89" javaGenName="SiteuserCity" name="SiteuserCity" resourceId="_N2_GUadPEd2IK99MKtYm3w" source="egltui::primitivetypes::SiteuserCity" type="CHAR(20)"/>
+<DATAITEM id="91" javaGenName="SiteuserState" name="SiteuserState" resourceId="_N3IQIqdPEd2IK99MKtYm3w" source="egltui::primitivetypes::SiteuserState" type="CHAR(2)"/>
+<DATAITEM id="93" javaGenName="Zip" name="Zip" resourceId="_N3IQJqdPEd2IK99MKtYm3w" source="egltui::primitivetypes::Zip" type="CHAR(5)"/>
+<DATAITEM id="95" javaGenName="SuType" name="SuType" resourceId="_N3IQKqdPEd2IK99MKtYm3w" source="egltui::primitivetypes::SuType" type="INT"/>
+<DATAITEM id="97" javaGenName="ReceiveUpdates" name="ReceiveUpdates" resourceId="_N3IQLqdPEd2IK99MKtYm3w" source="egltui::primitivetypes::ReceiveUpdates" type="INT"/>
+<DATAITEM id="99" javaGenName="JoinClub" name="JoinClub" resourceId="_N3IQMqdPEd2IK99MKtYm3w" source="egltui::primitivetypes::JoinClub" type="INT"/>
+<DATAITEM id="101" javaGenName="Comments" name="Comments" resourceId="_N3IQNqdPEd2IK99MKtYm3w" source="egltui::primitivetypes::Comments" type="CHAR(255)"/>
+</PACKAGE>
+<PACKAGE id="102" javaGenName="egltui.access" name="egltui.access" resourceId="">
+<SERVICE id="103" javaGenName="CustomerLib" name="CustomerLib" namespace="http://access.egltui" needsQualifier="false" record="egltui.data.Customer" recordRef="36" resourceId="_N2sLQKdPEd2IK99MKtYm3w" source="egltui::CUSTOMER" subtype="LIBRARY"/>
+<SERVICE id="104" javaGenName="OrdersLib" name="OrdersLib" namespace="http://access.egltui" needsQualifier="false" record="egltui.data.Orders" recordRef="62" resourceId="_N21VSKdPEd2IK99MKtYm3w" source="egltui::ORDERS" subtype="LIBRARY"/>
+<SERVICE id="105" javaGenName="SiteuserLib" name="SiteuserLib" namespace="http://access.egltui" needsQualifier="false" record="egltui.data.Siteuser" recordRef="75" resourceId="_N2_GOKdPEd2IK99MKtYm3w" source="egltui::SITEUSER" subtype="LIBRARY"/>
+</PACKAGE>
+<PACKAGE id="106" javaGenName="egltui.handlers" name="egltui.handlers" resourceId="">
+<PAGE id="107" javaGenName="customer" libraryId="103" name="customer" resourceId="_N2sLQKdPEd2IK99MKtYm3w" source="egltui::CUSTOMER">
+<DETAILPAGE addLabel="Add" deleteLabel="Delete" label="CUSTOMER Details Page" updateLabel="Update"/>
+<LISTPAGE addLabel="Add" label="CUSTOMER List Page" maxRows="5" searchLabel="Search"/>
+<ADDPAGE addLabel="Add" label="CUSTOMER Details Page"/>
+<PAGEFIELD displayName="CUSTOMER_ID" id="111" javaGenName="CustomerId" multiple="false" name="CustomerId" readonly="false" resourceId="_N2sLQ6dPEd2IK99MKtYm3w" searchable="true" singleOccurReference="false" source="egltui::CUSTOMER::CUSTOMER_ID" sqlField="37" summary="true"/>
+<PAGEFIELD displayName="FIRST_NAME" id="112" javaGenName="FirstName" multiple="false" name="FirstName" readonly="false" resourceId="_N2sLR6dPEd2IK99MKtYm3w" searchable="false" singleOccurReference="false" source="egltui::CUSTOMER::FIRST_NAME" sqlField="40" summary="true"/>
+<PAGEFIELD displayName="LAST_NAME" id="113" javaGenName="LastName" multiple="false" name="LastName" readonly="false" resourceId="_N2sLS6dPEd2IK99MKtYm3w" searchable="false" singleOccurReference="false" source="egltui::CUSTOMER::LAST_NAME" sqlField="42" summary="true"/>
+<PAGEFIELD displayName="PASSWORD" id="114" javaGenName="Password" multiple="false" name="Password" readonly="false" resourceId="_N2sLT6dPEd2IK99MKtYm3w" searchable="false" singleOccurReference="false" source="egltui::CUSTOMER::PASSWORD" sqlField="44" summary="true"/>
+<PAGEFIELD displayName="PHONE" id="115" javaGenName="Phone" multiple="false" name="Phone" readonly="false" resourceId="_N2sLU6dPEd2IK99MKtYm3w" searchable="false" singleOccurReference="false" source="egltui::CUSTOMER::PHONE" sqlField="46" summary="true"/>
+<PAGEFIELD displayName="EMAIL_ADDRESS" id="116" javaGenName="EmailAddress" multiple="false" name="EmailAddress" readonly="false" resourceId="_N2sLV6dPEd2IK99MKtYm3w" searchable="false" singleOccurReference="false" source="egltui::CUSTOMER::EMAIL_ADDRESS" sqlField="48" summary="true"/>
+<PAGEFIELD displayName="STREET" id="117" javaGenName="Street" multiple="false" name="Street" readonly="false" resourceId="_N21VMadPEd2IK99MKtYm3w" searchable="false" singleOccurReference="false" source="egltui::CUSTOMER::STREET" sqlField="50" summary="true"/>
+<PAGEFIELD displayName="APARTMENT" id="118" javaGenName="Apartment" multiple="false" name="Apartment" readonly="false" resourceId="_N21VNadPEd2IK99MKtYm3w" searchable="false" singleOccurReference="false" source="egltui::CUSTOMER::APARTMENT" sqlField="52" summary="true"/>
+<PAGEFIELD displayName="CITY" id="119" javaGenName="City" multiple="false" name="City" readonly="false" resourceId="_N21VOadPEd2IK99MKtYm3w" searchable="false" singleOccurReference="false" source="egltui::CUSTOMER::CITY" sqlField="54" summary="true"/>
+<PAGEFIELD displayName="STATE" id="120" javaGenName="State" multiple="false" name="State" readonly="false" resourceId="_N21VPadPEd2IK99MKtYm3w" searchable="false" singleOccurReference="false" source="egltui::CUSTOMER::STATE" sqlField="56" summary="true"/>
+<PAGEFIELD displayName="POSTALCODE" id="121" javaGenName="Postalcode" multiple="false" name="Postalcode" readonly="false" resourceId="_N21VQadPEd2IK99MKtYm3w" searchable="false" singleOccurReference="false" source="egltui::CUSTOMER::POSTALCODE" sqlField="58" summary="true"/>
+<PAGEFIELD displayName="DIRECTIONS" id="122" javaGenName="Directions" multiple="false" name="Directions" readonly="false" resourceId="_N21VRadPEd2IK99MKtYm3w" searchable="false" singleOccurReference="false" source="egltui::CUSTOMER::DIRECTIONS" sqlField="60" summary="true"/>
+<PAGEIMPORT part="egltui.access"/>
+</PAGE>
+<PAGE id="123" javaGenName="orders" libraryId="104" name="orders" resourceId="_N21VSKdPEd2IK99MKtYm3w" source="egltui::ORDERS">
+<DETAILPAGE addLabel="Add" deleteLabel="Delete" label="ORDERS Details Page" updateLabel="Update"/>
+<LISTPAGE addLabel="Add" label="ORDERS List Page" maxRows="5" searchLabel="Search"/>
+<ADDPAGE addLabel="Add" label="ORDERS Details Page"/>
+<PAGEFIELD displayName="ORDER_ID" id="127" javaGenName="OrderId" multiple="false" name="OrderId" readonly="false" resourceId="_N21VSqdPEd2IK99MKtYm3w" searchable="true" singleOccurReference="false" source="egltui::ORDERS::ORDER_ID" sqlField="63" summary="true"/>
+<PAGEFIELD displayName="CUSTOMER_ID" id="128" javaGenName="CustomerId" multiple="false" name="CustomerId" readonly="false" resourceId="_N21VTqdPEd2IK99MKtYm3w" searchable="false" singleOccurReference="false" source="egltui::ORDERS::CUSTOMER_ID" sqlField="65" summary="true"/>
+<PAGEFIELD displayName="ORDER_AMOUNT" id="129" javaGenName="OrderAmount" multiple="false" name="OrderAmount" readonly="false" resourceId="_N21VUqdPEd2IK99MKtYm3w" searchable="false" singleOccurReference="false" source="egltui::ORDERS::ORDER_AMOUNT" sqlField="67" summary="true"/>
+<PAGEFIELD displayName="ORDER_DETAILS" id="130" javaGenName="OrderDetails" multiple="false" name="OrderDetails" readonly="false" resourceId="_N21VVqdPEd2IK99MKtYm3w" searchable="false" singleOccurReference="false" source="egltui::ORDERS::ORDER_DETAILS" sqlField="69" summary="true"/>
+<PAGEFIELD displayName="ORDER_DATE" id="131" javaGenName="OrderDate" multiple="false" name="OrderDate" readonly="false" resourceId="_N2_GMadPEd2IK99MKtYm3w" searchable="false" singleOccurReference="false" source="egltui::ORDERS::ORDER_DATE" sqlField="71" summary="true"/>
+<PAGEFIELD displayName="ORDER_STATUS" id="132" javaGenName="OrderStatus" multiple="false" name="OrderStatus" readonly="false" resourceId="_N2_GNadPEd2IK99MKtYm3w" searchable="false" singleOccurReference="false" source="egltui::ORDERS::ORDER_STATUS" sqlField="73" summary="true"/>
+<PAGEIMPORT part="egltui.access"/>
+</PAGE>
+<PAGE id="133" javaGenName="siteuser" libraryId="105" name="siteuser" resourceId="_N2_GOKdPEd2IK99MKtYm3w" source="egltui::SITEUSER">
+<DETAILPAGE addLabel="Add" deleteLabel="Delete" label="SITEUSER Details Page" updateLabel="Update"/>
+<LISTPAGE addLabel="Add" label="SITEUSER List Page" maxRows="5" searchLabel="Search"/>
+<ADDPAGE addLabel="Add" label="SITEUSER Details Page"/>
+<PAGEFIELD displayName="SITEUSER_ID" id="137" javaGenName="SiteuserId" multiple="false" name="SiteuserId" readonly="false" resourceId="_N2_GOqdPEd2IK99MKtYm3w" searchable="true" singleOccurReference="false" source="egltui::SITEUSER::SITEUSER_ID" sqlField="76" summary="true"/>
+<PAGEFIELD displayName="FIRSTNAME" id="138" javaGenName="Firstname" multiple="false" name="Firstname" readonly="false" resourceId="_N2_GPqdPEd2IK99MKtYm3w" searchable="false" singleOccurReference="false" source="egltui::SITEUSER::FIRSTNAME" sqlField="78" summary="true"/>
+<PAGEFIELD displayName="LASTNAME" id="139" javaGenName="Lastname" multiple="false" name="Lastname" readonly="false" resourceId="_N2_GQqdPEd2IK99MKtYm3w" searchable="false" singleOccurReference="false" source="egltui::SITEUSER::LASTNAME" sqlField="80" summary="true"/>
+<PAGEFIELD displayName="USER_ID" id="140" javaGenName="UserId" multiple="false" name="UserId" readonly="false" resourceId="_N2_GRqdPEd2IK99MKtYm3w" searchable="false" singleOccurReference="false" source="egltui::SITEUSER::USER_ID" sqlField="82" summary="true"/>
+<PAGEFIELD displayName="PASS_WORD" id="141" javaGenName="PassWord" multiple="false" name="PassWord" readonly="false" resourceId="_N2_GSqdPEd2IK99MKtYm3w" searchable="false" singleOccurReference="false" source="egltui::SITEUSER::PASS_WORD" sqlField="84" summary="true"/>
+<PAGEFIELD displayName="STREET_ADDRESS" id="142" javaGenName="StreetAddress" multiple="false" name="StreetAddress" readonly="false" resourceId="_N2_GTqdPEd2IK99MKtYm3w" searchable="false" singleOccurReference="false" source="egltui::SITEUSER::STREET_ADDRESS" sqlField="86" summary="true"/>
+<PAGEFIELD displayName="CITY" id="143" javaGenName="City" multiple="false" name="City" readonly="false" resourceId="_N2_GUqdPEd2IK99MKtYm3w" searchable="false" singleOccurReference="false" source="egltui::SITEUSER::CITY" sqlField="88" summary="true"/>
+<PAGEFIELD displayName="STATE" id="144" javaGenName="State" multiple="false" name="State" readonly="false" resourceId="_N3IQI6dPEd2IK99MKtYm3w" searchable="false" singleOccurReference="false" source="egltui::SITEUSER::STATE" sqlField="90" summary="true"/>
+<PAGEFIELD displayName="ZIP" id="145" javaGenName="Zip" multiple="false" name="Zip" readonly="false" resourceId="_N3IQJ6dPEd2IK99MKtYm3w" searchable="false" singleOccurReference="false" source="egltui::SITEUSER::ZIP" sqlField="92" summary="true"/>
+<PAGEFIELD displayName="SU_TYPE" id="146" javaGenName="SuType" multiple="false" name="SuType" readonly="false" resourceId="_N3IQK6dPEd2IK99MKtYm3w" searchable="false" singleOccurReference="false" source="egltui::SITEUSER::SU_TYPE" sqlField="94" summary="true"/>
+<PAGEFIELD displayName="RECEIVE_UPDATES" id="147" javaGenName="ReceiveUpdates" multiple="false" name="ReceiveUpdates" readonly="false" resourceId="_N3IQL6dPEd2IK99MKtYm3w" searchable="false" singleOccurReference="false" source="egltui::SITEUSER::RECEIVE_UPDATES" sqlField="96" summary="true"/>
+<PAGEFIELD displayName="JOIN_CLUB" id="148" javaGenName="JoinClub" multiple="false" name="JoinClub" readonly="false" resourceId="_N3IQM6dPEd2IK99MKtYm3w" searchable="false" singleOccurReference="false" source="egltui::SITEUSER::JOIN_CLUB" sqlField="98" summary="true"/>
+<PAGEFIELD displayName="COMMENTS" id="149" javaGenName="Comments" multiple="false" name="Comments" readonly="false" resourceId="_N3IQN6dPEd2IK99MKtYm3w" searchable="false" singleOccurReference="false" source="egltui::SITEUSER::COMMENTS" sqlField="100" summary="true"/>
+<PAGEIMPORT part="egltui.access"/>
+</PAGE>
+</PACKAGE>
+<APPLIEDTRANSFORM accessProject="EGLTUIProject" accessSourceFolder="EGLSource" dataFile="DataDefinitions" dataProject="EGLTUIProject" dataSourceFolder="EGLSource" targetProject="EGLTUIProject" transformid="com.ibm.etools.egl.uml.transform.maint.root" uiProject="EGLTUIProject" uiSourceFolder="EGLSource" webContentFolder="WebContent"/>
+<TRANSFORMPARAMS/>
+</EGLMODEL>

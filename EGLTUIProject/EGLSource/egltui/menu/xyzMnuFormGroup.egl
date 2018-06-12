@@ -1,0 +1,44 @@
+package egltui.menu;
+
+FormGroup xyzMnuFormGroup
+		
+Form Menu type textForm	// 
+ {validationBypassKeys = [pf2, pf3],  screenSizes = [[24,80]], FormSize = [24, 80], Position = [1, 1], 
+  msgField = formMSG, helpForm="Help1", helpKey=pf1}
+
+// Start of screen fields
+// Header fields
+		screenName char(9) {Position = [1, 1], color = green, protect = skipProtect};
+		* {Value = "XYZ Company", fieldLen = 14, Position = [1, 34], Color = yellow, intensity = bold, protect = skipProtect};
+		screenDate char(10) {Position = [1, 69], color = green, protect = skipProtect};
+		ScreenTitle char(50) {Position = [2,15], color = green, protect = skipProtect};
+// Body Fields		
+		MenuLine char(35)[5] {fieldLen = 35, Position = [8, 25], color = green, protect = skipProtect , indexOrientation = down , columns = 1 , linesBetweenRows = 0 , spacesBetweenColumns = 1};
+		MenuOption num(1) {ValidValues = [[1,5]], InputRequired = yes, Position = [14, 36], highlight = underline, color = green, protect = noProtect};
+		* {fieldLen = 10, Position = [14, 25], value = "Selection:", color = cyan, protect = skipProtect};
+		* {fieldLen = 47, Position = [16, 21], value = "Type the Menu Item number and Press Enter", color = cyan, protect = skipProtect};
+// Footer fields
+		formMSG char(76)  // Message Text
+  	 	{Position = [22, 3], fieldLen = 76, color = red, highlight = noHighlight, intensity = bold, protect = skipProtect};
+		fkeyLine2 char(78) {Position = [24, 1], color = green, protect = skipProtect};
+		* {Position = [5, 4], value = "Welcome,", color = cyan, protect = skipProtect};
+		firstname char(20) {Position = [5, 13], color = green, protect = skipProtect};
+end // form Menu
+
+form Help1 type textForm
+	{ FormSize = [24, 80], Position = [1, 1], helpForm="Help2", helpKey=pf1}
+	* {Value = "MNUHELP1", Position = [1, 1], color = green, protect = skipProtect};
+	* {Value = "XYZ Company", fieldLen = 14, Position = [1, 34], Color = yellow, intensity = bold, protect = skipProtect};
+    * {Value = "This is Help Screen 1", Position =[2,1]};		
+    * {Value = "PF1=More Help;  PF2=Return to Menu", Position =[24,1]};		        
+end //form Help1
+
+form Help2 type textForm
+	{ FormSize = [24, 80], Position = [1, 1]}
+	* {Value = "MNUHELP2", Position = [1, 1], color = green, protect = skipProtect};
+	* {Value = "XYZ Company", fieldLen = 14, Position = [1, 34], Color = yellow, intensity = bold, protect = skipProtect};
+    * {Value = "This is Help Screen 2", Position =[2,1]};		
+    * {Value = "                PF2=Return to Menu", Position =[24,1]};		        
+end //form Help2
+	 
+end // FormGroup

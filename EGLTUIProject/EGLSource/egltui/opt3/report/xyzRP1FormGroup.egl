@@ -1,0 +1,47 @@
+package egltui.opt3.report;
+
+// form group with screen and print floating areas
+//
+formGroup xyzRP1FormGroup
+	{PrintFloatingAreas = [
+		@PrintFloatingArea{pageSize=[255, 132], 
+		bottomMargin=190, topMargin=4, 
+		leftMargin=0, rightMargin=0, deviceType=singleByte}
+		],	
+	validationBypassKeys = [pf2], helpKey = pf1, 
+	pfKeyEquate = yes}
+	form Header type printForm
+		{ FormSize = [3, 132], Position = [1, 1]}
+		* {Position = [1, 52], value = "Customer and Orders Report"};
+		curDate char(10) {DateFormat = systemGregorianDateFormat, Position = [2, 1]};
+		curTime char(8) {TimeFormat = defaultTimeFormat, Position = [2, 12]};
+		* {Position = [2, 120], value = "Page "};
+		curPage num(3,0) {Sign = none, FillCharacter = " ", Position = [2, 126]};
+	end
+	form Trailer type printForm
+		{ FormSize = [3, 132], Position = [62,1]}
+		* {Position = [2, 1], value = "This is the trailer form"};
+	end
+	form CustomerLine type printForm
+		{ FormSize = [4, 132]}
+		CustomerID int {FillCharacter = "0", Position = [2, 1]};
+		FirstName char(30) {Position = [2, 12]};
+		LastName char(30) {Position = [2, 44]};
+		City char(30) {Position = [3, 12]};
+		State char(2) {Position = [3, 44]};
+		PostalCode char(10) {Position = [3, 48]};
+		* {Position = [4, 6], value = "Order ID   Order Date       Order Amount   Order Status"};
+		continuedFlag char(9) {Position = [1, 78]};
+	end
+	form OrderLine type printForm
+		{ FormSize = [2, 132]}
+		OrderID int {Position = [2, 5]};
+		OrderDate char(10) {DateFormat = usaDateFormat, Position = [2, 18]};
+		OrderAmount decimal(8,2) {NumericSeparator = yes, CurrencySymbol = "$", Currency = yes, FieldLen = 15, Position = [2, 31]};
+		OrderStatus char(12) {Position = [2, 49]};
+	end
+	form NoOrdersForm type printForm
+		{ FormSize = [1, 132]}
+		* {Position = [1, 8], value = "No orders for this customer"};
+	end
+end  // end of FormGroup

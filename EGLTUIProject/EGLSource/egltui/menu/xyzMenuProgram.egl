@@ -1,0 +1,58 @@
+package egltui.menu;
+
+import egltui.data.Siteuser;
+import egltui.logon.xyzLogonProgram;
+import egltui.opt1.custlist.*;
+import egltui.opt2.custdetail.*;
+import egltui.zzz.common.*;
+
+program xyzMenuProgram type TextUIProgram 
+    {inputRecord=transferData}
+
+    transferData xyzTransferData;
+
+	// Variable Declarations
+	todaysDate Char(10) = dateTimeLib.currentDate();
+	programToRun Char(30);
+
+	// Use Declarations
+	use xyzMnuFormGroup.Menu;
+	
+	function main()
+		initialize();
+		converse Menu;
+		while (conversevar.eventKey not PF3
+		    && converseVar.eventKey not PF2)
+			case
+      			when (Menu.MenuOption == 1)
+     				transfer to program xyzCustListProgram passing transferData;
+      			when (Menu.MenuOption == 2)
+        			transfer to program xyzCustDetailProgram passing transferData;
+      			otherwise
+      				Menu.formMsg = "Selection not supported - must be 1 or 2";
+					converse Menu;
+    		end
+		end
+
+        // check to see if done with Menu program
+	    case (converseVar.eventKey)
+	    	when(PF2)
+	    		  transfer to xyzLogonProgram passing transferData;
+	        when(PF3)  
+	    	      exit program;
+	    end
+	end
+	
+	// move the selection choices to the map before conversing it.
+	function initialize()
+		move "xyzMain" to Menu.screenName;
+		move "XYZ Company Main Menu" to Menu.ScreenTitle;
+		move todaysDate to Menu.screenDate;
+		move transferData.SiteuserFirstname to Menu.firstname;
+		move "F2=Logon;  F3=Exit;  Enter=Select a menu item" to Menu.fkeyLine2;
+		
+		// move the option text to the menu screen
+		move "1 - Customer List" to Menu.MenuLine[1];
+		move "2 - Customer Detail" to Menu.MenuLine[2];
+	end
+end  // end of program

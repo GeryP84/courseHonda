@@ -1,0 +1,86 @@
+package egltui.allcustomers;
+import egltui.*;
+import egltui.access.CustomerLib;
+import egltui.data.Customer;
+
+//Put EGL Source File Contents Here
+Program allCustomersProgram type textUIProgram
+
+
+	customers Customer[];
+	customer Customer;
+	status StatusRec;
+	i int;
+	size int;
+	startingName char(20);
+	
+	const linesOnScreen int =15;
+
+	use allCustomersFormGroup.custList;
+	use CustomerLib;
+
+Function Main()
+	initialize();
+	CustomerLib.GetCustomerListAll(customers, status);
+	movetoform();
+    converseForm();
+End
+
+Function initialize();
+	move "AllCust" to custList.screenName;
+	custList.screenDate = dateTimeLib.currentDate();
+end
+
+Function movetoform()
+	size = customers.getSize();
+	if (size > linesOnScreen)// the number of records is more than the size of the screen array
+		size = linesOnScreen;// stop at the bottom of the screen array
+	end
+	for (i from 1 to size by 1)            // move data to screen
+		custList.firstName[i] = customers[i].FirstName;
+		custList.lastName[i] = customers[i].LastName;
+		custList.state[i] = customers[i].State;
+		custList.city[i] = customers[i].City;									
+	end
+	for (i from size+1 to linesOnScreen by 1)         // blank remaining rows
+		custList.firstName[i] = "";
+		custList.lastName[i] = "";
+		custList.state[i] = "";
+		custList.city[i] = "";
+	end
+	move "" to custList.StartName;                    // blank starting name
+
+end
+
+Function converseForm()
+	while (converseVar.eventKey not PF3
+	    && converseVar.eventKey not PF2)
+		converse custList;
+		case
+		  when (converseVar.eventKey is Enter)
+		  	if (custList.StartName != "")
+		  	  startingName = custList.startName;
+			  CustomerLib.GetCustomerListStartName(startingName, customers, status);
+			  if (status.succeeded)
+				movetoform();
+			  else
+				custList.formMSG = "Problem retrieving data";
+			  end
+			else
+	  		  custList.formMSG = "Please enter a few characters of the last name";			    
+			end
+		  otherwise
+			custList.formMSG = "Please enter a few characters of the last name";
+		end
+	end
+    
+    // done with List Program
+	case (converseVar.eventKey)
+	    when(PF3)  
+	    	  exit program;
+	end
+		
+end // converseForm
+
+end // end program
+

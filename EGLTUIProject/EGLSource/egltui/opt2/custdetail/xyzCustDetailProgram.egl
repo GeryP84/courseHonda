@@ -1,0 +1,85 @@
+package egltui.opt2.custdetail;
+
+import egltui.*;
+import egltui.access.CustomerLib;
+import egltui.data.Customer;
+import egltui.menu.xyzMenuProgram;
+import egltui.opt1.custlist.xyzCustListProgram;
+import egltui.zzz.common.xyzTransferData;
+
+//Put EGL Source File Contents Here
+Program xyzCustDetailProgram type textUIProgram
+   {inputRecord=transferData}
+
+    transferData xyzTransferData;
+	customer Customer;
+	status StatusRec;
+	i int;
+	size int;
+
+	use xyzCD1FormGroup.custDetail;
+	use CustomerLib;
+
+Function Main()
+	initialize();
+	if (transferData.CustomerId > 0)     // if customerID passed in, get data
+	    customer.CustomerId = transferData.CustomerId;   
+		ActionSelect();
+	end
+    converseForm();
+End
+
+Function initialize();
+	move "xyzCD1" to custDetail.screenName;
+	custDetail.screenDate = dateTimeLib.currentDate();
+end
+
+Function converseForm()
+	while (converseVar.eventKey not PF3
+	    && converseVar.eventKey not PF2)		
+		converse custDetail;
+		case
+		  when (converseVar.eventKey is Enter)
+            // handle insert, select, update, delete
+		  	case (custDetail.Action)
+		  		when("S")
+		  			if (custDetail.CustomerId > 0)
+		  				customer.CustomerId = custDetail.CustomerId;
+		  				ActionSelect();
+					else
+      					custDetail.formMSG = "CustomerID <= 0";
+					end
+		  		otherwise
+			  		custDetail.formMSG = "Action not supported yet";
+            end
+		  when (converseVar.eventKey is PF4)
+		  	// handle transfer back to Customer List program
+		  		  transferData.CustomerId = 0;
+		  		  transfer to xyzCustListProgram passing transferData;
+		  otherwise
+			custDetail.formMSG = "Please set an action code";
+		end
+	end
+
+    // done with List Program
+	case (converseVar.eventKey)
+		when(PF2)
+			  transferData.CustomerId = 0;
+	  		  transfer to xyzMenuProgram passing transferData;
+	    when(PF3)  
+	    	  exit program;
+	end
+	
+end // converseForm
+
+Function ActionSelect()
+	CustomerLib.GetCustomer(customer, status);
+	if (status.succeeded)
+		move customer to custDetail byName;
+	else
+		custDetail.formMSG = "Problem retrieving data";
+	end			
+end	
+
+end // end program
+

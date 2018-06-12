@@ -1,0 +1,95 @@
+package egltui.logon;
+
+import egltui.StatusRec;
+import egltui.access.*;
+import egltui.data.*;
+import egltui.menu.*;
+import egltui.zzz.common.xyzTransferData;
+
+Program xyzLogonProgram type textUIProgram	
+ 
+  siteuser Siteuser;
+  status StatusRec;
+  transferData xyzTransferData;
+  
+  todaysDate char(12);
+  nbrTry	int = 0;
+
+  use xyzLogFormGroup.Login;  
+  use SiteuserLib;
+ 
+  Function main()
+    nbrTry = 1; 
+    todaysDate = dateTimeLib.currentDate(); 
+    move todaysDate to login.todaysDate;
+    mapTime char(10) = dateTimeLib.currentTime();
+    move mapTime to login.mapTime; 
+    
+    login.userName = "";
+    login.passWord = "";
+    login.formMSG = "Please enter your username and password";
+
+    while (1 == 1)
+      converse login; 
+      if (ConverseVar.eventKey is PF3)
+        exit program;
+      end
+		
+      if(login.userName == "")
+        login.formMSG = "Please enter a username";
+        set login.userName cursor;
+        continue while;
+      end
+
+      if(login.passWord == "")
+        login.formMSG = "Please enter a password";
+        set login.passWord cursor;
+        continue while;
+      end
+      
+      // Check user ID and password 
+      siteuser.UserId = login.userName;
+      siteuser.PassWord = login.passWord;
+      
+      ValidateLogon();
+      if(login.formMSG != "")   // loop until valid logon
+     	continue while;
+      else                      // valid logon
+        try
+      		transferData.SiteuserFirstname = siteuser.Firstname;
+      		transfer to program xyzMenuProgram passing transferData;
+        onException(exception AnyException) // Fetch/Terminate/Stop was invoked
+            sysLib.writeStdout("Transfer to Menu Failed");
+        end
+      end
+
+    end // While
+
+  end
+  
+  Function ValidateLogon()
+		login.formMSG = "";
+		  	
+		if(nbrTry > 3)  //More than three tries... Not just a bad typist?
+			login.formMSG = "You must be trying to hack in.  Get Lost!";
+			return;
+		end
+		
+		siteuserLib.VerifyUserID(siteuser, status);
+        if (! status.succeeded)
+			login.formMSG = "Invalid User ID";	//Bad USER ID
+			nbrTry += 1;
+			return;
+		end
+		
+		
+		siteuserLib.VerifyUserIDPassword(siteuser, status);
+		if (! status.succeeded)
+			login.formMSG = "Invalid Password";	//Bad Password		
+			nbrTry += 1;
+      
+        end
+      
+  end	
+  
+end // End of the Program

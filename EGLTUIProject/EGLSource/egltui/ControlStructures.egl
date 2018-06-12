@@ -1,0 +1,59 @@
+package egltui;
+
+
+/***
+ * Important Development Note (Please read the following comments)
+ * All code contained in this file will be overwritten each time the Data Access Application Wizard is executed.
+ * If the contents of this file must be preserved, move all source code into the custom definitions area at the end of the file.
+ * NOTE: preservation of this file's content may result in the generation of duplicate resources.
+ * This will result in syntax and compilation errors.
+ * You will have to manually resolve all discrepancies by deleting duplicates.
+ ***/
+
+/***
+ * Important note
+ *
+ * Do not delete or modify BEGIN and END tags
+ * These tags allow preservation of hand modified code
+ * Modification of these tags will result in code loss
+ *
+ ***/
+ 
+/* This record defines a control structure for a GetList function
+ * The function returns a list of records to be paged through 
+ * 
+ * IMPORTANT: You must set values for fromTablesWhere and blockingFactor 
+ *        The selectClause value may be optionally set by the user 
+ */
+//BEGIN ListSpecification
+// @generated - Delete generated tag to preserve modified code      
+Record ListSpecification
+	// indicates that dynamic SQL has been prepared using the value in fromTablesWhere 
+    // IMPORTANT: Set false when fromTablesWhere is modified 
+	initialized boolean = false;  
+	 
+	// Optional select clause for statement 
+	// USAGE: Enter "Select colm1, colm2, colm3 etc. " as a string 
+	selectClause  string;
+	 
+	// SQL FROM, WHERE and ORDER BY clauses 
+	// USAGE: specify as you would for dynamic SQL 
+	fromTablesWhere string;  
+	
+	// Indicates number of rows per page 
+	blockingFactor int;
+	
+	// Ordinal number (current row) in the array for paging 
+	position int;
+	
+	// Total number of pages 
+	pageCount int;
+	
+	// Total number of rows that satisfied your WHERE clause 
+	rowCount int;
+end
+//END ListSpecification
+
+//BEGIN custom source definitions
+//TODO: Add additional code here
+//END custom source definitions

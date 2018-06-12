@@ -1,0 +1,85 @@
+package egltui.opt3.report;
+
+import egltui.StatusRec;
+import egltui.access.CustomerLib;
+import egltui.access.OrdersLib;
+import egltui.data.Customer;
+import egltui.data.Orders;
+
+program xyzReportProgram type basicProgram
+	
+	use xyzRP1FormGroup;
+
+	customerArray Customer[];
+	ordersArray Orders[];
+	status StatusRec;
+	i smallint;
+	j smallint;
+	customerSize smallint;
+	orderSize smallint;
+	lineCount smallint = 0;  
+	
+	const maxBodyLines smallint = 60;
+		
+	function main()
+		// initialization for Header Form
+		strLib.defaultDateFormat = "MM/dd/yyyy";
+		strlib.defaultTimeFormat = "HH:mm:ss";
+		Header.curDate = dateTimeLib.currentDate();
+		Header.curTime = dateTimeLib.currentTime();		
+		Header.curPage = 1;
+		print Header;
+		
+		// get list of all customers
+		CustomerLib.GetCustomerListAll(customerArray, status);
+		
+		customerSize = customerArray.getSize();
+		for (i from 1 to customerSize by 1)            // move customer data to print form
+		  CustomerLine.CustomerID = customerArray[i].CustomerId;
+		  CustomerLine.FirstName = customerArray[i].FirstName;
+		  CustomerLine.LastName = customerArray[i].LastName;
+		  CustomerLine.State = customerArray[i].State;
+		  CustomerLine.City = customerArray[i].City;
+  		  CustomerLine.PostalCode = customerArray[i].PostalCode;
+		  
+		  if (lineCount + 4  > maxBodyLines)  // space in floating area?
+		    // not enough space left in floating area for CustomerLine form
+		  	print Trailer;
+		  	Header.curPage = Header.curPage + 1;									
+		  	print Header;
+		  	lineCount = 0;
+		  end
+		  print CustomerLine;
+		  lineCount = lineCount + 4;
+		  
+		  // get orders for this customer
+		  OrdersLib.GetCustomerOrdersListAll(CustomerLine.CustomerID, ordersArray, status);
+  		  orderSize = ordersArray.getSize();
+  		  if (orderSize == 0)
+  		  	print NoOrdersForm;
+  		  	lineCount = lineCount + 1;
+  		  end
+		  for (j from 1 to orderSize by 1)            // move orders data to print form
+		    OrderLine.OrderID = ordersArray[j].OrderId;
+		    OrderLine.OrderDate = ordersArray[j].OrderDate;
+		    OrderLine.OrderAmount = ordersArray[j].OrderAmount;
+		    OrderLine.OrderStatus = ordersArray[j].OrderStatus;	
+		    
+		    if (lineCount + 2 > maxBodyLines)	// space in floating area?    		    		    
+		      // not enough space left in floating area for OrderLine form
+		      print Trailer;
+		      Header.curPage = Header.curPage + 1;
+		      print Header;
+		      lineCount = 0;
+		      CustomerLine.continuedFlag = "continued";
+		      print CustomerLine;
+		      lineCount = lineCount + 4;
+   		      CustomerLine.continuedFlag = "";  // clear continued flag
+		    end
+		    print OrderLine;
+		    lineCount = lineCount + 2; 
+    	  end              // end of orders for loop
+	    end                // end of customers for loop
+	    print Trailer;
+	end 
+end
