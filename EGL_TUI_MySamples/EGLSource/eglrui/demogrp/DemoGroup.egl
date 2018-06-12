@@ -1,0 +1,22 @@
+package eglrui.demogrp;
+
+// form group with screen and print floating areas
+//
+formGroup DemoGroup
+	{ScreenFloatingAreas = [
+		@ScreenFloatingArea{screenSize=[24, 80], bottomMargin=0, topMargin=0, leftMargin=0, rightMargin=0}
+	],
+	 PrintFloatingAreas = [
+		@PrintFloatingArea{pageSize=[255,132], topMargin=3, bottomMargin=3, leftMargin=5, rightMargin=5}
+    ],
+	
+	validationBypassKeys = [pf2], helpKey = pf1, 
+	pfKeyEquate = yes}
+	form Form1 type textForm
+		{ FormSize = [24, 80], Position = [1, 1]}
+		* {Position = [1, 15], value = "This is the screen Title Line. It is a constant", color = blue, intensity = bold, protect = skipProtect};
+	end
+	
+	// Use Declarations or Form Definitions
+	 
+end
