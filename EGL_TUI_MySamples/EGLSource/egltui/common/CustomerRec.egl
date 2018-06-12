@@ -1,0 +1,17 @@
+package egltui.common;
+
+// basic record
+//
+record CustomerRec type BasicRecord
+	10 firstName		FIRST_NAME;
+	10 lastName			LAST_NAME;
+	10 city				CITY;
+	10 state			STATE;
+end
+
+
+
+dataItem FIRST_NAME char(15) {DisplayName = "First Name"} end
+dataItem LAST_NAME char(20) {DisplayName = "Last Name"} end
+dataItem CITY char(20) {DisplayName = "City"} end
+dataItem STATE char(2) {DisplayName = "State"} end
