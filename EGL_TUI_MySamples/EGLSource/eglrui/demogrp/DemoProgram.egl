@@ -1,0 +1,15 @@
+package eglrui.demogrp;
+
+// text UI program
+//
+program DemoProgram type TextUIProgram
+	{}
+	use DemoGroup;
+	
+	function main()
+		while (ConverseVar.eventKey not pf3)
+			converse Form1;	
+		end
+	end 
+	
+end

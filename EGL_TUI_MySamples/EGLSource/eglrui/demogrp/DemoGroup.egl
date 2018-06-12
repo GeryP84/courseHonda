@@ -13,8 +13,16 @@ formGroup DemoGroup
 	validationBypassKeys = [pf2], helpKey = pf1, 
 	pfKeyEquate = yes}
 	form Form1 type textForm
-		{ FormSize = [24, 80], Position = [1, 1]}
-		* {Position = [1, 15], value = "This is the screen Title Line. It is a constant", color = blue, intensity = bold, protect = skipProtect};
+		{ FormSize = [24, 80], Position = [1, 1], msgField = Message1}
+		* {Highlight = reverse, Position = [1, 15], value = "This is the screen Title Line. It is a constant", Color = green, intensity = bold, protect = skipProtect};
+		Input1 char(24) {MinimumInput = 3, InputRequired = yes, Position = [7, 7], highlight = underline, color = green, protect = noProtect};
+		Output1 char(32) {Position = [7, 32], color = green, protect = skipProtect};
+		Array1 char(57)[2] {Position = [9, 6], color = green, Protect = noProtect , indexOrientation = down , columns = 1 , linesBetweenRows = 0 , spacesBetweenColumns = 1,
+	this[1]{Value = "Column Array, Element 1"}
+,
+	this[2]{Value = "Column Array, Element 2"}
+};
+		Message1 char(68) {Value = "This is the Message Line", Position = [21, 8], color = red, intensity = bold, protect = skipProtect};
 	end
 	
 	// Use Declarations or Form Definitions
