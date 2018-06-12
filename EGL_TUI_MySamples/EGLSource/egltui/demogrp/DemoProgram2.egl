@@ -1,0 +1,32 @@
+package egltui.demogrp;
+
+// text UI program
+//
+program DemoProgram2 type TextUIProgram
+	{}
+	
+	use DemoGroup;
+	
+	function main()
+		while (converseVar.eventKey not pf3)
+			converse Form1;
+			if (converseVar.eventKey is pf4)
+				PopUpMenu1.VariableFormField2[1] = "Option 1";
+				PopUpMenu1.VariableFormField2[2] = "Option 2";
+				
+				converse PopUpMenu1;
+				
+				if (PopUpMenu1.VariableFormField1[1] is cursor)
+					Form1.Output1 = PopUpMenu1.VariableFormField2[1];
+				end
+				if (PopUpMenu1.VariableFormField1[2] is cursor)
+					Form1.Output1 = PopUpMenu1.VariableFormField2[2];
+				end
+				
+				ConverseLib.clearScreen();
+			end
+		end
+	end 
+	
+end
+

@@ -23,7 +23,7 @@ formGroup DemoGroup
 			this[2]{Value = "Column Array, Element 2"}
 		};
 		Message1 char(68) {Value = "This is the Message Line", Position = [21, 8], color = red, intensity = bold, protect = skipProtect};
-		* {Position = [1, 2], value = "This is Another Title Line", color = blue, intensity = bold, protect = skipProtect};
+		* {Position = [1, 27], value = "This is Another Title Line", color = blue, intensity = bold, protect = skipProtect};
 		* {Position = [4, 8], Value = "Label Field", color = cyan, protect = skipProtect};
 		* {Position = [5, 8], Value = "Instructions Field", color = cyan, protect = skipProtect};
 		* {Position = [6, 8], Value = "Help Field. Note the properties for these fields", color = white, protect = skipProtect};
@@ -57,5 +57,54 @@ formGroup DemoGroup
 	
 	
 	end
+	form PartialForm type textForm
+		{ FormSize = [10, 61], Position = [1, 10]}
+	end
+	form PopUpMenu1 type textForm
+		//{ FormSize = [14, 37], Position = [3, 19]}
+		{FormSize = [24, 80], screenSizes = [[24, 80]]}
+		* {Position = [1, 1], value = "------------------------------------", color = white};
+		* {Position = [14, 1], value = "------------------------------------", color = white};
+		* {Position = [2, 1], value = "|", color = white};
+		* {Position = [2, 36], value = "|", color = white};
+		* {Position = [3, 1], value = "|", color = white};
+		* {Position = [3, 36], value = "|", color = white};
+		* {Position = [4, 1], value = "|", color = white};
+		* {Position = [4, 36], value = "|", color = white};
+		* {Position = [5, 1], value = "|", color = white};
+		* {Position = [5, 36], value = "|", color = white};
+		* {Position = [6, 1], value = "|", color = white};
+		* {Position = [6, 36], value = "|", color = white};
+		* {Position = [7, 1], value = "|", color = white};
+		* {Position = [7, 36], value = "|", color = white};
+		* {Position = [8, 1], value = "|", color = white};
+		* {Position = [8, 36], value = "|", color = white};
+		* {Position = [9, 1], value = "|", color = white};
+		* {Position = [9, 36], value = "|", color = white};
+		* {Position = [10, 1], value = "|", color = white};
+		* {Position = [10, 36], value = "|", color = white};
+		* {Position = [11, 1], value = "|", color = white};
+		* {Position = [11, 36], value = "|", color = white};
+		* {Position = [12, 1], value = "|", color = white};
+		* {Position = [12, 36], value = "|", color = white};
+		* {Position = [13, 1], value = "|", color = white};
+		* {Position = [13, 36], value = "|", color = white};
+		* {Position = [2, 10], value = "Title of PopUp", color = blue, intensity = bold, protect = skipProtect};
+		* {Position = [4, 3], value = "Click on an option, Press Enter.", color = white, protect = skipProtect};
+		VariableFormField1 char(1)[5] {Position = [6, 3], highlight = underline, color = green, protect = noProtect};
+		VariableFormField2 char(30)[5] {Position = [6, 5], color = green, protect = skipProtect,
+	this[1]{Value = "Option A"}
+,
+	this[2]{Value = "Option B"}
+,
+	this[3]{Value = "Option C"}
+,
+	this[4]{Value = "Option D"}
+,
+	this[5]{Value = "Option E"}
+};
+		* {Position = [11, 3], value = "This is additional help text", color = white, protect = skipProtect};
+	end
+
 	 
 end
