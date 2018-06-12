@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource name="EGL_TUI_MySamples">
+	<storedValue key="EGLProjectMigrationVersion" value="8.0.0"/>
+	<storedValue key="DefaultBuildDescriptorCobolTargetName" value="EGL_TUI_MySamplesCOBOLBuildOptions"/>
+	<storedValue key="DefaultBuildDescriptorCobolTargetPath" value="EGL_TUI_MySamples/EGLSource/EGL_TUI_MySamples.eglbld"/>
+	<storedValue key="DefaultBuildDescriptorNonJavaScriptDebugName" value="EGL_TUI_MySamplesDebugBuildOptions"/>
+	<storedValue key="EGLProjectFeatureMask" value="16"/>
+	<storedValue key="EGLProjectSecondaryMigrationVersion" value="9.0"/>
+	<storedValue key="DefaultBuildDescriptorNonJavaScriptDebugPath" value="EGL_TUI_MySamples/EGLSource/EGL_TUI_MySamples.eglbld"/>
+	<storedValue key="EGLTargetRuntimeMask" value="4"/>
+</resource>
