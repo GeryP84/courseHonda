@@ -16,12 +16,12 @@ program simpleCalculations type BasicProgram {}
 		calcDivision();
 		calcMultiplication();
 		calcSubstaction();
-		//test
+		// comment 4
 	end
 	
 	function initNumbers()
 		number1 = 25;
-		number2 = 4;
+		number2 = 5;
 	end
 	
 	function calcSum();
