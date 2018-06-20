@@ -16,7 +16,7 @@ program simpleCalculations type BasicProgram {}
 		calcDivision();
 		calcMultiplication();
 		calcSubstaction();
-		// comment 3
+		// comment 4
 	end
 	
 	function initNumbers()
