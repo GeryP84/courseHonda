@@ -1,4 +1,4 @@
-// Generated at Mon Jun 11 21:44:46 CEST 2018 by EGL 8.0.0.v20150827_1902
+// Generated at Tue Jun 12 15:21:45 CEST 2018 by EGL 8.0.0.v20150827_1902
 // No APARs installed.
 package egltui.opt2.custdetail;
 
@@ -21,8 +21,8 @@ public class xyzCustDetailProgram extends com.ibm.javart.resources.Program
 		super( "xyzCustDetailProgram", "xyzCustDetailProgram", ru, false, true, 0 );
 		ezeProgram = this;
 		xyzCD1FormGroup = new egltui.opt2.custdetail.xyzCD1FormGroup( "xyzCD1FormGroup" );
-		egl__core__DateTimeLib = (egl.core.DateTimeLib_Lib)ezeProgram._runUnit().loadLibrary( "egl.core.DateTimeLib_Lib" );
 		egltui__access__CustomerLib = (egltui.access.CustomerLib_Lib)ezeProgram._runUnit().loadLibrary( "egltui.access.CustomerLib_Lib" );
+		egl__core__DateTimeLib = (egl.core.DateTimeLib_Lib)ezeProgram._runUnit().loadLibrary( "egl.core.DateTimeLib_Lib" );
 		com.ibm.javart.forms.common.Utility.setApp( this );
 		xyzCD1FormGroup$custDetail = new egltui.opt2.custdetail.xyzCD1FormGroup$custDetail(ezeProgram, "xyzCD1FormGroup$custDetail" );
 		xyzCD1FormGroup$custDetail.setFormGroup(xyzCD1FormGroup);

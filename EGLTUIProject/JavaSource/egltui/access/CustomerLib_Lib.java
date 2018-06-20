@@ -1,4 +1,4 @@
-// Generated at Mon Jun 11 21:44:44 CEST 2018 by EGL 8.0.0.v20150827_1902
+// Generated at Tue Jun 12 15:21:44 CEST 2018 by EGL 8.0.0.v20150827_1902
 // No APARs installed.
 package egltui.access;
 
@@ -517,7 +517,7 @@ public class CustomerLib_Lib extends com.ibm.javart.resources.Program
 					com.ibm.javart.sql.Sql.fail( ezeProgram, "OPEN", $sqlx, null, $prepStmt, false, 1, true );
 				}
 			}
-			// Get ABSOLUTE (listSpec.position) from resultSet into temp.CUSTOMERID, temp.FIRSTNAME, temp.LASTNAME, temp.password, temp.PHONE, temp.EMAILADDRESS, tem...
+			// Get ABSOLUTE (listSpec.position) from resultSet into temp.CustomerId, temp.firstName, temp.lastName, temp.Password, temp.Phone, temp.EmailAddress, tem...
 			{
 				int $position = listSpec.position.getValue();
 				com.ibm.javart.sql.Sql.begin2( ezeProgram, "GET ABSOLUTE" );
@@ -577,7 +577,7 @@ public class CustomerLib_Lib extends com.ibm.javart.resources.Program
 				i = (short)2;
 				for ( ; (i <= customerList.checkedValue( ezeProgram ).getSize( ezeProgram )); i++ )
 				{
-					// Get NEXT from resultSet into temp.CUSTOMERID, temp.FIRSTNAME, temp.LASTNAME, temp.password, temp.PHONE, temp.EMAILADDRESS, temp.STREET, temp.APARTMENT...
+					// Get NEXT from resultSet into temp.CustomerId, temp.firstName, temp.lastName, temp.Password, temp.Phone, temp.EmailAddress, temp.Street, temp.Apartment...
 					{
 						com.ibm.javart.sql.Sql.begin2( ezeProgram, "GET NEXT" );
 						com.ibm.javart.sql.JavartResultSet[] $resultSets = ezeProgram._resultSets();

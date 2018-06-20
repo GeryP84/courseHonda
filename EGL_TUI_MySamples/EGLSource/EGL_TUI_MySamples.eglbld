@@ -10,12 +10,12 @@
 	J2EE="NO"
 	genProperties="GLOBAL"
 	genDataTables="YES"
-	dbms="DB2"
-	sqlValidationConnectionURL="jdbc:db2://localhost:50000/SAMPLE"
-	sqlJDBCDriverClass="com.ibm.db2.jcc.DB2Driver"
-	sqlDB="jdbc:db2://localhost:50000/SAMPLE"
+	dbms="DERBY"
+	sqlValidationConnectionURL="jdbc:derby:C:\EGLDerbyDB;create=true"
+	sqlJDBCDriverClass="org.apache.derby.jdbc.EmbeddedDriver"
+	sqlDB="jdbc:derby:C:\EGLDerbyDB;create=true"
 	deploymentDescriptor="EGL_TUI_MySamples"
->
+sqlID="" sqlPassword="">
 </BuildDescriptor>
 <BuildDescriptor
 	name="EGL_TUI_MySamplesCOBOLBuildOptions"
@@ -29,11 +29,11 @@
 	genDataTables="YES"
 	genFormGroup="YES"
 	genHelpFormGroup="YES"
-	sqlDB=""
+	sqlDB="jdbc:derby:C:\EGLDerbyDB;create=true"
 	sqlID=""
 	sqlPassword=""
 	deploymentDescriptor="EGL_TUI_MySamples"
-	>
+	sqlValidationConnectionURL="jdbc:derby:C:\EGLDerbyDB;create=true" sqlJDBCDriverClass="org.apache.derby.jdbc.EmbeddedDriver" dbms="DERBY">
 	<symbolicParameter name="DSNLOAD">
 		<symbolicValue>
 			<![CDATA[]]>

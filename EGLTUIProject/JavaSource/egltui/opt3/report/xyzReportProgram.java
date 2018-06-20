@@ -1,4 +1,4 @@
-// Generated at Mon Jun 11 21:44:44 CEST 2018 by EGL 8.0.0.v20150827_1902
+// Generated at Tue Jun 12 15:21:44 CEST 2018 by EGL 8.0.0.v20150827_1902
 // No APARs installed.
 package egltui.opt3.report;
 
@@ -15,34 +15,34 @@ public class xyzReportProgram extends com.ibm.javart.resources.Program
 	public short customerSize;
 	public short orderSize;
 	public short lineCount;
-	public egltui.opt3.report.xyzRP1FormGroup xyzRP1FormGroup;
 	public egltui.access.CustomerLib_Lib egltui__access__CustomerLib;
 	public egltui.access.OrdersLib_Lib egltui__access__OrdersLib;
-	public egltui.opt3.report.xyzRP1FormGroup$NoOrdersForm xyzRP1FormGroup$NoOrdersForm;
-	public egltui.opt3.report.xyzRP1FormGroup$Header xyzRP1FormGroup$Header;
+	public egltui.opt3.report.xyzRP1FormGroup xyzRP1FormGroup;
 	public egltui.opt3.report.xyzRP1FormGroup$CustomerLine xyzRP1FormGroup$CustomerLine;
+	public egltui.opt3.report.xyzRP1FormGroup$NoOrdersForm xyzRP1FormGroup$NoOrdersForm;
 	public egltui.opt3.report.xyzRP1FormGroup$Trailer xyzRP1FormGroup$Trailer;
 	public egltui.opt3.report.xyzRP1FormGroup$OrderLine xyzRP1FormGroup$OrderLine;
+	public egltui.opt3.report.xyzRP1FormGroup$Header xyzRP1FormGroup$Header;
 	
 	public xyzReportProgram( com.ibm.javart.resources.RunUnit ru ) throws java.lang.Exception
 	{
 		super( "xyzReportProgram", "xyzReportProgram", ru, false, true, 2 );
 		ezeProgram = this;
-		egl__core__DateTimeLib = (egl.core.DateTimeLib_Lib)ezeProgram._runUnit().loadLibrary( "egl.core.DateTimeLib_Lib" );
-		xyzRP1FormGroup = new egltui.opt3.report.xyzRP1FormGroup( "xyzRP1FormGroup" );
 		egltui__access__CustomerLib = (egltui.access.CustomerLib_Lib)ezeProgram._runUnit().loadLibrary( "egltui.access.CustomerLib_Lib" );
+		egl__core__DateTimeLib = (egl.core.DateTimeLib_Lib)ezeProgram._runUnit().loadLibrary( "egl.core.DateTimeLib_Lib" );
 		egltui__access__OrdersLib = (egltui.access.OrdersLib_Lib)ezeProgram._runUnit().loadLibrary( "egltui.access.OrdersLib_Lib" );
+		xyzRP1FormGroup = new egltui.opt3.report.xyzRP1FormGroup( "xyzRP1FormGroup" );
 		com.ibm.javart.forms.common.Utility.setApp( this );
-		xyzRP1FormGroup$NoOrdersForm = new egltui.opt3.report.xyzRP1FormGroup$NoOrdersForm(ezeProgram, "xyzRP1FormGroup$NoOrdersForm" );
-		xyzRP1FormGroup$NoOrdersForm.setFormGroup(xyzRP1FormGroup);
-		xyzRP1FormGroup$Header = new egltui.opt3.report.xyzRP1FormGroup$Header(ezeProgram, "xyzRP1FormGroup$Header" );
-		xyzRP1FormGroup$Header.setFormGroup(xyzRP1FormGroup);
 		xyzRP1FormGroup$CustomerLine = new egltui.opt3.report.xyzRP1FormGroup$CustomerLine(ezeProgram, "xyzRP1FormGroup$CustomerLine" );
 		xyzRP1FormGroup$CustomerLine.setFormGroup(xyzRP1FormGroup);
+		xyzRP1FormGroup$NoOrdersForm = new egltui.opt3.report.xyzRP1FormGroup$NoOrdersForm(ezeProgram, "xyzRP1FormGroup$NoOrdersForm" );
+		xyzRP1FormGroup$NoOrdersForm.setFormGroup(xyzRP1FormGroup);
 		xyzRP1FormGroup$Trailer = new egltui.opt3.report.xyzRP1FormGroup$Trailer(ezeProgram, "xyzRP1FormGroup$Trailer" );
 		xyzRP1FormGroup$Trailer.setFormGroup(xyzRP1FormGroup);
 		xyzRP1FormGroup$OrderLine = new egltui.opt3.report.xyzRP1FormGroup$OrderLine(ezeProgram, "xyzRP1FormGroup$OrderLine" );
 		xyzRP1FormGroup$OrderLine.setFormGroup(xyzRP1FormGroup);
+		xyzRP1FormGroup$Header = new egltui.opt3.report.xyzRP1FormGroup$Header(ezeProgram, "xyzRP1FormGroup$Header" );
+		xyzRP1FormGroup$Header.setFormGroup(xyzRP1FormGroup);
 		xyzRP1FormGroup.setPFKeyEquate( true );
 		customerArray = new com.ibm.javart.ref.ContainerArrayRef( "customerArray", null, "1Tegltui/data/Customer;" ){
 			private static final long serialVersionUID = 70L;

@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resource name="EGLTUIProject">
-	<storedValue key="EGLProjectSecondaryMigrationVersion" value="9.0"/>
-	<storedValue key="EGLProjectMigrationVersion" value="7.5.0"/>
-	<storedValue key="DefaultBuildDescriptorDebugPath" value="EGLTUIProject/EGLSource/EGLTUIProject.eglbld"/>
-	<storedValue key="DefaultBuildDescriptorTargetName" value="EGLTUIProjectJavaBuildOptions"/>
+	<storedValue key="DefaultBuildDescriptorCobolTargetName" value="EGL_TUI_MySamplesCOBOLBuildOptions"/>
 	<storedValue key="DefaultBuildDescriptorTargetPath" value="EGLTUIProject/EGLSource/EGLTUIProject.eglbld"/>
-	<storedValue key="EGLProjectFeatureMask" value="0"/>
+	<storedValue key="DefaultBuildDescriptorTargetName" value="EGLTUIProjectJavaBuildOptions"/>
 	<storedValue key="DefaultBuildDescriptorDebugName" value="EGLTUIProjectJavaBuildOptions"/>
+	<storedValue key="EGLProjectFeatureMask" value="0"/>
+	<storedValue key="DefaultBuildDescriptorNonJavaScriptDebugPath" value="EGLTUIProject/EGLSource/EGLTUIProject.eglbld"/>
+	<storedValue key="EGLProjectMigrationVersion" value="7.5.0"/>
+	<storedValue key="DefaultBuildDescriptorCobolTargetPath" value="EGL_TUI_MySamples/EGLSource/EGL_TUI_MySamples.eglbld"/>
+	<storedValue key="DefaultBuildDescriptorDebugPath" value="EGLTUIProject/EGLSource/EGLTUIProject.eglbld"/>
+	<storedValue key="DefaultBuildDescriptorNonJavaScriptDebugName" value="EGLTUIProjectJavaBuildOptions"/>
+	<storedValue key="DefaultBuildDescriptorJavaTargetPath" value="EGLTUIProject/EGLSource/EGLTUIProject.eglbld"/>
+	<storedValue key="EGLProjectSecondaryMigrationVersion" value="9.0"/>
+	<storedValue key="DefaultBuildDescriptorJavaTargetName" value="EGLTUIProjectJavaBuildOptions"/>
 </resource>

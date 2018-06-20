@@ -1,4 +1,4 @@
-// Generated at Mon Jun 11 21:44:45 CEST 2018 by EGL 8.0.0.v20150827_1902
+// Generated at Tue Jun 12 15:21:45 CEST 2018 by EGL 8.0.0.v20150827_1902
 // No APARs installed.
 package egltui.demogrp;
 
@@ -15,8 +15,8 @@ public class DemoProgram2 extends com.ibm.javart.resources.Program
 	{
 		super( "DemoProgram2", "DemoProgram2", ru, false, true, 0 );
 		ezeProgram = this;
-		DemoGroup = new egltui.demogrp.DemoGroup( "DemoGroup" );
 		egl__ui__text__ConverseLib = (egl.ui.text.ConverseLib_Lib)ezeProgram._runUnit().loadLibrary( "egl.ui.text.ConverseLib_Lib" );
+		DemoGroup = new egltui.demogrp.DemoGroup( "DemoGroup" );
 		com.ibm.javart.forms.common.Utility.setApp( this );
 		DemoGroup$Form1 = new egltui.demogrp.DemoGroup$Form1(ezeProgram, "DemoGroup$Form1" );
 		DemoGroup$Form1.setFormGroup(DemoGroup);

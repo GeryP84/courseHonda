@@ -1,4 +1,4 @@
-// Generated at Mon Jun 11 21:44:45 CEST 2018 by EGL 8.0.0.v20150827_1902
+// Generated at Tue Jun 12 15:21:45 CEST 2018 by EGL 8.0.0.v20150827_1902
 // No APARs installed.
 package egltui.helloworld;
 
@@ -8,8 +8,8 @@ public class helloProgram extends com.ibm.javart.resources.Program
 	
 	public final helloProgram ezeProgram;
 	public egltui.helloworld.helloGroup helloGroup;
-	public egltui.helloworld.helloGroup$HelloWorld1 helloGroup$HelloWorld1;
 	public egltui.helloworld.helloGroup$HelloWorld2 helloGroup$HelloWorld2;
+	public egltui.helloworld.helloGroup$HelloWorld1 helloGroup$HelloWorld1;
 	
 	public helloProgram( com.ibm.javart.resources.RunUnit ru ) throws java.lang.Exception
 	{
@@ -17,14 +17,14 @@ public class helloProgram extends com.ibm.javart.resources.Program
 		ezeProgram = this;
 		helloGroup = new egltui.helloworld.helloGroup( "helloGroup" );
 		com.ibm.javart.forms.common.Utility.setApp( this );
-		helloGroup$HelloWorld1 = new egltui.helloworld.helloGroup$HelloWorld1(ezeProgram, "helloGroup$HelloWorld1" );
-		helloGroup$HelloWorld1.setFormGroup(helloGroup);
-		helloGroup$HelloWorld1.setHelpKey(egl.ui.PFKeyKind.pf1);
-		helloGroup$HelloWorld1.setValidationBypassKeys(new com.ibm.javart.IntValue[]{egl.ui.PFKeyKind.pf2});
 		helloGroup$HelloWorld2 = new egltui.helloworld.helloGroup$HelloWorld2(ezeProgram, "helloGroup$HelloWorld2" );
 		helloGroup$HelloWorld2.setFormGroup(helloGroup);
 		helloGroup$HelloWorld2.setHelpKey(egl.ui.PFKeyKind.pf1);
 		helloGroup$HelloWorld2.setValidationBypassKeys(new com.ibm.javart.IntValue[]{egl.ui.PFKeyKind.pf2});
+		helloGroup$HelloWorld1 = new egltui.helloworld.helloGroup$HelloWorld1(ezeProgram, "helloGroup$HelloWorld1" );
+		helloGroup$HelloWorld1.setFormGroup(helloGroup);
+		helloGroup$HelloWorld1.setHelpKey(egl.ui.PFKeyKind.pf1);
+		helloGroup$HelloWorld1.setValidationBypassKeys(new com.ibm.javart.IntValue[]{egl.ui.PFKeyKind.pf2});
 		helloGroup.setPFKeyEquate( true );
 		$inithelloProgram( this );
 	}

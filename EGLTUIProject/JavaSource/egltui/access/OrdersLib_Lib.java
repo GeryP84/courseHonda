@@ -1,4 +1,4 @@
-// Generated at Mon Jun 11 21:44:44 CEST 2018 by EGL 8.0.0.v20150827_1902
+// Generated at Tue Jun 12 15:21:44 CEST 2018 by EGL 8.0.0.v20150827_1902
 // No APARs installed.
 package egltui.access;
 
@@ -499,7 +499,7 @@ public class OrdersLib_Lib extends com.ibm.javart.resources.Program
 					com.ibm.javart.sql.Sql.fail( ezeProgram, "OPEN", $sqlx, null, $prepStmt, false, 1, true );
 				}
 			}
-			// Get ABSOLUTE (listSpec.position) from resultSet into temp.ORDERID, temp.CUSTOMERID, temp.ORDERAMOUNT, temp.ORDERDETAILS, temp.ORDERDATE, temp.ORDERSTA...
+			// Get ABSOLUTE (listSpec.position) from resultSet into temp.OrderId, temp.CustomerId, temp.OrderAmount, temp.OrderDetails, temp.OrderDate, temp.OrderSta...
 			{
 				int $position = listSpec.position.getValue();
 				com.ibm.javart.sql.Sql.begin2( ezeProgram, "GET ABSOLUTE" );
@@ -553,7 +553,7 @@ public class OrdersLib_Lib extends com.ibm.javart.resources.Program
 				i = (short)2;
 				for ( ; (i <= ordersList.checkedValue( ezeProgram ).getSize( ezeProgram )); i++ )
 				{
-					// Get NEXT from resultSet into temp.ORDERID, temp.CUSTOMERID, temp.ORDERAMOUNT, temp.ORDERDETAILS, temp.ORDERDATE, temp.ORDERSTATUS;
+					// Get NEXT from resultSet into temp.OrderId, temp.CustomerId, temp.OrderAmount, temp.OrderDetails, temp.OrderDate, temp.OrderStatus;
 					{
 						com.ibm.javart.sql.Sql.begin2( ezeProgram, "GET NEXT" );
 						com.ibm.javart.sql.JavartResultSet[] $resultSets = ezeProgram._resultSets();

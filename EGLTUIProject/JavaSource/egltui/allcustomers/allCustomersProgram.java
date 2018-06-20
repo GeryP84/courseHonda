@@ -1,4 +1,4 @@
-// Generated at Mon Jun 11 21:44:46 CEST 2018 by EGL 8.0.0.v20150827_1902
+// Generated at Tue Jun 12 15:21:45 CEST 2018 by EGL 8.0.0.v20150827_1902
 // No APARs installed.
 package egltui.allcustomers;
 
@@ -22,8 +22,8 @@ public class allCustomersProgram extends com.ibm.javart.resources.Program
 		super( "allCustomersProgram", "allCustomersProgram", ru, false, true, 0 );
 		ezeProgram = this;
 		allCustomersFormGroup = new egltui.allcustomers.allCustomersFormGroup( "allCustomersFormGroup" );
-		egltui__access__CustomerLib = (egltui.access.CustomerLib_Lib)ezeProgram._runUnit().loadLibrary( "egltui.access.CustomerLib_Lib" );
 		egl__core__DateTimeLib = (egl.core.DateTimeLib_Lib)ezeProgram._runUnit().loadLibrary( "egl.core.DateTimeLib_Lib" );
+		egltui__access__CustomerLib = (egltui.access.CustomerLib_Lib)ezeProgram._runUnit().loadLibrary( "egltui.access.CustomerLib_Lib" );
 		com.ibm.javart.forms.common.Utility.setApp( this );
 		allCustomersFormGroup$custList = new egltui.allcustomers.allCustomersFormGroup$custList(ezeProgram, "allCustomersFormGroup$custList" );
 		allCustomersFormGroup$custList.setFormGroup(allCustomersFormGroup);

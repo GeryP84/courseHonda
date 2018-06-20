@@ -1,4 +1,4 @@
-// Generated at Mon Jun 11 17:12:54 CEST 2018 by EGL 8.0.0.v20150827_1902
+// Generated at Tue Jun 19 11:55:55 CEST 2018 by EGL 8.0.0.v20150827_1902
 // No APARs installed.
 package basiclibrary;
 
@@ -49,7 +49,7 @@ public class convertTempLib_Lib extends com.ibm.javart.resources.Program
 	
 	public void $initconvertTempLib_Lib( convertTempLib_Lib ezeProgram ) throws java.lang.Exception
 	{
-		_dbms( com.ibm.javart.sql.Sql.DBMS_DB2 );
+		_dbms( com.ibm.javart.sql.Sql.DBMS_DERBY );
 		// RETURN
 	}
 	
@@ -75,7 +75,7 @@ public class convertTempLib_Lib extends com.ibm.javart.resources.Program
 //	currencySymbol = 
 //	data = 31
 //	dbContentSeparator = 
-//	dbms = DB2
+//	dbms = DERBY
 //	debugTrace = NO
 //	decimalSymbol = 
 //	defaultDateFormat = 
@@ -146,14 +146,14 @@ public class convertTempLib_Lib extends com.ibm.javart.resources.Program
 //	spacesZero = NO
 //	sqlAccessColumnsAsBytes = NO
 //	sqlCommitControl = 
-//	sqlDB = jdbc:db2://localhost:50000/SAMPLE
+//	sqlDB = jdbc:derby:C:\\EGLDerbyDB;create=true
 //	sqlErrorTrace = NO
 //	sqlID = 
 //	sqlIOTrace = NO
-//	sqlJDBCDriverClass = com.ibm.db2.jcc.DB2Driver
+//	sqlJDBCDriverClass = org.apache.derby.jdbc.EmbeddedDriver
 //	sqlJNDIName = 
 //	sqlSchema = 
-//	sqlValidationConnectionURL = jdbc:db2://localhost:50000/SAMPLE
+//	sqlValidationConnectionURL = jdbc:derby:C:\\EGLDerbyDB;create=true
 //	startTransactionID = 
 //	statementTrace = NO
 //	synchOnPgmTransfer = YES
